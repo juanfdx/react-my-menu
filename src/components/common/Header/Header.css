@@ -1,0 +1,13 @@
+
+.header {
+  position: fixed;
+  width: 100%;
+  height: 75px;
+  background: #f3f6f9;
+  box-shadow: 0 14.8222px 37.0556px rgba(0, 0, 0, .1);
+  z-index: 10;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

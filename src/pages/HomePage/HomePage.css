@@ -1,0 +1,17 @@
+
+.home-page {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.home-page__main {
+  width: 100%;
+  /* when flex column, this make main take all available space in container */
+  flex: 1; 
+  padding-top: 75px;
+}

@@ -1,0 +1,339 @@
+/* Here we define the Custom properties */
+:root {
+  /* Default light theme */
+  --color-primary: #101826;
+  --color-secondary: #FFFFFF;
+
+  /* Typography */
+  --type-principal: Helvetica, Arial, sans-serif;
+  --type-secondary: Verdana;
+  --font-sans: "Inter", "ui-sans-serif", "system-ui", "-apple-system", "system-ui", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "Noto Sans", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  /* Colors */
+  --color-primary: #FF5A5F;
+  --color-black: #000000;
+  --color-text-dark: #484848;
+  --color-text-medium: #767676;
+  --color-text-light: #A1A1A1;
+  --color-background: #FFFFFF;
+  --color-background-light: #F7F7F7;
+  --color-border: #DBDBDB;
+  --color-interactive: #00A699;
+  --color-interactive-hover: #008489;
+
+
+  /* fonts sizes */
+  --font-size-xxl: 36px;
+  --font-size-xl: 28px;
+  --font-size-lg: 20px;
+  --font-size-md: 16px;
+  --font-size-sm: 14px;
+  --font-size-xs: 12px;
+  --font-size-xxs: 8px;
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+
+  /* Spacing */
+  --spacing-xxs: 4px;
+  --spacing-xs: 8px;
+  --spacing-sm: 12px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+
+  /* Borders and Shadows */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 16px;
+  --border-radius-pill: 50%;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.25);
+
+}
+
+
+/* Dark theme */
+[data-theme='dark'] {
+  --color-primary: #f0f0f0;
+  --color-secondary: #101826;
+
+  /* fonts colors */
+
+}
+
+/* Optional */
+/* We configure whether a user has activated high contrast mode. (WD) */
+@media (prefers-contrast: high) {
+  :root {
+    --color-primary: black;
+    --color-secondary: white;
+  }
+}
+
+/* Optional */
+/* Disable animations in case the user has set the mode to no animation. */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none;
+    transition: none;
+  }
+}
+
+
+/* We reset the margin and padding of all labels */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video,
+button,
+button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  vertical-align: baseline;
+}
+
+/* We avoid problems with images */
+img,
+picture,
+video,
+iframe,
+figure {
+  max-width: 100%;
+  width: 100%;
+  display: block;
+  /* optional */
+  object-fit: cover;
+  /* optional */
+  object-position: center center;
+}
+
+/* We reset the links to work as boxes... */
+a {
+  display: block;
+}
+
+/* ... except those found in paragraphs */
+p a {
+  display: inline;
+}
+
+/* We remove the dots from the <li> */
+li {
+  list-style-type: none;
+}
+
+/* We set up soft anchors */
+html {
+  scroll-behavior: smooth;
+}
+
+/* We disable default styles of the main text tags */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+strong,
+blockquote,
+i,
+b,
+u,
+em {
+  font-size: 1em;
+  font-weight: inherit;
+  font-style: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* We avoid problems with pseudo elements of quotes */
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+/* We configure the text we select */
+::selection {
+  background-color: var(--bg-color-selection);
+  color: #FFFFFF;
+}
+
+/* We level out problems with typography and form placement */
+form,
+input,
+textarea,
+select,
+button,
+label {
+  font-family: inherit;
+  font-size: inherit;
+  hyphens: auto;
+  background-color: transparent;
+  display: block;
+  color: inherit;
+  /* optional */
+  appearance: none;
+}
+
+/* We reset the tables */
+table,
+tr,
+td {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Avoiding problems with SVGs */
+svg {
+  width: 100%;
+  display: block;
+  fill: currentColor;
+}
+
+/* We set the typography for the entire website */
+body {
+  min-height: 100vh;
+  font-size: 100%;
+  font-family: var(--font-sans);
+  color: var(--color-text-dark);
+  background-color: var(--color-background);
+  /* optional */
+  line-height: 1.4em;
+  /* optional */
+  hyphens: auto;
+  /* optional */
+  font-smooth: always;
+  /* optional */
+  -webkit-font-smoothing: antialiased;
+  /* optional */
+  -moz-osx-font-smoothing: grayscale;
+  /* optional */
+  min-width: 320px;
+  /* optional */
+  overflow-x: hidden;
+}
+
+
+/* Reset inputs */
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+  border: none;
+  background: none;
+  outline: none;
+  /* Remove focus outline */
+  box-shadow: none;
+  /* Remove any box-shadow */
+  font: inherit;
+  /* Inherit the font properties from the parent */
+  color: inherit;
+  /* Inherit the text color */
+  box-sizing: border-box;
+  /* Include padding in the width calculation */
+}
+
+
+/* Remove the up and down arrows */
+/* Chrome, Safari, Edge, Opera */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  /* eslint-disable-next-line */
+  -moz-appearance: textfield;
+}
