@@ -14,5 +14,5 @@
   /* when flex column, this make main take all available space in container */
   flex: 1; 
   /* import for scroll when overpass main */
-  padding-bottom: 70px; 
+  padding-bottom: 72px; 
 }

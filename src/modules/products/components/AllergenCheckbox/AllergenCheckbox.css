@@ -1,0 +1,25 @@
+
+
+.allergen-checkbox {
+  cursor: pointer;
+}
+
+.allergen-checkbox__allergen {
+  padding: 8px 15px;
+  background: #efefef;
+  border-radius: var(--border-radius-lg);
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+}
+
+.allergen-checkbox__img {
+  width: 23px;
+  height: 23px;
+}
+
+.allergen-checkbox__text {
+  font-size: var(--font-size-xs);
+}

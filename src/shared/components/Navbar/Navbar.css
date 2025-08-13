@@ -28,7 +28,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   transition: all .2s ease;
   color: var(--color-text-darkest);
 }
@@ -38,22 +38,23 @@
 }
 
 .navbar__icon-fk {
-  width: 20px;
-  height: 20px;
-}
-
-.navbar__icon-heart {
-  width: 24px;
-  height: 24px;
-}
-
-.navbar__icon-star {
   width: 22px;
   height: 22px;
 }
 
+.navbar__icon-heart {
+  width: 25px;
+  height: 25px;
+}
+
+.navbar__icon-star {
+  width: 23px;
+  height: 23px;
+  margin-bottom: 2px;
+}
+
 .navbar__span {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-md);
   font-weight: var(--font-weight-bold);
 }
 
@@ -76,9 +77,9 @@
 }
 
 .navbar__icon-settings {
-  margin-top: 1px;
-  width: 20px;
-  height: 20px;
+  margin-top: 2px;
+  width: 21px;
+  height: 21px;
 }
 
 
@@ -94,6 +95,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 35px;
   }
 }

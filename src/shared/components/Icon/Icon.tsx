@@ -4,6 +4,8 @@ import { IoSettingsOutline } from "react-icons/io5";
 import { IoIosHeart } from "react-icons/io";
 import { ForkKnifeIcon } from '../../../assets/images/svg/ForkKnifeIcon';
 import { StartIcon } from '../../../assets/images/svg/StartIcon';
+import { AllergenIcon } from '../../../assets/images/svg/AllergenIcon';
+import { ViewIcon } from '../../../assets/images/svg/ViewIcon';
 
 type IconProps = {
   type: string;
@@ -28,6 +30,12 @@ export const Icon = ({ type, className }: IconProps) => {
       )}
       {type === 'star' && (
         <StartIcon className={className} />
+      )}
+      {type === 'allergen' && (
+        <AllergenIcon className={className} />
+      )}
+      {type === 'view' && (
+        <ViewIcon className={className} />
       )}
     </>
   )
