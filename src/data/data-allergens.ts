@@ -1,4 +1,5 @@
-import type { Allergens } from '../interfaces/product.interface';
+import type { Allergens } from '../modules/products/interfaces/product.interface';
+
 
 
 export const allergens: Allergens[] = [

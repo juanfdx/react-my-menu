@@ -1,8 +1,9 @@
-import { Outlet } from 'react-router';
 import './HomePage.css';
+import { Outlet } from 'react-router';
 // COMPONENTS
-import { Header } from '../../components/common/Header/Header';
-import { Footer } from '../../components/common/Footer/Footer';
+import { Header } from '../../shared/components/Header/Header';
+import { Footer } from '../../shared/components/Footer/Footer';
+
 
 
 export const HomePage = () => {

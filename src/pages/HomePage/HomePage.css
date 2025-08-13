@@ -13,5 +13,6 @@
   width: 100%;
   /* when flex column, this make main take all available space in container */
   flex: 1; 
-  padding-top: 75px;
+  /* import for scroll when overpass main */
+  padding-bottom: 70px; 
 }

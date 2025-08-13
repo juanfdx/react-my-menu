@@ -7,19 +7,22 @@
   /* Typography */
   --type-principal: Helvetica, Arial, sans-serif;
   --type-secondary: Verdana;
-  --font-sans: "Inter", "ui-sans-serif", "system-ui", "-apple-system", "system-ui", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "Noto Sans", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-sans: "system-ui", "-apple-system", "system-ui", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "Noto Sans", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
   /* Colors */
-  --color-primary: #FF5A5F;
-  --color-black: #000000;
-  --color-text-dark: #484848;
-  --color-text-medium: #767676;
-  --color-text-light: #A1A1A1;
-  --color-background: #FFFFFF;
+  --color-primary     : #46b975;
+  --color-black       : #000000;
+  --color-text-darkest: #283646;
+  --color-text-dark   : #484848;
+  --color-text-medium : #767676;
+  --color-text-light  : #A1A1A1;
+  --color-background  : #FFFFFF;
   --color-background-light: #F7F7F7;
-  --color-border: #DBDBDB;
-  --color-interactive: #00A699;
-  --color-interactive-hover: #008489;
+  --color-border      : #DBDBDB;
+  --color-interactive : #00a729;
+  --color-interactive-hover: #00a729;
+  --color-pink: #FF5A5F;
+  --color-star: #fa0;
 
 
   /* fonts sizes */
@@ -29,8 +32,9 @@
   --font-size-md: 16px;
   --font-size-sm: 14px;
   --font-size-xs: 12px;
-  --font-size-xxs: 8px;
+  --font-size-xxs: 9px;
   --font-weight-regular: 400;
+  --font-weight-medium: 500;
   --font-weight-bold: 700;
 
   /* Spacing */
@@ -42,6 +46,7 @@
   --spacing-xl: 32px;
 
   /* Borders and Shadows */
+  --border-radius-xs: 3px;
   --border-radius-sm: 4px;
   --border-radius-md: 8px;
   --border-radius-lg: 16px;

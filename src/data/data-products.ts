@@ -1,4 +1,5 @@
-import type { Product } from '../interfaces/product.interface';
+import type { Product } from '../modules/products/interfaces/product.interface'
+// IMAGES
 import thumbGrilledPork from '../assets/images/products/pork/thumbnails/thumb-grilled-pork.jpg'
 import grilledPork from '../assets/images/products/pork/grilled-pork.jpg'
 import thumbTaquitosPork from '../assets/images/products/pork/thumbnails/thumb-grilled-pork.jpg'
@@ -15,7 +16,6 @@ import thumbShrimpPancakes from '../assets/images/products/seafood/thumbnails/th
 import shrimpPancakes from '../assets/images/products/seafood/shrimp-pancakes.jpg'
 import thumbSquidSprigs from '../assets/images/products/seafood/thumbnails/thumb-squid-sprigs.jpg'
 import squidSprigs from '../assets/images/products/seafood/squid-sprigs.jpg'
-
 
 
 
