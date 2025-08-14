@@ -1,12 +1,18 @@
 import './Navbar.css';
+import { useState } from 'react';
+// COMPONENTS
+import { LinkButton } from '../LinkButton/LinkButton';
 // IMAGES
-import spaFlag from '../../../assets/images/flags/spa-flag.webp';
 import iconSettings from '../../../assets/images/svg/settings.svg';
 import logo from '../../../assets/images/logo/logo.png';
-import { LinkButton } from '../LinkButton/LinkButton';
+// DATA
+import { languages } from '../../../data/data-languages';
 
 
 export const Navbar = () => {
+
+  const [selector, setSelector] = useState<boolean>(false)
+
   return (
     <nav className='navbar'>
       {/* logo */}
@@ -53,9 +59,19 @@ export const Navbar = () => {
 
       {/* action buttons */}
       <div className='navbar__actions'>
-        <button className='navbar__btn'>
-          <img className='navbar__img-flag' src={spaFlag} alt="" />
-        </button>
+
+        {/* languages */}
+        {languages?.map((lang) =>        
+          <button 
+            key={lang.id} 
+            className={`navbar__btn-flag ${lang.locale === 'es' ? 'navbar__btn-flag--active' : ''}`} 
+            onClick={() => setSelector(!selector)}
+          >
+            <img className='navbar__img-flag' src={lang.image} alt={`${lang.locale} flag`} />
+          </button>  
+        )}
+
+        {/* settings */}
         <button className='navbar__btn'>
           <img className='navbar__icon-settings' src={iconSettings} alt="settings icon" />
         </button>

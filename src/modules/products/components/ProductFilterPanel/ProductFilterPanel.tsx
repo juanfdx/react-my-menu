@@ -3,8 +3,8 @@ import { useRef, useState } from 'react';
 // COMPONENTS
 import { Icon } from '../../../../shared/components/Icon/Icon';
 import { AllergenCheckbox } from '../AllergenCheckbox/AllergenCheckbox';
-
-import allergen from '../../../../assets/images/allergens/gluten.png'
+// DATA
+import { allergens } from '../../../../data/data-allergens';
 
 
 export const ProductFilterPanel = () => {
@@ -52,24 +52,11 @@ export const ProductFilterPanel = () => {
             <h5 className='product-filter-panel__allergens-title'>allergens</h5>
             
             <ul className='product-filter-panel__allergens-list'>
-              <li className='product-filter-panel__allergens-item'>
-                <AllergenCheckbox img={allergen} text='gluten' />
-              </li>
-              <li className='product-filter-panel__allergens-item'>
-                <AllergenCheckbox img={allergen} text='gluten' />
-              </li>
-              <li className='product-filter-panel__allergens-item'>
-                <AllergenCheckbox img={allergen} text='gluten' />
-              </li>
-              <li className='product-filter-panel__allergens-item'>
-                <AllergenCheckbox img={allergen} text='gluten' />
-              </li>
-              <li className='product-filter-panel__allergens-item'>
-                <AllergenCheckbox img={allergen} text='gluten' />
-              </li>
-              <li className='product-filter-panel__allergens-item'>
-                <AllergenCheckbox img={allergen} text='gluten' />
-              </li>
+              {allergens?.map((allergen) => (
+                <li key={allergen.id} className='product-filter-panel__allergens-item'>
+                  <AllergenCheckbox img={allergen.image} text={allergen.name} />
+                </li>      
+              ))}
             </ul>
           </div>
 

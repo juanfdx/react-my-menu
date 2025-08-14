@@ -1,66 +1,76 @@
 import type { Allergens } from '../modules/products/interfaces/product.interface';
-
+// IMAGES
+import apio from '../assets/images/allergens/apio.png'
+import gluten from '../assets/images/allergens/gluten.png'
+import eggs from '../assets/images/allergens/eggs.png'
+import milk from '../assets/images/allergens/milk.png'
+import fish from '../assets/images/allergens/fish.png'
+import soy from '../assets/images/allergens/soy.png'
+import sesame from '../assets/images/allergens/sesame.png'
+import nuts from '../assets/images/allergens/nuts.png'
+import crustaceans from '../assets/images/allergens/crustaceans.png'
+import molluscs from '../assets/images/allergens/molluscs.png'
 
 
 export const allergens: Allergens[] = [
   {
     id: 1,
     name: 'gluten',
-    image: 'gluten.png',
+    image: gluten,
     locale: 'en',
   },
   {
     id: 2,
     name: 'eggs',
-    image: 'eggs.png',
+    image: eggs,
     locale: 'en',
   },
   {
     id: 3,
     name: 'milk',
-    image: 'milk.png',
+    image: milk,
     locale: 'en',
   },
   {
     id: 4,
     name: 'fish',
-    image: 'fish.png',
+    image: fish,
     locale: 'en',
   },
   {
     id: 5,
-    name: 'shellfish',
-    image: 'shellfish.png',
+    name: 'apio',
+    image: apio,
     locale: 'en',
   },
   {
     id: 6,
     name: 'soy',
-    image: 'soy.png',
+    image: soy,
     locale: 'en',
   },
   {
     id: 7,
     name: 'sesame',
-    image: 'sesame.png',
+    image: sesame,
     locale: 'en',
   },
   {
     id: 8,
     name: 'nuts',
-    image: 'nuts.png',
+    image: nuts,
     locale: 'en',
   },
   {
     id: 9,
     name: 'crustaceans',
-    image: 'crustaceans.png',
+    image: crustaceans,
     locale: 'en',
   },
   {
     id: 10,
     name: 'molluscs',
-    image: 'molluscs.png',
+    image: molluscs,
     locale: 'en',
   }
 ]

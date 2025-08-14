@@ -2,7 +2,7 @@ import type { Product } from '../modules/products/interfaces/product.interface'
 // IMAGES
 import thumbGrilledPork from '../assets/images/products/pork/thumbnails/thumb-grilled-pork.jpg'
 import grilledPork from '../assets/images/products/pork/grilled-pork.jpg'
-import thumbTaquitosPork from '../assets/images/products/pork/thumbnails/thumb-grilled-pork.jpg'
+import thumbTaquitosPork from '../assets/images/products/pork/thumbnails/thumb-taquitos-pork.jpg'
 import taquitosPork from '../assets/images/products/pork/taquitos-pork.jpg'
 import thumbChickenStrips from '../assets/images/products/poultry/thumbnails/thumb-chicken-strips.jpg'
 import chickenStrips from '../assets/images/products/poultry/chicken-strips.jpg'
@@ -16,6 +16,23 @@ import thumbShrimpPancakes from '../assets/images/products/seafood/thumbnails/th
 import shrimpPancakes from '../assets/images/products/seafood/shrimp-pancakes.jpg'
 import thumbSquidSprigs from '../assets/images/products/seafood/thumbnails/thumb-squid-sprigs.jpg'
 import squidSprigs from '../assets/images/products/seafood/squid-sprigs.jpg'
+import thumbMadridStyleTripe from '../assets/images/products/beef/thumbnails/thumb-madrid-style-tripe.jpg'
+import madridStyleTripe from '../assets/images/products/beef/madrid-style-tripe.jpg'
+import thumbMeatloaf from '../assets/images/products/beef/thumbnails/thumb-meatloaf.jpg'
+import meatloaf from '../assets/images/products/beef/meatloaf.jpg'
+import thumbVealInSauce from '../assets/images/products/beef/thumbnails/thumb-veal-in-sauce.jpg'
+import vealInSauce from '../assets/images/products/beef/veal-in-sauce.jpg'
+import thumbBolognese from '../assets/images/products/pasta/thumbnails/thumb-bolognese.jpg'
+import bolognese from '../assets/images/products/pasta/bolognese.jpg'
+import thumbCarbonara from '../assets/images/products/pasta/thumbnails/thumb-carbonara.jpg'
+import carbonara from '../assets/images/products/pasta/carbonara.jpg'
+import thumbPesto from '../assets/images/products/pasta/thumbnails/thumb-pesto.jpg'
+import pesto from '../assets/images/products/pasta/pesto.jpg'
+
+
+
+
+
 
 
 
@@ -74,7 +91,7 @@ export const products: Product[] = [
   },
   {
     id: 2,
-    name: 'taquitos de Pincho Moruno',
+    name: 'taquitos de pincho moruno',
     description: 'marinated lean pork accompanied with fried potatoes and padrón peppers',
     category: 'pork',
     price: 10.2,
@@ -227,7 +244,7 @@ export const products: Product[] = [
     locale: 'en',
     active: true
   },
-    {
+  {
     id: 8,
     name: 'squid sprigs',
     description: 'crispy on the outside and juicy on the inside',
@@ -271,5 +288,243 @@ export const products: Product[] = [
     locale: 'en',
     active: true
   },
+  {
+    id: 9,
+    name: 'madrid style tripe',
+    description: 'homemade tripe a la madrileña. You will wet bread!!',
+    category: 'beef',
+    price: 14.5,
+    thumbnail: thumbMadridStyleTripe,
+    image: madridStyleTripe,
+    rating: 0,
+    allergens: [
+      {
+        id: 1,
+        name: 'gluten',
+        image: 'gluten.png',
+        locale: 'en',
+      },
+      {
+        id: 4,
+        name: 'fish',
+        image: 'fish.png',
+        locale: 'en',
+      },
+      {
+        id: 6,
+        name: 'soy',
+        image: 'soy.png',
+        locale: 'en',
+      }, 
+      {
+        id: 9,
+        name: 'crustaceans',
+        image: 'crustaceans.png',
+        locale: 'en',
+      },
 
+    ],
+    locale: 'en',
+    active: true
+  },
+  {
+    id: 10,
+    name: 'meatloaf',
+    description: 'homemade beef meatballs in sauce, with french fries',
+    category: 'beef',
+    price: 13.5,
+    thumbnail: thumbMeatloaf,
+    image: meatloaf,
+    rating: 0,
+    allergens: [
+      {
+        id: 1,
+        name: 'gluten',
+        image: 'gluten.png',
+        locale: 'en',
+      },
+      {
+        id: 2,
+        name: 'eggs',
+        image: 'eggs.png',
+        locale: 'en',
+      },
+      {
+        id: 4,
+        name: 'fish',
+        image: 'fish.png',
+        locale: 'en',
+      },
+      {
+        id: 6,
+        name: 'soy',
+        image: 'soy.png',
+        locale: 'en',
+      }, 
+      {
+        id: 9,
+        name: 'crustaceans',
+        image: 'crustaceans.png',
+        locale: 'en',
+      },
+
+    ],
+    locale: 'en',
+    active: true
+  },
+  {
+    id: 11,
+    name: 'veal in sauce',
+    description: 'braised beef with our delicious sauce',
+    category: 'beef',
+    price: 13.5,
+    thumbnail: thumbVealInSauce,
+    image: vealInSauce,
+    rating: 0,
+    allergens: [
+      {
+        id: 1,
+        name: 'gluten',
+        image: 'gluten.png',
+        locale: 'en',
+      },
+      {
+        id: 4,
+        name: 'fish',
+        image: 'fish.png',
+        locale: 'en',
+      },
+      {
+        id: 6,
+        name: 'soy',
+        image: 'soy.png',
+        locale: 'en',
+      }, 
+      {
+        id: 9,
+        name: 'crustaceans',
+        image: 'crustaceans.png',
+        locale: 'en',
+      },
+
+    ],
+    locale: 'en',
+    active: true
+  },
+  {
+    id: 12,
+    name: 'bolognese',
+    description: 'spaghetti or tagliatelle with homemade bolognese sauce',
+    category: 'pasta',
+    price: 8.5,
+    thumbnail: thumbBolognese,
+    image: bolognese,
+    rating: 0,
+    allergens: [
+      {
+        id: 1,
+        name: 'gluten',
+        image: 'gluten.png',
+        locale: 'en',
+      },
+      {
+        id: 2,
+        name: 'eggs',
+        image: 'eggs.png',
+        locale: 'en',
+      },
+      {
+        id: 3,
+        name: 'milk',
+        image: 'milk.png',
+        locale: 'en',
+      },
+      {
+        id: 6,
+        name: 'soy',
+        image: 'soy.png',
+        locale: 'en',
+      }, 
+      {
+        id: 9,
+        name: 'crustaceans',
+        image: 'crustaceans.png',
+        locale: 'en',
+      },
+
+    ],
+    locale: 'en',
+    active: true
+  },
+  {
+    id: 13,
+    name: 'carbonara',
+    description: 'spaghetti or tagliatelle with homemade carbonara sauce with bacon',
+    category: 'pasta',
+    price: 8.5,
+    thumbnail: thumbCarbonara,
+    image: carbonara,
+    rating: 0,
+    allergens: [
+      {
+        id: 1,
+        name: 'gluten',
+        image: 'gluten.png',
+        locale: 'en',
+      },
+      {
+        id: 2,
+        name: 'eggs',
+        image: 'eggs.png',
+        locale: 'en',
+      },
+      {
+        id: 3,
+        name: 'milk',
+        image: 'milk.png',
+        locale: 'en',
+      }
+    ],
+    locale: 'en',
+    active: true
+  },
+  {
+    id: 14,
+    name: 'pesto',
+    description: 'spaghetti or tagliatelle with homemade pesto sauce',
+    category: 'pasta',
+    price: 8.5,
+    thumbnail: thumbPesto,
+    image: pesto,
+    rating: 0,
+    allergens: [
+      {
+        id: 1,
+        name: 'gluten',
+        image: 'gluten.png',
+        locale: 'en',
+      },
+      {
+        id: 2,
+        name: 'eggs',
+        image: 'eggs.png',
+        locale: 'en',
+      },
+      {
+        id: 3,
+        name: 'milk',
+        image: 'milk.png',
+        locale: 'en',
+      },
+      {
+        id: 9,
+        name: 'crustaceans',
+        image: 'crustaceans.png',
+        locale: 'en',
+      },
+
+    ],
+    locale: 'en',
+    active: true
+  },
 ]

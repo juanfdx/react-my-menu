@@ -60,10 +60,22 @@
 
 /* Actions */
 .navbar__actions {
+  position: relative;
+  height: 100%;
+
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 25px;
+}
+
+.navbar__btn-flag {
+  display: none;
+}
+
+.navbar__btn-flag--active {
+  display: block;
+  cursor: pointer;
 }
 
 .navbar__btn {
@@ -72,6 +84,7 @@
 
 .navbar__img-flag {
   width: 33px;
+  min-width: 33px;
   height: 22px;
   border-radius: var(--border-radius-xs);
 }
@@ -83,7 +96,8 @@
 }
 
 
-/* Media queries */
+
+/* MEDIA QUERIES */
 @media (min-width: 960px) {
   .navbar {
     padding: 0 25px;

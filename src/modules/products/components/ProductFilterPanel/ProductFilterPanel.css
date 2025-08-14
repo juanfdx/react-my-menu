@@ -100,14 +100,14 @@
 /* accordion 1 */
 .product-filter-panel__allergens-container {
   width: 100%;
-  padding: 0px 25px 0px;
+  padding: 0px;
   overflow: clip;
   max-height: 0;
   transition: max-height .3s ease;
 }
 
 .product-filter-panel__allergens-title {
-  padding-top: 25px;
+  padding-top: 15px;
   font-size: var(--font-size-lg);
   font-weight: var(--font-weight-medium);
   line-height: 1.4;
@@ -123,7 +123,7 @@
 
 /* accordion 2 */
 .product-filter-panel__filters-title {
-  padding-top: 25px;
+  padding-top: 10px;
   font-size: var(--font-size-lg);
   font-weight: var(--font-weight-medium);
   line-height: 1.4;
@@ -131,7 +131,7 @@
 
 .product-filter-panel__filters-container {
   width: 100%;
-  padding: 0px 25px 0px;
+  padding: 0px;
   overflow: clip;
   max-height: 0;
   transition: max-height .3s ease;
@@ -164,6 +164,22 @@
 @media (min-width: 700px) {
   .product-filter-panel__button:nth-child(2) {
     margin-right: 22px;
+  }
+
+  .product-filter-panel__allergens-container {
+    padding: 0px 25px 0px;
+  }
+
+  .product-filter-panel__allergens-title {
+    padding-top: 25px;
+  }
+
+  .product-filter-panel__filters-container {
+    padding: 0px 25px 0px;
+  }
+
+  .product-filter-panel__filters-title {
+    padding-top: 25px;
   }
 }
 
