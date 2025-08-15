@@ -1,20 +1,23 @@
 import './Products.css';
+import { useLoaderData } from 'react-router';
 // COMPONENTS
-import { ProductFilterPanel } from '../../modules/products/components/ProductFilterPanel/ProductFilterPanel';
-import { CategoryFilter } from '../../modules/products/components/CategoryFilter/CategoryFilter';
 import { ProductsList } from '../../modules/products/components/ProductsList/ProductsList';
-// import { CategoriesList } from '../../modules/products/components/CategoriesList/categoriesList';
 
 
 
 export const Products = () => {
+
+  const products = useLoaderData();
+
+  if(!products || products.length === 0) {
+    return (
+      <h1>No products found...</h1>
+    )
+  }
   
   return (
     <>
-      <ProductFilterPanel />
-      <CategoryFilter />
-      <ProductsList />
-      {/* <CategoriesList /> */}
+      <ProductsList  products={products}/>
     </>
   )
 }

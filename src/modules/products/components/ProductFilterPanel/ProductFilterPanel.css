@@ -45,7 +45,7 @@
   padding: 6px 12px;
   background-color: var(--color-primary);
   cursor: pointer;
-  transition: all .2s ease;
+  transition: all .3s ease;
 
   display: flex;
   justify-content: center;
@@ -118,6 +118,22 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
+}
+
+.product-filter-panel__reset-btn {
+  width: 100%;
+  padding: 8px 15px;
+  background: #efefef;
+  border-radius: var(--border-radius-lg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.product-filter-panel__reset-btn:hover {
+  background: #ececec;
 }
 
 /* accordion 2 */

@@ -3,6 +3,11 @@ import { createBrowserRouter, RouterProvider } from 'react-router'
 import { HomePage } from './pages/HomePage/HomePage'
 import { Error } from './pages/Error/Error'
 import { Products } from './pages/Products/Products'
+import { Categories } from './pages/Categories/Categories'
+
+// LOADERS
+import { categoriesLoader } from './modules/products/loaders/categoriesLoader'
+import { productsLoader } from './modules/products/loaders/productsLoader'
 
 
 
@@ -14,7 +19,13 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Products />
+        element: <Categories />,
+        loader: categoriesLoader
+      },
+      {
+        path: '/products/:category',
+        element: <Products />,
+        loader: productsLoader
       }
     ]
   }

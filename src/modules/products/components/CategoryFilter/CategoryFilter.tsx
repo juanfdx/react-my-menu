@@ -14,7 +14,7 @@ export const CategoryFilter = () => {
 
           {categories.map((category) => (
             <li key={category.id} className='category-filter__li'>
-              <Link to={`/category/${category.id}`} className='category-filter__link'>
+              <Link to={`/products/${category.name.toLocaleLowerCase()}`} className='category-filter__link'>
                 {category.name}
               </Link>
             </li>

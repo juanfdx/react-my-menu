@@ -98,6 +98,15 @@ export const ProductFilterPanel = () => {
                   />
                 </li>      
               ))}
+
+              <li className='product-filter-panel__allergens-item'>
+                <button 
+                  className='product-filter-panel__reset-btn'
+                  onClick={() => setMyAllergens([])}
+                >
+                  Clear
+                </button>
+              </li>
             </ul>
 
           </div>

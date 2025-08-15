@@ -1,10 +1,15 @@
 import './CategoriesList.css';
 import { Link } from 'react-router';
-// DATA
-import { categories } from '../../../../data/data-categories';
+import type { Category } from '../../interfaces/category.interface';
 
 
-export const CategoriesList = () => {
+type Props = {
+  categories: Category[]
+}
+
+
+
+export const CategoriesList = ({ categories }: Props) => {
   
   return (
     <section className='categories'>
@@ -13,7 +18,7 @@ export const CategoriesList = () => {
 
           {categories?.map((category) => 
             <li key={category.id} className='categories__li'>
-              <Link className='categories__link' to={`/category/${category.id}`}>
+              <Link className='categories__link' to={`/products/${category.name.toLocaleLowerCase()}`}>
                 <img className='categories__img' src={category.image} alt={category.name} />
                 <h3 className='categories__title'>{category.name}</h3>
               </Link>

@@ -2,12 +2,11 @@ import './ProductsList.css';
 import { Link } from 'react-router';
 // UTILS
 import { capitalizeFirstLetter } from '../../../../shared/utils/string-methods';
-// DATA
-import { products } from '../../../../data/data-products';
+import type { Product } from '../../interfaces/product.interface';
 
 
 
-export const ProductsList = () => {
+export const ProductsList = ({ products }: { products: Product[]}) => {
 
   return (
     <section className='products'>
