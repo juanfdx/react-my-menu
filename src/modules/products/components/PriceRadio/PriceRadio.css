@@ -1,0 +1,32 @@
+
+.price-radio {
+  width: 100%;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.price-radio__label {
+  padding: 6px 20px;
+  background: #efefef;
+  border-radius: var(--border-radius-lg);
+  cursor: pointer;
+}
+
+.price-radio__label--active {
+  background: var(--color-primary);
+}
+
+.price-radio__input {
+  display: none;
+}
+
+.price-radio__text {
+  font-size: var(--font-size-sm);
+}
+
+.price-radio__text--active {
+  color: var(--color-secondary);
+  font-weight: var(--font-weight-medium);
+}

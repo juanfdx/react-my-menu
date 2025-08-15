@@ -1,27 +1,43 @@
 import './AllergenCheckbox.css';
+// UTILS
+import { capitalizeFirstLetter } from '../../../../shared/utils/string-methods';
 
 
 type Props = {
   img: string,
-  text: string
+  allergen: string
+  selectedAllergens: string[]
+  handleInputChange: (text: string) => void
+
 }
 
-export const AllergenCheckbox = ({ img, text }: Props) => {
+export const AllergenCheckbox = ({ img, allergen, selectedAllergens, handleInputChange }: Props) => {
 
+  const isChecked = selectedAllergens.includes(allergen);
+
+  
   return (
-    <label className='allergen-checkbox' htmlFor={`allergen-${text}`} >
+    <label className='allergen-checkbox' htmlFor={`allergen-${allergen}`}>
       <input 
-        id={`allergen-${text}`} 
-        type="checkbox" 
-        name='allergen'
+        className='allergen-checkbox__input'
+        id={`allergen-${allergen}`} 
+        type="checkbox"
+        name="allergen"
+        value={allergen}
+        checked={isChecked}
+        onChange={() =>handleInputChange(allergen)}
       />
-      <div className='allergen-checkbox__allergen'>
+      <div className={`allergen-checkbox__info-wrapper ${isChecked  ? 'allergen-checkbox__info-wrapper--active' : ''}`}>
         <img 
           className='allergen-checkbox__img' 
           src={img} 
           alt="allergen image" 
         />
-        <span className='allergen-checkbox__text'>{text}</span>
+        <span 
+          className={`allergen-checkbox__text ${isChecked ? 'allergen-checkbox__text--active' : ''}`}
+        >
+          {capitalizeFirstLetter(allergen)}
+        </span>
       </div>
     </label>
   )

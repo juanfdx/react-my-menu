@@ -30,7 +30,6 @@
   box-shadow: 0 16px 40px rgba(0, 0, 0, .05);
   background-color: white;
   border: 1px solid #ced4da;
-  /* border-radius: var(--border-radius-xs); */
   border-top-left-radius: var(--border-radius-xs);
   border-bottom-left-radius: var(--border-radius-xs);
 }
@@ -137,12 +136,18 @@
   transition: max-height .3s ease;
 }
 
-.product-filter-panel__filters {
-  margin: 10px 0;
-  
-  height: 200px;
-  background-color: #80bdff;
+.product-filter-panel__price-list {
+  margin-top: 10px;
+  padding-bottom: 10px;
+  overflow-x: scroll;
+  scrollbar-width: none;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
 }
+
 
 
 

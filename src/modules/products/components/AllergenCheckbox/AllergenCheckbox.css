@@ -4,7 +4,11 @@
   cursor: pointer;
 }
 
-.allergen-checkbox__allergen {
+.allergen-checkbox__input {
+  display: none;
+}
+
+.allergen-checkbox__info-wrapper {
   padding: 8px 15px;
   background: #efefef;
   border-radius: var(--border-radius-lg);
@@ -15,6 +19,10 @@
   gap: 8px;
 }
 
+.allergen-checkbox__info-wrapper--active {
+  background: var(--color-red);
+}
+
 .allergen-checkbox__img {
   width: 23px;
   height: 23px;
@@ -22,4 +30,9 @@
 
 .allergen-checkbox__text {
   font-size: var(--font-size-xs);
+}
+
+.allergen-checkbox__text--active {
+  color: var(--color-secondary);
+  font-weight: var(--font-weight-bold);
 }

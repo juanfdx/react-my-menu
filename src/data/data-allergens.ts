@@ -1,4 +1,4 @@
-import type { Allergens } from '../modules/products/interfaces/product.interface';
+import type { Allergen } from '../modules/products/interfaces/product.interface';
 // IMAGES
 import apio from '../assets/images/allergens/apio.png'
 import gluten from '../assets/images/allergens/gluten.png'
@@ -12,7 +12,7 @@ import crustaceans from '../assets/images/allergens/crustaceans.png'
 import molluscs from '../assets/images/allergens/molluscs.png'
 
 
-export const allergens: Allergens[] = [
+export const allergens: Allergen[] = [
   {
     id: 1,
     name: 'gluten',

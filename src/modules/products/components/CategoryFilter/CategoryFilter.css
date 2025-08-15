@@ -9,17 +9,17 @@
   max-width: 1500px;
   margin: 0 auto;
   padding: 0px 25px;
-  overflow-x: scroll;
-  scrollbar-width: none;
 }
 
 .category-filter__list {
   width: 100%;
+  overflow-x: scroll;
+  scrollbar-width: none;
+
   display: flex;
   justify-content: flex-start;
   align-items: center;
   gap: 12px;
-  overflow: hidden;
 }
 
 .category-filter__link {
