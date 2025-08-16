@@ -13,9 +13,9 @@ export const ProductsList = ({ products }: { products: Product[]}) => {
       <div className='products__container'>
         <ul className='products__list'>
 
-          {products.map((product) => 
+          {products?.map((product) => 
             <li key={product.id} className='products__li'>
-              <Link className='products__link' to={`/product/${product.id}`}>
+              <Link className='products__link' to={`/products/${product.category}/${product.id}`}>
                 <img className='products__img' src={product.thumbnail} alt={product.name} />
               </Link>   
                 <h3 className='products__title'>{capitalizeFirstLetter(product.name)}</h3>

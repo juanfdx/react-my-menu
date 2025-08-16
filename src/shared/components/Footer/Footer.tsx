@@ -1,7 +1,6 @@
 import './Footer.css';
 // COMPONENTS
-// import { Icon } from '../Icon/Icon';
-import { LinkButton } from '../LinkButton/LinkButton';
+import { NavLinkButton } from '../NavLinkButton/NavLinkButton';
 
 
 
@@ -12,7 +11,7 @@ export const Footer = () => {
       <ul className='footer__list'>
 
         <li className='footer__li'>
-          <LinkButton 
+          <NavLinkButton 
             link='/' 
             icon='fork-knife' 
             text="menu" 
@@ -23,7 +22,7 @@ export const Footer = () => {
         </li>
 
         <li className='footer__li'>
-          <LinkButton 
+          <NavLinkButton 
             link='/wishlist' 
             icon='heart' 
             text="wishlist" 
@@ -34,7 +33,7 @@ export const Footer = () => {
         </li>
 
         <li className='footer__li'>
-          <LinkButton 
+          <NavLinkButton 
             link='/suggestions' 
             icon='star' 
             text="chef's suggestions" 

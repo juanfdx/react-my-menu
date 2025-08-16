@@ -1,0 +1,33 @@
+
+.loader {
+  width: 100%;
+  height: calc(100vh - 500px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader__img {
+  width: 170px;
+
+  animation: pulse-scale 4s infinite ease-in-out;
+  display: inline-block;
+  transition: transform 0.3s;
+}
+
+@keyframes pulse-scale {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.loader__text {
+  margin-top: 10px;
+  font-size: 18px;
+}

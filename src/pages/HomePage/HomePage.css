@@ -10,6 +10,7 @@
 }
 
 .home-page__main {
+  position: relative;
   width: 100%;
   /* when flex column, this make main take all available space in container */
   flex: 1; 

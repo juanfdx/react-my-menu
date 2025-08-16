@@ -38,6 +38,10 @@
   color: var(--color-interactive-hover);
 }
 
+.footer__link.active {
+  color: var(--color-interactive);
+}
+
 .footer__span {
   font-size: var(--font-size-xxs);
   line-height: 2.8;

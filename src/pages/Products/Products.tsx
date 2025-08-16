@@ -8,16 +8,8 @@ import { ProductsList } from '../../modules/products/components/ProductsList/Pro
 export const Products = () => {
 
   const products = useLoaderData();
-
-  if(!products || products.length === 0) {
-    return (
-      <h1>No products found...</h1>
-    )
-  }
   
-  return (
-    <>
-      <ProductsList  products={products}/>
-    </>
+  return ( 
+    <ProductsList  products={products}/> 
   )
 }

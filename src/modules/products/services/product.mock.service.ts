@@ -48,7 +48,16 @@ export const getProductById = (productId: number): Promise<ResponseProduct> => {
 
     setTimeout(() => {
       const product = products?.find((product) => product.id === productId);
-      resolve({ status: 200, data: { product } });
+
+      if (!product) {
+        resolve({ 
+          status: 404,
+          data: { product: undefined }
+        });
+      }
+      else {
+        resolve({ status: 200, data: { product } });
+      }
     }, 1000);
   })
 } 
@@ -58,12 +67,34 @@ export const getProductById = (productId: number): Promise<ResponseProduct> => {
   GET CATEGORIES
 ========================================================*/
 export const getCategories = (): Promise<ResponseCategories> => {
-  return new Promise((resolve) => {
+  return new Promise((resolve, reject) => {
 
     setTimeout(() => {
-      resolve({ status: 200, data: { categories } })
-    }, 1000); 
-  })
+      const isUnauthorized = false; // mock condition
+      // const categories: Category[] = []; // mock empty response
+
+      if (isUnauthorized) {
+        reject({ 
+          status: 403,
+          statusText: "Forbidden", 
+          message: "You are not authorized" 
+        });
+      } else if (!categories.length) {
+        reject({ 
+          status: 404,
+          statusText: "Not Found", 
+          message: "No categories found" 
+        });
+      } else {
+        resolve({ status: 200, data: { categories } });
+      }
+    }, 1000);
+
+    // setTimeout(() => {
+    //   reject({ status: 500, message: "Database connection failed" }); // ✅ proper error
+    // }, 1000);
+
+  });
 }
 
 
@@ -71,11 +102,21 @@ export const getCategories = (): Promise<ResponseCategories> => {
   GET PRODUCTS BY CATEGORY 
 ========================================================*/
 export const getProductsByCategory = (categoryName: string): Promise<ResponseProducts> => {
-  return new Promise((resolve) => {
+  return new Promise((resolve, reject) => {
 
     setTimeout(() => {
       const productsByCategory = products?.filter((product) => product.category.includes(categoryName));
-      resolve({ status: 200, data: { products: productsByCategory } });
+      
+      if (!productsByCategory.length) {
+          reject({ 
+          status: 404,
+          statusText: "Not Found", 
+          message: "No products found" 
+        });
+      }
+      else {
+        resolve({ status: 200, data: { products: productsByCategory } });
+      }
     }, 1000);
   })
 }

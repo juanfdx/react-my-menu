@@ -1,15 +1,20 @@
 import './HomePage.css';
-import { Outlet } from 'react-router';
+import { Outlet, useNavigation } from 'react-router';
 // COMPONENTS
 import { Header } from '../../shared/components/Header/Header';
 import { Footer } from '../../shared/components/Footer/Footer';
 import { ProductFilterPanel } from '../../modules/products/components/ProductFilterPanel/ProductFilterPanel';
 import { CategoryFilter } from '../../modules/products/components/CategoryFilter/CategoryFilter';
+import { Loader } from '../../shared/components/Loader/Loader';
 
 
 
 export const HomePage = () => {
-  
+
+  const navigation = useNavigation();
+  const isNavigating = navigation.state === "loading";
+
+
   return (
     <div className='home-page'>
       <Header />
@@ -17,7 +22,12 @@ export const HomePage = () => {
       <CategoryFilter />
       
       <div className='home-page__main'>
-        <Outlet />
+        {isNavigating ? (
+          <Loader />
+
+        ) : (
+          <Outlet /> 
+        )}
       </div>
   
       <Footer />

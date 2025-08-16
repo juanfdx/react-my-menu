@@ -1,7 +1,8 @@
 import './Navbar.css';
 import { useState } from 'react';
+import { Link } from 'react-router';
 // COMPONENTS
-import { LinkButton } from '../LinkButton/LinkButton';
+import { NavLinkButton } from '../NavLinkButton/NavLinkButton';
 // IMAGES
 import iconSettings from '../../../assets/images/svg/settings.svg';
 import logo from '../../../assets/images/logo/logo.png';
@@ -16,14 +17,14 @@ export const Navbar = () => {
   return (
     <nav className='navbar'>
       {/* logo */}
-      <a href="/" className='navbar__logo-link'>
+      <Link to='/' className='navbar__logo-link'>
         <img className='navbar__img-logo' src={logo} alt="logo" />
-      </a>
+      </Link>
 
       {/* navigation */}
       <ul className='navbar__list'>
         <li className='navbar__li'>
-          <LinkButton 
+          <NavLinkButton 
             link='/' 
             icon='fork-knife' 
             text="Menu" 
@@ -34,7 +35,7 @@ export const Navbar = () => {
         </li>
 
         <li className='navbar__li'>
-          <LinkButton 
+          <NavLinkButton 
             link='/wishlist' 
             icon='heart' 
             text="wishlist" 
@@ -45,7 +46,7 @@ export const Navbar = () => {
         </li>
 
         <li className='navbar__li'>
-          <LinkButton 
+          <NavLinkButton 
             link='/suggestions' 
             icon='star' 
             text="chef's suggestions"
