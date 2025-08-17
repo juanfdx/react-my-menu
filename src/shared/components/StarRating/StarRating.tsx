@@ -1,12 +1,17 @@
-import { useState } from 'react';
 import './StarRating.css';
+import { useState } from 'react';
 
 const TOTAL_STARS = 5;
 
 
-export const StarRating = () => {
+interface StarRatingProps {
+  productId: number;
+  currentRating: number;
+  onRate: (productId: number, rating: number) => void;
+}
 
-  const [rating, setRating] = useState<number>(0);
+export const StarRating = ({ productId, currentRating, onRate }: StarRatingProps) => {
+
   const [hover, setHover] = useState<number | null>(null);
 
 
@@ -14,13 +19,13 @@ export const StarRating = () => {
     <div className="star-rating">
       {Array.from({ length: TOTAL_STARS }, (_, index) => {
         const starValue = index + 1;
-        const isFilled = hover ? starValue <= hover : starValue <= rating;
+        const isFilled = hover ? starValue <= hover : starValue <= currentRating;
 
         return (
           <span
             key={starValue}
             className={`star ${isFilled ? 'filled' : ''}`}
-            onClick={() => setRating(starValue)}
+            onClick={() => onRate(productId, starValue)}
             onMouseEnter={() => setHover(starValue)}
             onMouseLeave={() => setHover(null)}
           >

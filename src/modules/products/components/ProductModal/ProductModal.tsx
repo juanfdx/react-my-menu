@@ -23,6 +23,9 @@ export const ProductModal = ({ product }: ProductModalProps) => {
   const [myWishlist, setMyWishlist] = useState<number[]>(
     getMyMenu().wishlist
   )
+  const [myRatedProducts, setMyRatedProducts] = useState(
+    getMyMenu().ratedProducts
+  );
   const timeoutRef = useRef<number | null>(null); // used to clear the timeout
   const navigate = useNavigate();
 
@@ -41,6 +44,10 @@ export const ProductModal = ({ product }: ProductModalProps) => {
      updateMyMenu({ wishlist: myWishlist });
   }, [myWishlist]);
 
+  useEffect(() => {
+    updateMyMenu({ ratedProducts: myRatedProducts });
+  }, [myRatedProducts]);
+
   
   const handleToggleActive = () => {
     setIsActive(false);
@@ -55,6 +62,23 @@ export const ProductModal = ({ product }: ProductModalProps) => {
       setMyWishlist([...myWishlist, productId]);
     }
   };
+
+const handleMyRatedProducts = (productId: number, rating: number) => {
+  const currentRating = myRatedProducts[productId];
+
+  if (currentRating === rating) {
+    // User clicked the same rating again — rating is set to 0 but not removed
+    // setMyRatedProducts({ ...myRatedProducts, [productId]: 0 });
+
+    // User clicked the same rating again — remove key and rating
+    const { [productId]: _, ...rest } = myRatedProducts;
+    void _; // Explicitly discard the unused variable
+    setMyRatedProducts(rest);
+  } else {
+    // Set or update the rating
+    setMyRatedProducts({ ...myRatedProducts, [productId]: rating });
+  }
+};
 
 
   return (
@@ -83,7 +107,11 @@ export const ProductModal = ({ product }: ProductModalProps) => {
           {/* rating modal */}
           <div className={`product-modal__rating-modal ${isRatingModalOpen ? 'product-modal__rating-modal--active' : ''}`}>
             <h3 className='product-modal__rating-modal-title'>Rate this product</h3>
-            <StarRating />
+            <StarRating  
+              productId={product.id} 
+              currentRating={myRatedProducts[product.id] || 0} 
+              onRate={handleMyRatedProducts}
+            />
           </div>
 
           {/* score buttons */}
