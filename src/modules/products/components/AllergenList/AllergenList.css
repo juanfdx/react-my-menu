@@ -1,0 +1,39 @@
+
+.allergen-list {
+  width: 100%;
+  padding: 0px 25px 25px;
+}
+
+.allergen-list__title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-darkest);
+  line-height: 1.4;
+}
+
+.allergen-list__list {
+  margin-top: 10px;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.allergen-list__item {
+  padding: 8px 15px;
+  background: #efefef;
+  border-radius: var(--border-radius-lg);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+}
+
+.allergen-list__img {
+  width: 23px;
+  height: 23px;
+}
+
+.allergen-list__text {
+  font-size: var(--font-size-xs);
+}

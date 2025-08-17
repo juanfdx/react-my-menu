@@ -13,7 +13,7 @@ export const HomePage = () => {
 
   const navigation = useNavigation();
   const isNavigating = navigation.state === "loading";
-
+  
 
   return (
     <div className='home-page'>

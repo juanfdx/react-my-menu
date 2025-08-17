@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Icon } from '../../../../shared/components/Icon/Icon';
 import { AllergenCheckbox } from '../AllergenCheckbox/AllergenCheckbox';
 // UTILS
-import { getJsonFromLocalStorage } from '../../../../shared/utils/localStorage';
+import { getMyMenu, updateMyMenu } from '../../../../shared/utils/localStorage';
 // DATA
 import { allergens } from '../../../../data/data-allergens';
 import { priceRange } from '../../../../data/data-price-range';
@@ -18,10 +18,10 @@ export const ProductFilterPanel = () => {
   const [accordion1, setAccordion1] = useState<boolean>(false);
   const [accordion2, setAccordion2] = useState<boolean>(false);
   const [myAllergens, setMyAllergens] = useState<string[]>(
-    getJsonFromLocalStorage('allergens', [])
+    getMyMenu().allergens
   );
   const [selectedPrice, setSelectedPrice] = useState<number>(
-    getJsonFromLocalStorage('price', 0)
+    getMyMenu().maxPrice
   );
   
   const contentRef1 = useRef<HTMLDivElement>(null);
@@ -29,11 +29,11 @@ export const ProductFilterPanel = () => {
 
 
   useEffect(() => {
-    localStorage.setItem('allergens', JSON.stringify(myAllergens));
+    updateMyMenu({ allergens: myAllergens }); // update to local storage
   }, [myAllergens]);
 
   useEffect(() => {
-    localStorage.setItem('price', JSON.stringify(selectedPrice));
+    updateMyMenu({ maxPrice: selectedPrice });
   }, [selectedPrice]);
 
 

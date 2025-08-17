@@ -4,7 +4,7 @@ import { getProductById } from '../services/product.mock.service';
 
 
 
-export const productLoader = async ({ params }: { params?: { productId?: string } }) => {
+export const singleProductLoader = async ({ params }: { params?: { productId?: string } }) => {
 
   const productId = params?.productId ? Number(params?.productId) : null;
   

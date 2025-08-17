@@ -4,13 +4,14 @@ import { HomePage } from './pages/HomePage/HomePage'
 import { Error } from './pages/Error/Error'
 import { Products } from './pages/Products/Products'
 import { Categories } from './pages/Categories/Categories'
-import { ProductModal } from './pages/ProductModal/ProductModal'
 import { ErrorElement } from './shared/components/ErrorElement/ErrorElement'
 
 // LOADERS
 import { categoriesLoader } from './modules/products/loaders/categoriesLoader'
 import { productsLoader } from './modules/products/loaders/productsLoader'
-import { productLoader } from './modules/products/loaders/productLoader'
+import { SingleProduct } from './pages/SingleProduct/SingleProduct'
+import { menuLoader } from './modules/products/loaders/menuLoader'
+// import { singleProductLoader } from './modules/products/loaders/singleProductLoader'
 
 
 
@@ -18,6 +19,7 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <HomePage />,
+    loader: menuLoader,
     errorElement: <Error />,
     children: [
       {
@@ -34,9 +36,9 @@ const router = createBrowserRouter([
       },
       {
         path: '/products/:category/:productId',
-        element: <ProductModal />,
-        loader: productLoader,
-        errorElement: <ErrorElement />
+        element: <SingleProduct />,
+        // loader: singleProductLoader,
+        // errorElement: <ErrorElement />
       }
     ]
   }

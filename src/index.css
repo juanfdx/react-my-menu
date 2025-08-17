@@ -248,7 +248,7 @@ q:after {
 
 /* We configure the text we select */
 ::selection {
-  background-color: var(--bg-color-selection);
+  background-color: #005ce5;;
   color: #FFFFFF;
 }
 

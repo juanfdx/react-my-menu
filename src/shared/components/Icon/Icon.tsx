@@ -6,6 +6,11 @@ import { ForkKnifeIcon } from '../../../assets/images/svg/ForkKnifeIcon';
 import { StartIcon } from '../../../assets/images/svg/StartIcon';
 import { AllergenIcon } from '../../../assets/images/svg/AllergenIcon';
 import { ViewIcon } from '../../../assets/images/svg/ViewIcon';
+import { ExitIcon } from '../../../assets/images/svg/ExitIcon';
+import { RateStarIcon } from '../../../assets/images/svg/RateStarIcon';
+import { HeartFilledIcon } from '../../../assets/images/svg/HeartFilledIcon';
+import { HeartOutlineIcon } from '../../../assets/images/svg/HeartOutlineIcon';
+
 
 type IconProps = {
   type: string;
@@ -36,6 +41,18 @@ export const Icon = ({ type, className }: IconProps) => {
       )}
       {type === 'view' && (
         <ViewIcon className={className} />
+      )}
+      {type === 'exit' && (
+        <ExitIcon className={className} />
+      )}
+      {type === 'rate-star' && (
+        <RateStarIcon className={className} />
+      )}
+      {type === 'heart-filled' && (
+        <HeartFilledIcon className={className} />
+      )}
+      {type === 'heart-outline' && (
+        <HeartOutlineIcon className={className} />
       )}
     </>
   )

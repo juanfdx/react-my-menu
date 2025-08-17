@@ -1,5 +1,5 @@
 /* ErrorElement.css */
-.error-element {  
+.modal-error {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -12,7 +12,7 @@
   align-items: center;
 }
 
-.error-element__box {
+.modal-error__box {
   width: 100%;
   max-width: 480px;
   margin: 0px 15px 500px;
@@ -23,10 +23,10 @@
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 
-  
+
 }
 
-.error-element__status {
+.modal-error__status {
   margin-bottom: 20px;
   font-size: 80px;
   font-weight: var(--font-weight-bold);
@@ -34,19 +34,19 @@
   line-height: 1;
 }
 
-.error-element__title {
+.modal-error__title {
   font-size: 28px;
   margin: 10px 0;
   color: var(--color-text-dark);
 }
 
-.error-element__message {
+.modal-error__message {
   font-size: 16px;
   color: var(--color-text-medium);
   margin-bottom: 45px;
 }
 
-.error-element__back-button {
+.modal-error__back-button {
   padding: 12px 20px;
   font-size: 16px;
   color: #fff;
@@ -57,6 +57,6 @@
   transition: all 0.3s ease;
 }
 
-.go-back-button:hover {
+.modal-error__back-button:hover {
   background-color: var(--color-interactive-hover);
 }

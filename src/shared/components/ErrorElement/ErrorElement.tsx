@@ -24,10 +24,10 @@ export const ErrorElement = () => {
     <div className="error-element">
       <div className="error-element__box">
         <h1 className="error-element__status">{status}</h1>
-        <h2 className="error-title">{title}</h2>
-        <p className="error-message">{message}</p>
+        <h2 className="error-element__title">{title}</h2>
+        <p className="error-element__message">{message}</p>
 
-        <button className="go-back-button" onClick={() => navigate(-1)}>
+        <button className="error-element__back-button" onClick={() => navigate(-1)}>
           ⬅ Go Back
         </button>
       </div>
