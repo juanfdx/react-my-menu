@@ -13,7 +13,7 @@ type Props = {
 
 export const AllergenCheckbox = ({ img, allergen, selectedAllergens, handleInputChange }: Props) => {
 
-  const isChecked = selectedAllergens.includes(allergen);
+  const isChecked = selectedAllergens?.includes(allergen);
 
   
   return (

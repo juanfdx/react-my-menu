@@ -1,9 +1,10 @@
 import './ProductModal.css';
 import type { Product } from '../../interfaces/product.interface';
 import { useEffect, useRef, useState } from 'react';
+// STORE
+import { useMenuStore } from '../../../../stores/useMenuStore';
 // UTILS
 import { capitalizeFirstLetter } from '../../../../shared/utils/string-methods';
-import { getMyMenu, updateMyMenu } from '../../../../shared/utils/localStorage';
 // COMPONENTS
 import { ExitIcon } from '../../../../assets/images/svg/ExitIcon';
 import { useNavigate } from 'react-router';
@@ -17,15 +18,18 @@ type ProductModalProps = {
 }
 
 export const ProductModal = ({ product }: ProductModalProps) => {
-  
+
+  const myWishlist = useMenuStore((state) => state.menu.wishlist);
+  const setMyWishlist = useMenuStore((state) => state.addToWishlist);
+  const remove = useMenuStore((state) => state.removeFromWishlist);
+
+  const myRatedProducts    = useMenuStore((state) => state.menu.ratedProducts);
+  const setMyRatedProducts = useMenuStore((state) => state.setRatedProducts);
+  const removeRatedProduct = useMenuStore((state) => state.removeRatedProduct);
+
   const [isActive, setIsActive] = useState<boolean>(false);
   const [isRatingModalOpen, setIsRatingModalOpen] = useState<boolean>(false);
-  const [myWishlist, setMyWishlist] = useState<number[]>(
-    getMyMenu().wishlist
-  )
-  const [myRatedProducts, setMyRatedProducts] = useState(
-    getMyMenu().ratedProducts
-  );
+
   const timeoutRef = useRef<number | null>(null); // used to clear the timeout
   const navigate = useNavigate();
 
@@ -40,13 +44,6 @@ export const ProductModal = ({ product }: ProductModalProps) => {
     };
   }, []);
 
-  useEffect(() => {
-     updateMyMenu({ wishlist: myWishlist });
-  }, [myWishlist]);
-
-  useEffect(() => {
-    updateMyMenu({ ratedProducts: myRatedProducts });
-  }, [myRatedProducts]);
 
   
   const handleToggleActive = () => {
@@ -54,31 +51,23 @@ export const ProductModal = ({ product }: ProductModalProps) => {
     timeoutRef.current = setTimeout(() => navigate(-1), 300);
   };
 
-
   const handleMyWishlist = (productId: number) => {
     if (myWishlist.includes(productId)) {
-      setMyWishlist(myWishlist.filter((id) => id !== productId));
-    } else {
-      setMyWishlist([...myWishlist, productId]);
+      remove(productId);
+      return
     }
+    setMyWishlist(productId);
   };
 
-const handleMyRatedProducts = (productId: number, rating: number) => {
-  const currentRating = myRatedProducts[productId];
+  const handleMyRatedProducts = (productId: number, rating: number) => {
+    const currentRating = myRatedProducts[productId];
+    if (currentRating === rating) {
+      removeRatedProduct(productId);
+      return;
+    }
+    setMyRatedProducts(productId, rating);
+  };
 
-  if (currentRating === rating) {
-    // User clicked the same rating again — rating is set to 0 but not removed
-    // setMyRatedProducts({ ...myRatedProducts, [productId]: 0 });
-
-    // User clicked the same rating again — remove key and rating
-    const { [productId]: _, ...rest } = myRatedProducts;
-    void _; // Explicitly discard the unused variable
-    setMyRatedProducts(rest);
-  } else {
-    // Set or update the rating
-    setMyRatedProducts({ ...myRatedProducts, [productId]: rating });
-  }
-};
 
 
   return (
@@ -109,7 +98,7 @@ const handleMyRatedProducts = (productId: number, rating: number) => {
             <h3 className='product-modal__rating-modal-title'>Rate this product</h3>
             <StarRating  
               productId={product.id} 
-              currentRating={myRatedProducts[product.id] || 0} 
+              currentRating={myRatedProducts?.[product.id] || 0} 
               onRate={handleMyRatedProducts}
             />
           </div>

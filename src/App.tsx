@@ -10,7 +10,6 @@ import { ErrorElement } from './shared/components/ErrorElement/ErrorElement'
 import { categoriesLoader } from './modules/products/loaders/categoriesLoader'
 import { productsLoader } from './modules/products/loaders/productsLoader'
 import { SingleProduct } from './pages/SingleProduct/SingleProduct'
-import { menuLoader } from './modules/products/loaders/menuLoader'
 // import { singleProductLoader } from './modules/products/loaders/singleProductLoader'
 
 
@@ -19,7 +18,6 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <HomePage />,
-    loader: menuLoader,
     errorElement: <Error />,
     children: [
       {

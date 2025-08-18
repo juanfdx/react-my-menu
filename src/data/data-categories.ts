@@ -4,6 +4,8 @@ import pork from '../assets/images/products/pork/thumbnails/thumb-taquitos-pork.
 import beef from '../assets/images/products/beef/thumbnails/thumb-veal-in-sauce.jpg'
 import seafood from '../assets/images/products/seafood/thumbnails/thumb-battered-squid .jpg'
 import pasta from '../assets/images/products/pasta/thumbnails/thumb-bolognese.jpg'
+import poultry from '../assets/images/products/poultry/thumbnails/thumb-chicken-strips.jpg'
+
 
 
 export const categories: Category[] = [
@@ -36,6 +38,14 @@ export const categories: Category[] = [
     name: 'pasta',
     description: 'pasta',
     image: pasta,
+    locale: 'en',
+    active: true
+  },
+    {
+    id: 5,
+    name: 'poultry',
+    description: 'poultry',
+    image: poultry,
     locale: 'en',
     active: true
   },

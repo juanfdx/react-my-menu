@@ -1,10 +1,10 @@
 import './ProductFilterPanel.css';
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
+// STORE
+import { useMenuStore } from '../../../../stores/useMenuStore';
 // COMPONENTS
 import { Icon } from '../../../../shared/components/Icon/Icon';
 import { AllergenCheckbox } from '../AllergenCheckbox/AllergenCheckbox';
-// UTILS
-import { getMyMenu, updateMyMenu } from '../../../../shared/utils/localStorage';
 // DATA
 import { allergens } from '../../../../data/data-allergens';
 import { priceRange } from '../../../../data/data-price-range';
@@ -15,37 +15,23 @@ import { PriceRadio } from '../PriceRadio/PriceRadio';
 
 export const ProductFilterPanel = () => {
 
+  const myMaxPrice     = useMenuStore((state) => state.menu.maxPrice);
+  const setMyMaxPrice  = useMenuStore((state) => state.setMaxPrice);
+  const myAllergens    = useMenuStore((state) => state.menu.allergens);
+  const setMyAllergens = useMenuStore((state) => state.setAllergens);
+
   const [accordion1, setAccordion1] = useState<boolean>(false);
-  const [accordion2, setAccordion2] = useState<boolean>(false);
-  const [myAllergens, setMyAllergens] = useState<string[]>(
-    getMyMenu().allergens
-  );
-  const [selectedPrice, setSelectedPrice] = useState<number>(
-    getMyMenu().maxPrice
-  );
-  
+  const [accordion2, setAccordion2] = useState<boolean>(false);  
   const contentRef1 = useRef<HTMLDivElement>(null);
   const contentRef2 = useRef<HTMLDivElement>(null);
 
 
-  useEffect(() => {
-    updateMyMenu({ allergens: myAllergens }); // update to local storage
-  }, [myAllergens]);
-
-  useEffect(() => {
-    updateMyMenu({ maxPrice: selectedPrice });
-  }, [selectedPrice]);
-
-
   const handleToggleAllergen = (allergen: string) => {
-    setMyAllergens(prev => prev.includes(allergen)
-        ? prev.filter(a => a !== allergen)
-        : [...prev, allergen]
-    );
-  };
-
-  const handlePriceSelect = (value: number) => {
-    setSelectedPrice(value);
+    if (myAllergens.includes(allergen)) {
+      setMyAllergens(myAllergens.filter(a => a !== allergen));
+    } else {
+      setMyAllergens([...myAllergens, allergen]);
+    }
   };
 
 
@@ -126,8 +112,8 @@ export const ProductFilterPanel = () => {
                 <li key={price} className='product-filter-panel__price-item'>
                   <PriceRadio 
                     price={price} 
-                    selectedPrice={selectedPrice} 
-                    handlePriceChange={handlePriceSelect} 
+                    selectedPrice={myMaxPrice} 
+                    handlePriceChange={setMyMaxPrice} 
                   />
                 </li>      
               ))}
@@ -135,8 +121,8 @@ export const ProductFilterPanel = () => {
               <li className='product-filter-panel__price-item'>
                 <PriceRadio 
                   price={0} 
-                  selectedPrice={selectedPrice} 
-                  handlePriceChange={handlePriceSelect} 
+                  selectedPrice={myMaxPrice} 
+                  handlePriceChange={setMyMaxPrice} 
                 />
               </li>
             </ul>
