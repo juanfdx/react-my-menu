@@ -36,7 +36,7 @@ export const Footer = () => {
           <NavLinkButton 
             link='/suggestions' 
             icon='star' 
-            text="chef's suggestions" 
+            text="suggestions" 
             linkClass='footer__link' 
             iconClass='footer__icon-star' 
             textClass='footer__span'

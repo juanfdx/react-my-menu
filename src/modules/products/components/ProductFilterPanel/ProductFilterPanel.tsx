@@ -10,12 +10,15 @@ import { allergens } from '../../../../data/data-allergens';
 import { priceRange } from '../../../../data/data-price-range';
 import { PriceRadio } from '../PriceRadio/PriceRadio';
 import { SearchInput } from '../SearchInput/SearchInput';
+import { ToggleButton } from '../../../../shared/components/ToggleButton/ToggleButton';
 
 
 
 
 export const ProductFilterPanel = () => {
 
+  const mostPopular   = useMenuStore((state) => state.menu.mostPopular);
+  const setMostPopular = useMenuStore((state) => state.setMostPopular);
   const mySearchTerm   = useMenuStore((state) => state.menu.searchTerm);
   const setMySearchTerm = useMenuStore((state) => state.setSearchTerm);
   const myMaxPrice     = useMenuStore((state) => state.menu.maxPrice);
@@ -27,6 +30,7 @@ export const ProductFilterPanel = () => {
   const [accordion2, setAccordion2] = useState<boolean>(false);  
   const contentRef1 = useRef<HTMLDivElement>(null);
   const contentRef2 = useRef<HTMLDivElement>(null);
+  const contentRef3 = useRef<HTMLDivElement>(null);
 
 
   const handleToggleAllergen = (allergen: string) => {
@@ -59,12 +63,12 @@ export const ProductFilterPanel = () => {
         </div>
 
         {/* accordions */}
-        <div className='product-filter-panel__allergens'>
+        <div className='product-filter-panel__accordions'>
           
           {/* allergens filter */}
           <div
             ref={contentRef1} 
-            className='product-filter-panel__allergens-container'
+            className='product-filter-panel__list-wrapper'
             style={{
               maxHeight: accordion1 ? `${contentRef1.current?.scrollHeight}px` : '0px',
           }}
@@ -98,7 +102,7 @@ export const ProductFilterPanel = () => {
           {/* price filter */}
           <div
             ref={contentRef2} 
-            className='product-filter-panel__filters-container'
+            className='product-filter-panel__list-wrapper'
             style={{
               maxHeight: accordion2 ? `${contentRef2.current?.scrollHeight}px` : '0px',
           }}
@@ -124,6 +128,20 @@ export const ProductFilterPanel = () => {
                 />
               </li>
             </ul>
+
+          </div>
+
+          {/* most popular */}
+          <div
+            ref={contentRef3} 
+            className='product-filter-panel__list-wrapper'
+            style={{
+              maxHeight: accordion2 ? `${contentRef3.current?.scrollHeight}px` : '0px',
+          }}
+          >
+            <h5 className='product-filter-panel__most-popular-title'>Most Popular</h5>
+
+            <ToggleButton mostPopular={mostPopular} setMostPopular={setMostPopular}  />
 
           </div>
 

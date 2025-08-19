@@ -77,13 +77,13 @@
 
 
 /* accordion */
-.product-filter-panel__allergens {
+.product-filter-panel__accordions {
   width: 100%;
 }
 
 
 /* accordion 1 */
-.product-filter-panel__allergens-container {
+.product-filter-panel__list-wrapper {
   width: 100%;
   padding: 0px;
   overflow: clip;
@@ -131,14 +131,6 @@
   line-height: 1.4;
 }
 
-.product-filter-panel__filters-container {
-  width: 100%;
-  padding: 0px;
-  overflow: clip;
-  max-height: 0;
-  transition: max-height .3s ease;
-}
-
 .product-filter-panel__price-list {
   margin-top: 10px;
   padding-bottom: 10px;
@@ -149,6 +141,14 @@
   justify-content: flex-start;
   align-items: center;
   gap: 10px;
+}
+
+/* accordion 3 */
+.product-filter-panel__most-popular-title {
+    padding-top: 10px;
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.4;
 }
 
 
@@ -173,16 +173,12 @@
     margin-right: 22px;
   }
 
-  .product-filter-panel__allergens-container {
+  .product-filter-panel__list-wrapper {
     padding: 0px 25px 0px;
   }
 
   .product-filter-panel__allergens-title {
     padding-top: 25px;
-  }
-
-  .product-filter-panel__filters-container {
-    padding: 0px 25px 0px;
   }
 
   .product-filter-panel__filters-title {

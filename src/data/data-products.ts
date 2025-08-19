@@ -236,7 +236,7 @@ export const products: Product[] = [
     price: 12.5,
     thumbnail: thumbShrimpPancakes,
     image: shrimpPancakes,
-    rating: 0,
+    rating: 4,
     allergens: [
       {
         id: 1,
@@ -262,7 +262,7 @@ export const products: Product[] = [
     price: 13.5,
     thumbnail: thumbSquidSprigs,
     image: squidSprigs,
-    rating: 0,
+    rating: 5,
     allergens: [
       {
         id: 1,
@@ -474,7 +474,7 @@ export const products: Product[] = [
     price: 8.5,
     thumbnail: thumbCarbonara,
     image: carbonara,
-    rating: 0,
+    rating: 3,
     allergens: [
       {
         id: 1,

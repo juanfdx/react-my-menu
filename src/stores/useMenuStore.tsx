@@ -5,6 +5,7 @@ import { persist } from 'zustand/middleware';
 
 const defaultMenu: MyMenu = {
   wishlist: [],
+  mostPopular: true,
   ratedProducts: {},
   allergens: [],
   maxPrice: 0,
@@ -16,6 +17,7 @@ const defaultMenu: MyMenu = {
 interface MenuStore {
   menu: MyMenu;
   addToWishlist: (productId: number) => void;
+  setMostPopular: (value: boolean) => void;
   removeFromWishlist: (productId: number) => void;
   setRatedProducts: (productId: number, rating: number) => void;
   removeRatedProduct: (productId: number) => void;
@@ -37,6 +39,7 @@ export const useMenuStore = create<MenuStore>()(
       removeFromWishlist: (productId: number) => set((state) => ({ 
         menu: { ...state.menu, wishlist: state.menu.wishlist.filter((id) => id !== productId) } 
       })),
+      setMostPopular: (value: boolean) => set((state) => ({ menu: { ...state.menu, mostPopular: value } })),
       setRatedProducts: (productId: number, rating: number) => set((state) => ({
         menu: { ...state.menu, ratedProducts: { ...state.menu.ratedProducts, [productId]: rating } }
       })),
