@@ -9,12 +9,15 @@ import { AllergenCheckbox } from '../AllergenCheckbox/AllergenCheckbox';
 import { allergens } from '../../../../data/data-allergens';
 import { priceRange } from '../../../../data/data-price-range';
 import { PriceRadio } from '../PriceRadio/PriceRadio';
+import { SearchInput } from '../SearchInput/SearchInput';
 
 
 
 
 export const ProductFilterPanel = () => {
 
+  const mySearchTerm   = useMenuStore((state) => state.menu.searchTerm);
+  const setMySearchTerm = useMenuStore((state) => state.setSearchTerm);
   const myMaxPrice     = useMenuStore((state) => state.menu.maxPrice);
   const setMyMaxPrice  = useMenuStore((state) => state.setMaxPrice);
   const myAllergens    = useMenuStore((state) => state.menu.allergens);
@@ -40,14 +43,9 @@ export const ProductFilterPanel = () => {
     <section className='product-filter-panel'>
       <div className='product-filter-panel__container'>
         <div className='product-filter-panel__controls'>
+
           {/* search */}
-          <input 
-            className='product-filter-panel__input' 
-            type="text" 
-            name='search'
-            placeholder='Search...'
-            autoComplete='off'
-          />
+          <SearchInput searchTerm={mySearchTerm} setSearchTerm={setMySearchTerm} />
 
           {/* filters */}
           <button className='product-filter-panel__button' onClick={() => setAccordion1(!accordion1)}>

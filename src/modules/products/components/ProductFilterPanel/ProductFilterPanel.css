@@ -22,22 +22,6 @@
   align-items: center;
 }
 
-/* input */
-.product-filter-panel__input {
-  width: 100%;
-  height: 38px;
-  padding: 6px 12px;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, .05);
-  background-color: white;
-  border: 1px solid #ced4da;
-  border-top-left-radius: var(--border-radius-xs);
-  border-bottom-left-radius: var(--border-radius-xs);
-}
-
-.product-filter-panel__input:focus {
-  border-color: #80bdff;
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, .25);
-}
 
 /* filter buttons */
 .product-filter-panel__button {
@@ -91,10 +75,12 @@
   border-left: .3em solid transparent;
 }
 
+
 /* accordion */
 .product-filter-panel__allergens {
   width: 100%;
 }
+
 
 /* accordion 1 */
 .product-filter-panel__allergens-container {
@@ -136,6 +122,7 @@
   background: #ececec;
 }
 
+
 /* accordion 2 */
 .product-filter-panel__filters-title {
   padding-top: 10px;
@@ -163,7 +150,6 @@
   align-items: center;
   gap: 10px;
 }
-
 
 
 

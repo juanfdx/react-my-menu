@@ -13,17 +13,23 @@ export const ProductsList = ({ products }: { products: Product[]}) => {
   const location = useLocation();
   const myMenu = useMenuStore((state) => state.menu);
 
-  const { maxPrice, allergens } = myMenu;
+  const { searchTerm, maxPrice, allergens } = myMenu;
 
   const filteredProducts = products.filter((product) => {
+ 
     const isUnderMaxPrice = maxPrice === 0 || product.price <= maxPrice;
 
     const isAllergenSafe =
       allergens.length === 0 ||
       !product.allergens?.some((allergen: Allergen) => allergens.includes(allergen.name));
 
-    return isUnderMaxPrice && isAllergenSafe;
+    const matchesSearch =
+      searchTerm.trim() === '' || // if search term is empty return true so allows all products "   "
+      product.name.toLowerCase().includes(searchTerm.toLowerCase())
+      
+    return isUnderMaxPrice && isAllergenSafe && matchesSearch;
   });
+
 
   return (
     <section className='products'>
