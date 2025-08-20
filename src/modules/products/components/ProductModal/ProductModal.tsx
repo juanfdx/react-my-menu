@@ -45,7 +45,7 @@ export const ProductModal = ({ product }: ProductModalProps) => {
   }, []);
 
 
-  
+  // to see the effect of opacity we need to wait 300ms before navigates
   const handleToggleActive = () => {
     setIsActive(false);
     timeoutRef.current = setTimeout(() => navigate(-1), 300);

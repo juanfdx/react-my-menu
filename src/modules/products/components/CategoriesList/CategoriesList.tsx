@@ -1,6 +1,8 @@
 import './CategoriesList.css';
-import { Link } from 'react-router';
 import type { Category } from '../../interfaces/category.interface';
+import { Link } from 'react-router';
+// STORE
+import { useLanguageStore } from '../../../../stores/useLanguageStore';
 
 
 type Props = {
@@ -11,13 +13,23 @@ type Props = {
 
 export const CategoriesList = ({ categories }: Props) => {
   
+  const currentLanguage = useLanguageStore((state) => state.currentLanguage);
+
+  // Filter categories: try current language, then fallback to 'en'
+  const localizedCategories = categories.filter((category) => category.locale === currentLanguage);
+
+  const categoriesToRender = localizedCategories.length > 0 
+    ? localizedCategories 
+    : categories.filter((category) => category.locale === 'en');
   
+
+
   return (
     <section className='categories'>
       <div className='categories__container'>
         <ul className='categories__list'>
 
-          {categories?.map((category) => 
+          {categoriesToRender?.map((category) => 
             <li key={category.id} className='categories__li'>
               <Link className='categories__link' to={`/products/${category.name.toLocaleLowerCase()}`}>
                 <img className='categories__img' src={category.image} alt={category.name} />

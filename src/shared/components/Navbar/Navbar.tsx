@@ -1,6 +1,8 @@
 import './Navbar.css';
-import { useState } from 'react';
 import { Link } from 'react-router';
+// STORE
+import { useModalStore } from '../../../stores/useModalStore';
+import { useLanguageStore } from '../../../stores/useLanguageStore';
 // COMPONENTS
 import { NavLinkButton } from '../NavLinkButton/NavLinkButton';
 // IMAGES
@@ -10,9 +12,13 @@ import logo from '../../../assets/images/logo/logo.png';
 import { languages } from '../../../data/data-languages';
 
 
+
+
 export const Navbar = () => {
 
-  const [selector, setSelector] = useState<boolean>(false)
+  const openModal = useModalStore((state) => state.openModal);
+  const currentLanguage = useLanguageStore((state) => state.currentLanguage);
+
 
   return (
     <nav className='navbar'>
@@ -65,8 +71,8 @@ export const Navbar = () => {
         {languages?.map((lang) =>        
           <button 
             key={lang.id} 
-            className={`navbar__btn-flag ${lang.locale === 'es' ? 'navbar__btn-flag--active' : ''}`} 
-            onClick={() => setSelector(!selector)}
+            className={`navbar__btn-flag ${lang.locale === currentLanguage ? 'navbar__btn-flag--active' : ''}`} 
+            onClick={() => openModal('language')}
           >
             <img className='navbar__img-flag' src={lang.image} alt={`${lang.locale} flag`} />
           </button>  

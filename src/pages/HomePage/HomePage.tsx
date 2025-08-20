@@ -6,6 +6,7 @@ import { Footer } from '../../shared/components/Footer/Footer';
 import { ProductFilterPanel } from '../../modules/products/components/ProductFilterPanel/ProductFilterPanel';
 import { CategoryFilter } from '../../modules/products/components/CategoryFilter/CategoryFilter';
 import { Loader } from '../../shared/components/Loader/Loader';
+import { LanguageModal } from '../../shared/components/LanguageModal/LanguageModal';
 
 
 
@@ -31,6 +32,8 @@ export const HomePage = () => {
       </div>
   
       <Footer />
+
+      <LanguageModal />
     </div>
   )
 }
