@@ -14,6 +14,7 @@ export const ProductsList = ({ products }: { products: Product[]}) => {
   const myMenu = useMenuStore((state) => state.menu);
 
   const { searchTerm, maxPrice, allergens, mostPopular } = myMenu;
+  // this used to add banner suggestions on product images L63
   const isSuggestions = location.pathname.startsWith('/suggestions');
 
   
