@@ -97,7 +97,8 @@ export const products: Product[] = [
       
     ],
     locale: 'en',
-    active: true
+    active: true,
+    suggested: true
   },
   {
     id: 2,
@@ -110,7 +111,8 @@ export const products: Product[] = [
     rating: 0,
     allergens:[],
     locale: 'en',
-    active: true
+    active: true,
+    suggested: false
   },
   {
     id: 3,
@@ -148,7 +150,8 @@ export const products: Product[] = [
       },
     ],
     locale: 'en',
-    active: true
+    active: true,
+    suggested: false
   },
   {
     id: 4,
@@ -180,7 +183,8 @@ export const products: Product[] = [
       },
     ],
     locale: 'en',
-    active: true
+    active: true,
+    suggested: false
   },
   {
     id: 5,
@@ -193,7 +197,8 @@ export const products: Product[] = [
     rating: 0,
     allergens: [],
     locale: 'en',
-    active: true
+    active: true,
+    suggested: false
   },
   {
     id: 6,
@@ -226,7 +231,8 @@ export const products: Product[] = [
       
     ],
     locale: 'en',
-    active: true
+    active: true,
+    suggested: false
   },
   {
     id: 7,
@@ -252,7 +258,8 @@ export const products: Product[] = [
       },
     ],
     locale: 'en',
-    active: true
+    active: true,
+    suggested: false
   },
   {
     id: 8,
@@ -296,7 +303,8 @@ export const products: Product[] = [
       }
     ],
     locale: 'en',
-    active: true
+    active: true,
+    suggested: true
   },
   {
     id: 9,
@@ -335,7 +343,8 @@ export const products: Product[] = [
 
     ],
     locale: 'en',
-    active: true
+    active: true,
+    suggested: false
   },
   {
     id: 10,
@@ -380,7 +389,8 @@ export const products: Product[] = [
 
     ],
     locale: 'en',
-    active: true
+    active: true,
+    suggested: false
   },
   {
     id: 11,
@@ -419,7 +429,8 @@ export const products: Product[] = [
 
     ],
     locale: 'en',
-    active: true
+    active: true,
+    suggested: false
   },
   {
     id: 12,
@@ -464,7 +475,8 @@ export const products: Product[] = [
 
     ],
     locale: 'en',
-    active: true
+    active: true,
+    suggested: false
   },
   {
     id: 13,
@@ -496,7 +508,8 @@ export const products: Product[] = [
       }
     ],
     locale: 'en',
-    active: true
+    active: true,
+    suggested: false
   },
   {
     id: 14,
@@ -535,6 +548,7 @@ export const products: Product[] = [
 
     ],
     locale: 'en',
-    active: true
+    active: true,
+    suggested: false
   },
 ]

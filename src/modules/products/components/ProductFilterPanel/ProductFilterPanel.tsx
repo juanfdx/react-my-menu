@@ -4,14 +4,14 @@ import { useRef, useState } from 'react';
 import { useMenuStore } from '../../../../stores/useMenuStore';
 // COMPONENTS
 import { Icon } from '../../../../shared/components/Icon/Icon';
+import { SearchInput } from '../SearchInput/SearchInput';
 import { AllergenCheckbox } from '../AllergenCheckbox/AllergenCheckbox';
+import { PriceRadio } from '../PriceRadio/PriceRadio';
+import { ToggleButton } from '../../../../shared/components/ToggleButton/ToggleButton';
 // DATA
 import { allergens } from '../../../../data/data-allergens';
 import { priceRange } from '../../../../data/data-price-range';
-import { PriceRadio } from '../PriceRadio/PriceRadio';
-import { SearchInput } from '../SearchInput/SearchInput';
-import { ToggleButton } from '../../../../shared/components/ToggleButton/ToggleButton';
-
+import { filtersPanelByLocale } from '../../../../data/data-filters-lang';
 
 
 
@@ -26,11 +26,16 @@ export const ProductFilterPanel = () => {
   const myAllergens    = useMenuStore((state) => state.menu.allergens);
   const setMyAllergens = useMenuStore((state) => state.setAllergens);
 
+  const myLanguage     = useMenuStore((state) => state.menu.language);
+  const panel = filtersPanelByLocale[myLanguage];
+
   const [accordion1, setAccordion1] = useState<boolean>(false);
   const [accordion2, setAccordion2] = useState<boolean>(false);  
   const contentRef1 = useRef<HTMLDivElement>(null);
   const contentRef2 = useRef<HTMLDivElement>(null);
   const contentRef3 = useRef<HTMLDivElement>(null);
+
+
 
 
   const handleToggleAllergen = (allergen: string) => {
@@ -46,19 +51,23 @@ export const ProductFilterPanel = () => {
   return (
     <section className='product-filter-panel'>
       <div className='product-filter-panel__container'>
-        <div className='product-filter-panel__controls'>
 
+        <div className='product-filter-panel__controls'>
           {/* search */}
-          <SearchInput searchTerm={mySearchTerm} setSearchTerm={setMySearchTerm} />
+          <SearchInput 
+            searchTerm={mySearchTerm} 
+            setSearchTerm={setMySearchTerm} 
+            placeholder={panel.placeholder} 
+          />
 
           {/* filters */}
           <button className='product-filter-panel__button' onClick={() => setAccordion1(!accordion1)}>
             <Icon type='allergen' className='product-filter-panel__button-icon' />
-            <span className='product-filter-panel__button-text'>Sort by Allergen</span>
+            <span className='product-filter-panel__button-text'>{panel.sort1}</span>
           </button>
           <button className='product-filter-panel__button' onClick={() => setAccordion2(!accordion2)}>
             <Icon type='view' className='product-filter-panel__button-icon'/>
-            <span className='product-filter-panel__button-text'>Sort by </span>
+            <span className='product-filter-panel__button-text'>{panel.sort2} </span>
           </button>
         </div>
 
@@ -73,7 +82,7 @@ export const ProductFilterPanel = () => {
               maxHeight: accordion1 ? `${contentRef1.current?.scrollHeight}px` : '0px',
           }}
           >
-            <h5 className='product-filter-panel__allergens-title'>Allergens</h5>
+            <h5 className='product-filter-panel__allergens-title'>{panel.allergens}</h5>
             
             <ul className='product-filter-panel__allergens-list'>
               {allergens?.map((allergen) => (
@@ -107,7 +116,7 @@ export const ProductFilterPanel = () => {
               maxHeight: accordion2 ? `${contentRef2.current?.scrollHeight}px` : '0px',
           }}
           >
-            <h5 className='product-filter-panel__filters-title'>Price</h5>
+            <h5 className='product-filter-panel__filters-title'>{panel.price}</h5>
 
             <ul className='product-filter-panel__price-list'>
               {priceRange.map((price) => (
@@ -139,7 +148,7 @@ export const ProductFilterPanel = () => {
               maxHeight: accordion2 ? `${contentRef3.current?.scrollHeight}px` : '0px',
           }}
           >
-            <h5 className='product-filter-panel__most-popular-title'>Most Popular</h5>
+            <h5 className='product-filter-panel__most-popular-title'>{panel.mostPopular}</h5>
 
             <ToggleButton mostPopular={mostPopular} setMostPopular={setMostPopular}  />
 

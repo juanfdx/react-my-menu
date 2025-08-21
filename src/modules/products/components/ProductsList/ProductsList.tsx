@@ -14,8 +14,8 @@ export const ProductsList = ({ products }: { products: Product[]}) => {
   const myMenu = useMenuStore((state) => state.menu);
 
   const { searchTerm, maxPrice, allergens, mostPopular } = myMenu;
+  const isSuggestions = location.pathname === '/suggestions'
 
-  
   // FILTER
   const filteredProducts = products.filter((product) => {
 
@@ -53,8 +53,15 @@ export const ProductsList = ({ products }: { products: Product[]}) => {
                 }}
               >
                 <img className='products__img' src={product.thumbnail} alt={product.name} />
+                {(product.suggested && isSuggestions) &&
+                  <div className='products__suggestion-banner'>suggestion</div>
+                }
               </Link>   
-                <h3 className='products__title'>{capitalizeFirstLetter(product.name)}</h3>
+                <h3 
+                  className={`products__title ${product.suggested && isSuggestions ? 'products__title--suggested' : ''}`}
+                >
+                    {capitalizeFirstLetter(product.name)}
+                </h3>
             </li>
           )}
 

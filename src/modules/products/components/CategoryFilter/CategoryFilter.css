@@ -25,6 +25,7 @@
 .category-filter__link {
   font-size: 11px;
   text-transform: uppercase;
+  white-space: nowrap;
   padding: 8px 16px;
   border: 1px solid #ebeff3;
   border-radius: var(--border-radius-md);

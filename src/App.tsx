@@ -3,13 +3,15 @@ import { createBrowserRouter, RouterProvider } from 'react-router'
 import { HomePage } from './pages/HomePage/HomePage'
 import { Error } from './pages/Error/Error'
 import { Products } from './pages/Products/Products'
+import { SingleProduct } from './pages/SingleProduct/SingleProduct'
 import { Categories } from './pages/Categories/Categories'
+import { Suggestions } from './pages/Suggestions/Suggestions'
 import { ErrorElement } from './shared/components/ErrorElement/ErrorElement'
 
 // LOADERS
 import { categoriesLoader } from './modules/products/loaders/categoriesLoader'
+import { productsByCategoryLoader } from './modules/products/loaders/productsByCategoryLoader'
 import { productsLoader } from './modules/products/loaders/productsLoader'
-import { SingleProduct } from './pages/SingleProduct/SingleProduct'
 // import { singleProductLoader } from './modules/products/loaders/singleProductLoader'
 
 
@@ -29,7 +31,7 @@ const router = createBrowserRouter([
       {
         path: '/products/:category',
         element: <Products />,
-        loader: productsLoader,
+        loader: productsByCategoryLoader,
         errorElement: <ErrorElement />
       },
       {
@@ -37,6 +39,12 @@ const router = createBrowserRouter([
         element: <SingleProduct />,
         // loader: singleProductLoader,
         // errorElement: <ErrorElement />
+      },
+      {
+        path: 'suggestions',
+        element: <Suggestions />,
+        loader: productsLoader,
+        errorElement: <ErrorElement />
       }
     ]
   }

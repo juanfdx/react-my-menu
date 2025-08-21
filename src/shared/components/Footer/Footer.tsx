@@ -1,6 +1,6 @@
 import './Footer.css';
 // STORE
-import { useLanguageStore } from '../../../stores/useLanguageStore';
+import { useMenuStore } from '../../../stores/useMenuStore.tsx';
 // COMPONENTS
 import { NavLinkButton } from '../NavLinkButton/NavLinkButton';
 // DATA
@@ -10,11 +10,12 @@ import { footerLinks } from '../../../data/data-links.ts.ts';
 
 export const Footer = () => {
 
-  const currentLanguage = useLanguageStore((state) => state.currentLanguage);
+  const myLanguage = useMenuStore((state) => state.menu.language);
+  
 
   // Filter links: try current language, then fallback to 'en'
   const localizedLinks = footerLinks.filter(
-    (link) => link.locale === currentLanguage
+    (link) => link.locale === myLanguage
   );
 
   const linksToRender = localizedLinks.length > 0

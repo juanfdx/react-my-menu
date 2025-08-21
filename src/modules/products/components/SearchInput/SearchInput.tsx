@@ -5,9 +5,10 @@ import { useEffect, useState } from 'react';
 type SearchInputProps = {
   searchTerm: string;
   setSearchTerm: (value: string) => void;
+  placeholder?: string
 }
 
-export const SearchInput = ({ searchTerm, setSearchTerm }: SearchInputProps) => {
+export const SearchInput = ({ searchTerm, setSearchTerm, placeholder }: SearchInputProps) => {
 
   const [inputValue, setInputValue] = useState(searchTerm); // internal state
 
@@ -28,7 +29,7 @@ export const SearchInput = ({ searchTerm, setSearchTerm }: SearchInputProps) => 
       type="text" 
       name='search'
       value={inputValue}
-      placeholder='Search...'
+      placeholder={placeholder ? `${placeholder}...` : 'Search...'}
       autoComplete='off'
       onChange={(e) => setInputValue(e.target.value)}
     />

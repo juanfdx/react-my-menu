@@ -28,7 +28,7 @@ interface ResponseCategories {
 
 
 /*==================================================
-  GET PRODUCTS - not used
+  GET PRODUCTS 
 ===================================================*/
 export const getProducts = (): Promise<ResponseProducts> => {
   return new Promise((resolve) => {
@@ -151,7 +151,7 @@ export const getProductsByRating = (rating: number): Promise<ResponseProducts> =
 
 
 /*========================================================
-  GET PRODUCTS BY SEARCH 
+  GET PRODUCTS BY SEARCH - not used
 ========================================================*/
 export const getProductsBySearch = (searchQuery: string): Promise<ResponseProducts> => {
   return new Promise((resolve) => {

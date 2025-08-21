@@ -10,7 +10,7 @@ const defaultMenu: MyMenu = {
   allergens: [],
   maxPrice: 0,
   searchTerm: '',
-  language: 'en', //TODO: set default language load from localStorage
+  language: 'es', 
 };
 
 

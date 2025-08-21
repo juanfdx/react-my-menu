@@ -18,4 +18,5 @@ export interface Product {
   allergens: Allergen[];
   locale: string;
   active: boolean;
+  suggested: boolean
 }
