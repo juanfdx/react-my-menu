@@ -3,6 +3,7 @@ import { toast } from 'react-toastify';
 // STORE
 import { useModalStore } from '../../../stores/useModalStore';
 import { useLanguageStore, type Locale } from '../../../stores/useLanguageStore';
+import { useMenuStore } from '../../../stores/useMenuStore';
 // UTILS
 import { capitalizeFirstLetter } from '../../utils/string-methods';
 // COMPONENTS
@@ -17,10 +18,13 @@ export const LanguageModal = () => {
   const isOpen = useModalStore((state) => state.isOpen('language'));
   const closeModal = useModalStore((state) => state.closeModal);
   const { currentLanguage, setLanguage } = useLanguageStore();
+  const setMyLanguage = useMenuStore((state) => state.setLanguage);
+  
 
 
   const handleSelectLanguage = (lang: Language) => {
     setLanguage(lang.locale as Locale);
+    setMyLanguage(lang.locale); // update localStore
     toast.success(`Language changed to ${capitalizeFirstLetter(lang.name)}`);
     closeModal(); // close after selection
   };

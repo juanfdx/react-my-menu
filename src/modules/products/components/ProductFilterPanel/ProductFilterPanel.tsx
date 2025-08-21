@@ -17,9 +17,9 @@ import { ToggleButton } from '../../../../shared/components/ToggleButton/ToggleB
 
 export const ProductFilterPanel = () => {
 
-  const mostPopular   = useMenuStore((state) => state.menu.mostPopular);
-  const setMostPopular = useMenuStore((state) => state.setMostPopular);
-  const mySearchTerm   = useMenuStore((state) => state.menu.searchTerm);
+  const mostPopular     = useMenuStore((state) => state.menu.mostPopular);
+  const setMostPopular  = useMenuStore((state) => state.setMostPopular);
+  const mySearchTerm    = useMenuStore((state) => state.menu.searchTerm);
   const setMySearchTerm = useMenuStore((state) => state.setSearchTerm);
   const myMaxPrice     = useMenuStore((state) => state.menu.maxPrice);
   const setMyMaxPrice  = useMenuStore((state) => state.setMaxPrice);

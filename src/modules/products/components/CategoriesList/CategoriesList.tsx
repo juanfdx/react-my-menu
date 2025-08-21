@@ -31,7 +31,7 @@ export const CategoriesList = ({ categories }: Props) => {
 
           {categoriesToRender?.map((category) => 
             <li key={category.id} className='categories__li'>
-              <Link className='categories__link' to={`/products/${category.name.toLocaleLowerCase()}`}>
+              <Link className='categories__link' to={`/products/${category.link.toLocaleLowerCase()}`}>
                 <img className='categories__img' src={category.image} alt={category.name} />
                 <h3 className='categories__title'>{category.name}</h3>
               </Link>
