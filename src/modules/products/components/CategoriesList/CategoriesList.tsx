@@ -2,7 +2,7 @@ import './CategoriesList.css';
 import type { Category } from '../../interfaces/category.interface';
 import { Link } from 'react-router';
 // STORE
-import { useLanguageStore } from '../../../../stores/useLanguageStore';
+import { useMenuStore } from '../../../../stores/useMenuStore';
 
 
 type Props = {
@@ -10,13 +10,13 @@ type Props = {
 }
 
 
-
 export const CategoriesList = ({ categories }: Props) => {
   
-  const currentLanguage = useLanguageStore((state) => state.currentLanguage);
+  const myLanguage = useMenuStore((state) => state.menu.language);
+  
 
   // Filter categories: try current language, then fallback to 'en'
-  const localizedCategories = categories.filter((category) => category.locale === currentLanguage);
+  const localizedCategories = categories.filter((category) => category.locale === myLanguage);
 
   const categoriesToRender = localizedCategories.length > 0 
     ? localizedCategories 

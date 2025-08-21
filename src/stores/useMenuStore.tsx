@@ -28,7 +28,7 @@ interface MenuStore {
   resetMenu: () => void;
 }
 
-
+// persist() make the store persistent in localStorage
 export const useMenuStore = create<MenuStore>()(
   persist(
     (set) => ({
@@ -57,7 +57,6 @@ export const useMenuStore = create<MenuStore>()(
     }),
     {
       name: 'myMenu', // unique name for storage key
-      // You can add more options here if needed, like storage: createJSONStorage(() => sessionStorage)
     }
   )
 );

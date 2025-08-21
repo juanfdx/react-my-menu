@@ -15,6 +15,7 @@ export const ProductsList = ({ products }: { products: Product[]}) => {
 
   const { searchTerm, maxPrice, allergens, mostPopular } = myMenu;
 
+  
   // FILTER
   const filteredProducts = products.filter((product) => {
 
@@ -33,6 +34,7 @@ export const ProductsList = ({ products }: { products: Product[]}) => {
   .toSorted((a, b) => {
     return mostPopular ? b.rating - a.rating : 0; // only sort if mostPopular is true, 0 no sort applied
   });
+
 
 
   return (

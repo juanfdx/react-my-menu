@@ -1,7 +1,7 @@
 import './CategoryFilter.css';
 import { Link } from 'react-router';
 // STORE
-import { useLanguageStore } from '../../../../stores/useLanguageStore';
+import { useMenuStore } from '../../../../stores/useMenuStore';
 // DATA
 import { categories } from '../../../../data/data-categories';
 
@@ -9,10 +9,10 @@ import { categories } from '../../../../data/data-categories';
 
 export const CategoryFilter = () => {
   
-  const currentLanguage = useLanguageStore((state) => state.currentLanguage);
+  const myLanguage = useMenuStore((state) => state.menu.language);
   
   // Filter categories: try current language, then fallback to 'en'
-  const localizedCategories = categories.filter((category) => category.locale === currentLanguage);
+  const localizedCategories = categories.filter((category) => category.locale === myLanguage);
 
   const categoriesToRender = localizedCategories.length > 0 
     ? localizedCategories 

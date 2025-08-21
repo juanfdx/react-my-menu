@@ -2,7 +2,6 @@ import './LanguageModal.css';
 import { toast } from 'react-toastify';
 // STORE
 import { useModalStore } from '../../../stores/useModalStore';
-import { useLanguageStore, type Locale } from '../../../stores/useLanguageStore';
 import { useMenuStore } from '../../../stores/useMenuStore';
 // UTILS
 import { capitalizeFirstLetter } from '../../utils/string-methods';
@@ -17,14 +16,13 @@ export const LanguageModal = () => {
 
   const isOpen = useModalStore((state) => state.isOpen('language'));
   const closeModal = useModalStore((state) => state.closeModal);
-  const { currentLanguage, setLanguage } = useLanguageStore();
+  const myLanguage    = useMenuStore((state) => state.menu.language);
   const setMyLanguage = useMenuStore((state) => state.setLanguage);
   
 
 
   const handleSelectLanguage = (lang: Language) => {
-    setLanguage(lang.locale as Locale);
-    setMyLanguage(lang.locale); // update localStore
+    setMyLanguage(lang.locale); // set language in localStore
     toast.success(`Language changed to ${capitalizeFirstLetter(lang.name)}`);
     closeModal(); // close after selection
   };
@@ -54,7 +52,7 @@ export const LanguageModal = () => {
           {languages.map(language => (
             <li key={language.id} className='language-modal__language-item'>           
               <button 
-                className={`language-modal__button ${language.locale === currentLanguage ? 'language-modal__button--active' : ''}`}
+                className={`language-modal__button ${language.locale === myLanguage ? 'language-modal__button--active' : ''}`}
                 onClick={() => handleSelectLanguage(language)}  
               >
                 <img 
