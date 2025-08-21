@@ -14,8 +14,9 @@ export const ProductsList = ({ products }: { products: Product[]}) => {
   const myMenu = useMenuStore((state) => state.menu);
 
   const { searchTerm, maxPrice, allergens, mostPopular } = myMenu;
-  const isSuggestions = location.pathname === '/suggestions'
+  const isSuggestions = location.pathname.startsWith('/suggestions');
 
+  
   // FILTER
   const filteredProducts = products.filter((product) => {
 
@@ -46,7 +47,11 @@ export const ProductsList = ({ products }: { products: Product[]}) => {
             <li key={product.id} className='products__li'>
               <Link 
                 className='products__link' 
-                to={`/products/${product.category}/${product.id}`}
+                to={
+                  isSuggestions ? 
+                  `/suggestions/${product.id}` :
+                  `/products/${product.category}/${product.id}`
+                }
                 state={{
                   backgroundLocation: location,
                   products, // ✅ pass full array here
