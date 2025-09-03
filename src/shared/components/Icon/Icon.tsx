@@ -10,6 +10,8 @@ import { ExitIcon } from '../../../assets/images/svg/ExitIcon';
 import { RateStarIcon } from '../../../assets/images/svg/RateStarIcon';
 import { HeartFilledIcon } from '../../../assets/images/svg/HeartFilledIcon';
 import { HeartOutlineIcon } from '../../../assets/images/svg/HeartOutlineIcon';
+import { TfiLayoutListThumb } from "react-icons/tfi";
+import { TfiLayoutGrid2 } from "react-icons/tfi";
 
 
 type IconProps = {
@@ -53,6 +55,12 @@ export const Icon = ({ type, className }: IconProps) => {
       )}
       {type === 'heart-outline' && (
         <HeartOutlineIcon className={className} />
+      )}
+      {type === 'list' && (
+        <TfiLayoutListThumb className={className} />
+      )}
+      {type === 'grid' && (
+        <TfiLayoutGrid2 className={className} />
       )}
     </>
   )

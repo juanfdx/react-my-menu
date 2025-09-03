@@ -10,6 +10,7 @@ const defaultMenu: MyMenu = {
   allergens: [],
   maxPrice: 0,
   searchTerm: '',
+  viewMode: 'grid',
   language: 'es', 
 };
 
@@ -24,6 +25,7 @@ interface MenuStore {
   setMaxPrice: (price: number) => void;
   setAllergens: (allergens: string[]) => void;
   setSearchTerm: (term: string) => void;
+  setViewMode: (mode: 'grid' | 'list') => void;
   setLanguage: (lang: string) => void;
   resetMenu: () => void;
 }
@@ -53,6 +55,7 @@ export const useMenuStore = create<MenuStore>()(
       setAllergens: (allergens: string[]) => set((state) => ({ menu: { ...state.menu, allergens } })),
       setSearchTerm: (term: string) => set((state) => ({ menu: { ...state.menu, searchTerm: term } })),
       setLanguage: (lang: string) => set((state) => ({ menu: { ...state.menu, language: lang } })),
+      setViewMode: (mode: 'grid' | 'list') => set((state) => ({ menu: { ...state.menu, viewMode: mode } })),
       resetMenu: () => set({ menu: defaultMenu }),
     }),
     {

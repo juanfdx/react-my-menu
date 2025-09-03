@@ -2,6 +2,7 @@ import './Navbar.css';
 import { Link } from 'react-router';
 // STORE
 import { useModalStore } from '../../../stores/useModalStore';
+import { useMenuStore } from '../../../stores/useMenuStore';
 // COMPONENTS
 import { NavLinkButton } from '../NavLinkButton/NavLinkButton';
 // IMAGES
@@ -9,7 +10,7 @@ import iconSettings from '../../../assets/images/svg/settings.svg';
 import logo from '../../../assets/images/logo/logo.png';
 // DATA
 import { languages } from '../../../data/data-languages';
-import { useMenuStore } from '../../../stores/useMenuStore';
+import { navLinks } from '../../../data/data-links.ts';
 
 
 
@@ -18,6 +19,15 @@ export const Navbar = () => {
 
   const openModal = useModalStore((state) => state.openModal);
   const myLanguage = useMenuStore((state) => state.menu.language);
+
+  // Filter links: try current language, then fallback to 'en'
+  const localizedLinks = navLinks.filter(
+    (link) => link.locale === myLanguage
+  );
+
+  const linksToRender = localizedLinks.length > 0
+    ? localizedLinks
+    : navLinks.filter((link) => link.locale === 'en');
 
 
   
@@ -30,39 +40,18 @@ export const Navbar = () => {
 
       {/* navigation */}
       <ul className='navbar__list'>
-        <li className='navbar__li'>
-          <NavLinkButton 
-            link='/' 
-            icon='fork-knife' 
-            text="Menu" 
-            linkClass='navbar__link' 
-            iconClass='navbar__icon-fk' 
-            textClass='navbar__span'
-          />
-        </li>
-
-        <li className='navbar__li'>
-          <NavLinkButton 
-            link='/wishlist' 
-            icon='heart' 
-            text="wishlist" 
-            linkClass='navbar__link' 
-            iconClass='navbar__icon-heart' 
-            textClass='navbar__span'
-          />
-        </li>
-
-        <li className='navbar__li'>
-          <NavLinkButton 
-            link='/suggestions' 
-            icon='star' 
-            text="chef's suggestions"
-            linkClass='navbar__link' 
-            iconClass='navbar__icon-star' 
-            textClass='navbar__span'
-          />
-        </li>
-
+        {linksToRender?.map((link) => (
+          <li key={link.id} className='navbar__li'>
+            <NavLinkButton 
+              link={link.link} 
+              icon={link.icon} 
+              text={link.name} 
+              linkClass='navbar__link' 
+              iconClass={link.iconClass} 
+              textClass='navbar__span'
+            />
+          </li>
+        ))}
       </ul>
 
       {/* action buttons */}

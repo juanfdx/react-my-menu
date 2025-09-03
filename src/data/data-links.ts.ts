@@ -1,5 +1,5 @@
 
-export interface FooterLinks {
+export interface NavLinks {
   id: string;
   langId: string;
   name: string;
@@ -11,7 +11,7 @@ export interface FooterLinks {
 
 
 
-export const footerLinks: FooterLinks[] = [
+export const navLinks: NavLinks[] = [
   { 
     id: '1',
     langId: '1',

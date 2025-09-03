@@ -6,5 +6,6 @@ export interface MyMenu {
   allergens: string[];                    // Allergen tags to filter out
   maxPrice: number;
   searchTerm: string;
+  viewMode: 'grid' | 'list';
   language: string;
 }

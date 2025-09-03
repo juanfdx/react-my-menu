@@ -6,13 +6,13 @@ import { Products } from './pages/Products/Products'
 import { SingleProduct } from './pages/SingleProduct/SingleProduct'
 import { Categories } from './pages/Categories/Categories'
 import { Suggestions } from './pages/Suggestions/Suggestions'
+import { Wishlist } from './pages/Wishlist/Wishlist'
 import { ErrorElement } from './shared/components/ErrorElement/ErrorElement'
 
 // LOADERS
 import { categoriesLoader } from './modules/products/loaders/categoriesLoader'
 import { productsByCategoryLoader } from './modules/products/loaders/productsByCategoryLoader'
 import { productsLoader } from './modules/products/loaders/productsLoader'
-// import { singleProductLoader } from './modules/products/loaders/singleProductLoader'
 
 
 
@@ -47,6 +47,11 @@ const router = createBrowserRouter([
       {
         path: 'suggestions/:productId',
         element: <SingleProduct />,
+      },
+      {
+        path: 'wishlist',
+        element: <Wishlist />,
+        errorElement: <ErrorElement />
       }
     ]
   }

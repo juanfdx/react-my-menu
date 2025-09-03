@@ -21,10 +21,12 @@ export const ProductFilterPanel = () => {
   const setMostPopular  = useMenuStore((state) => state.setMostPopular);
   const mySearchTerm    = useMenuStore((state) => state.menu.searchTerm);
   const setMySearchTerm = useMenuStore((state) => state.setSearchTerm);
-  const myMaxPrice     = useMenuStore((state) => state.menu.maxPrice);
-  const setMyMaxPrice  = useMenuStore((state) => state.setMaxPrice);
-  const myAllergens    = useMenuStore((state) => state.menu.allergens);
-  const setMyAllergens = useMenuStore((state) => state.setAllergens);
+  const myMaxPrice      = useMenuStore((state) => state.menu.maxPrice);
+  const setMyMaxPrice   = useMenuStore((state) => state.setMaxPrice);
+  const myAllergens     = useMenuStore((state) => state.menu.allergens);
+  const setMyAllergens  = useMenuStore((state) => state.setAllergens);
+  const myViewMode      = useMenuStore((state) => state.menu.viewMode);
+  const setMyViewMode   = useMenuStore((state) => state.setViewMode);
 
   const myLanguage     = useMenuStore((state) => state.menu.language);
   const panel = filtersPanelByLocale[myLanguage];
@@ -34,6 +36,7 @@ export const ProductFilterPanel = () => {
   const contentRef1 = useRef<HTMLDivElement>(null);
   const contentRef2 = useRef<HTMLDivElement>(null);
   const contentRef3 = useRef<HTMLDivElement>(null);
+  const contentRef4 = useRef<HTMLDivElement>(null);
 
 
 
@@ -107,18 +110,50 @@ export const ProductFilterPanel = () => {
             </ul>
 
           </div>
-          
-          {/* price filter */}
-          <div
-            ref={contentRef2} 
+
+          {/* view mode */}
+          <div 
+            ref={contentRef2}
             className='product-filter-panel__list-wrapper'
             style={{
               maxHeight: accordion2 ? `${contentRef2.current?.scrollHeight}px` : '0px',
           }}
           >
-            <h5 className='product-filter-panel__filters-title'>{panel.price}</h5>
+            <h5 className='product-filter-panel__filters-title'>{panel.viewMode}</h5>
+          
+            <div className='product-filter-panel__items-list'>
+              <button 
+                className={`product-filter-panel__view-mode-btn ${myViewMode === 'grid' && 'product-filter-panel__view-mode-btn--active'}`}
+                onClick={() => setMyViewMode('grid')}
+              >
+                <Icon 
+                  type='grid' 
+                  className={`product-filter-panel__grid-icon ${myViewMode === 'grid' && 'product-filter-panel__grid-icon--active'}`} 
+                />
+              </button>
+              <button 
+                className={`product-filter-panel__view-mode-btn ${myViewMode === 'list' && 'product-filter-panel__view-mode-btn--active'}`}
+                onClick={() => setMyViewMode('list')}
+              >
+                <Icon 
+                  type='list' 
+                  className={`product-filter-panel__list-icon ${myViewMode === 'list' && 'product-filter-panel__list-icon--active'}`} 
+                />
+              </button>
+            </div>
+          </div>
+          
+          {/* price filter */}
+          <div
+            ref={contentRef3} 
+            className='product-filter-panel__list-wrapper'
+            style={{
+              maxHeight: accordion2 ? `${contentRef3.current?.scrollHeight}px` : '0px',
+          }}
+          >
+            <h5 className='product-filter-panel__filters-title-2'>{panel.price}</h5>
 
-            <ul className='product-filter-panel__price-list'>
+            <ul className='product-filter-panel__items-list'>
               {priceRange.map((price) => (
                 <li key={price} className='product-filter-panel__price-item'>
                   <PriceRadio 
@@ -137,18 +172,17 @@ export const ProductFilterPanel = () => {
                 />
               </li>
             </ul>
-
           </div>
 
           {/* most popular */}
           <div
-            ref={contentRef3} 
+            ref={contentRef4} 
             className='product-filter-panel__list-wrapper'
             style={{
-              maxHeight: accordion2 ? `${contentRef3.current?.scrollHeight}px` : '0px',
+              maxHeight: accordion2 ? `${contentRef4.current?.scrollHeight}px` : '0px',
           }}
           >
-            <h5 className='product-filter-panel__most-popular-title'>{panel.mostPopular}</h5>
+            <h5 className='product-filter-panel__filters-title-2'>{panel.mostPopular}</h5>
 
             <ToggleButton mostPopular={mostPopular} setMostPopular={setMostPopular}  />
 

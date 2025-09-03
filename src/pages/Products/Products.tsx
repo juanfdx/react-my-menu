@@ -1,7 +1,7 @@
 import './Products.css';
 import { useLoaderData } from 'react-router';
 // COMPONENTS
-import { ProductsList } from '../../modules/products/components/ProductsList/ProductsList';
+import { ProductsView } from '../../modules/products/components/ProductsView/ProductsView';
 
 
 
@@ -10,6 +10,6 @@ export const Products = () => {
   const products = useLoaderData();
   
   return ( 
-    <ProductsList  products={products}/> 
+    <ProductsView  products={products}/>
   )
 }

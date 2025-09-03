@@ -2,7 +2,7 @@ import './Suggestions.css';
 import type { Product } from '../../modules/products/interfaces/product.interface';
 import { Link, useLoaderData } from 'react-router';
 // COMPONENTS
-import { ProductsList } from '../../modules/products/components/ProductsList/ProductsList';
+import { ProductsView } from '../../modules/products/components/ProductsView/ProductsView';
 
 
 
@@ -27,6 +27,6 @@ export const Suggestions = () => {
   };
 
   return ( 
-    <ProductsList  products={suggestedProducts}/> 
+    <ProductsView  products={suggestedProducts}/>
   )
 }

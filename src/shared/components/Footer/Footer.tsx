@@ -4,7 +4,7 @@ import { useMenuStore } from '../../../stores/useMenuStore.tsx';
 // COMPONENTS
 import { NavLinkButton } from '../NavLinkButton/NavLinkButton';
 // DATA
-import { footerLinks } from '../../../data/data-links.ts.ts';
+import { navLinks } from '../../../data/data-links.ts.ts';
 
 
 
@@ -14,13 +14,13 @@ export const Footer = () => {
   
 
   // Filter links: try current language, then fallback to 'en'
-  const localizedLinks = footerLinks.filter(
+  const localizedLinks = navLinks.filter(
     (link) => link.locale === myLanguage
   );
 
   const linksToRender = localizedLinks.length > 0
     ? localizedLinks
-    : footerLinks.filter((link) => link.locale === 'en');
+    : navLinks.filter((link) => link.locale === 'en');
 
 
     

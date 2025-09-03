@@ -309,7 +309,7 @@ export const products: Product[] = [
   {
     id: 9,
     name: 'madrid style tripe',
-    description: 'homemade tripe a la madrileña. You will wet bread!!',
+    description: 'homemade tripe a la madrileña. You will wet bread',
     category: 'beef',
     price: 14.5,
     thumbnail: thumbMadridStyleTripe,

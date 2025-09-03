@@ -1,0 +1,27 @@
+
+.products-view {
+  width: 100%;
+  margin-top: 25px;
+}
+
+.products-view__container {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0px 12px;
+}
+
+
+/* MEDIA QUERIES */
+@media (min-width: 1200px) {
+.products-view__container {
+    max-width: 1140px;
+    padding: 0px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .products-view__container {
+    max-width: 1320px;
+  }
+}

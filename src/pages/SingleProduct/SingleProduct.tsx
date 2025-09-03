@@ -1,9 +1,9 @@
 import './SingleProduct.css';
 import type { Product } from '../../modules/products/interfaces/product.interface';
 import { useLocation, useParams } from 'react-router';
-import { ProductsList } from '../../modules/products/components/ProductsList/ProductsList';
 import { ModalError } from '../../shared/components/ModalError/ModalError';
 import { ProductModal } from '../../modules/products/components/ProductModal/ProductModal';
+import { ProductsView } from '../../modules/products/components/ProductsView/ProductsView';
 
 
 export const SingleProduct = () => {
@@ -37,7 +37,7 @@ export const SingleProduct = () => {
   return (
     <>
       <ProductModal product={product} />
-      <ProductsList products={products} />
+      <ProductsView products={products} />
     </>
    
   )
