@@ -1,6 +1,7 @@
 import './ProductModal.css';
-import type { Product } from '../../interfaces/product.interface';
 import { useEffect, useRef, useState } from 'react';
+// INTERFACES
+import type { Product } from '../../interfaces/product.interface';
 // STORE
 import { useMenuStore } from '../../../../stores/useMenuStore';
 // UTILS
@@ -9,19 +10,21 @@ import { capitalizeFirstLetter } from '../../../../shared/utils/string-methods';
 import { ExitIcon } from '../../../../assets/images/svg/ExitIcon';
 import { useNavigate } from 'react-router';
 import { AllergenList } from '../AllergenList/AllergenList';
-import { Icon } from '../../../../shared/components/Icon/Icon';
 import { StarRating } from '../../../../shared/components/StarRating/StarRating';
+import { WishlistButton } from '../../../../shared/components/WishlistButton/WishlistButton';
+import { StarButton } from '../../../../shared/components/StarButton/StarButton';
 
 
 type ProductModalProps = {
   product: Product
 }
 
+
 export const ProductModal = ({ product }: ProductModalProps) => {
 
-  const myWishlist = useMenuStore((state) => state.menu.wishlist);
-  const setMyWishlist = useMenuStore((state) => state.addToWishlist);
-  const remove = useMenuStore((state) => state.removeFromWishlist);
+  const myWishlist         = useMenuStore((state) => state.menu.wishlist);
+  const setMyWishlist      = useMenuStore((state) => state.addToWishlist);
+  const removeFromWishlist = useMenuStore((state) => state.removeFromWishlist);
 
   const myRatedProducts    = useMenuStore((state) => state.menu.ratedProducts);
   const setMyRatedProducts = useMenuStore((state) => state.setRatedProducts);
@@ -51,12 +54,12 @@ export const ProductModal = ({ product }: ProductModalProps) => {
     timeoutRef.current = setTimeout(() => navigate(-1), 300);
   };
 
-  const handleMyWishlist = (productId: number) => {
-    if (myWishlist.includes(productId)) {
-      remove(productId);
+  const handleMyWishlist = (product: Product) => {
+    if (myWishlist.some((p) => p.id === product.id)) {
+      removeFromWishlist(product.id);
       return
     }
-    setMyWishlist(productId);
+    setMyWishlist(product);
   };
 
   const handleMyRatedProducts = (productId: number, rating: number) => {
@@ -105,19 +108,16 @@ export const ProductModal = ({ product }: ProductModalProps) => {
 
           {/* score buttons */}
           <div className='product-modal__score-buttons-wrapper'>
-            <button className='product-modal__score-button' onClick={() => setIsRatingModalOpen(!isRatingModalOpen)}>
-              <Icon type='rate-star' className='product-modal__score-star-icon' />
-            </button>
-            <button 
-              className='product-modal__heart-button' 
-              onClick={() => handleMyWishlist(product.id)}
-            >
-              {myWishlist.includes(product.id) ? (
-                  <Icon type='heart-filled' className='product-modal__score-heart-filled-icon' />
-                ) : (
-                  <Icon type='heart-outline' className='product-modal__score-heart-outline-icon' />
-              )}
-            </button>
+            <StarButton 
+              isRatingModalOpen={isRatingModalOpen} 
+              handleRatingModal={setIsRatingModalOpen} 
+            />
+  
+            <WishlistButton 
+              product={product} 
+              wishlist={myWishlist} 
+              handleWishlist={handleMyWishlist} 
+            />
           </div>
         </div>
         
@@ -130,7 +130,10 @@ export const ProductModal = ({ product }: ProductModalProps) => {
             <p className='product-modal__price'>{product.price}€</p>
         </div>
 
-        <AllergenList allergens={product.allergens} />
+        {product?.allergens?.length > 0 &&
+          <AllergenList allergens={product.allergens} />
+        }
+        
       </div>
     </div>
   )

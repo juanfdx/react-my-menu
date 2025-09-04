@@ -5,10 +5,11 @@ import { useModalStore } from '../../../stores/useModalStore';
 import { useMenuStore } from '../../../stores/useMenuStore';
 // UTILS
 import { capitalizeFirstLetter } from '../../utils/string-methods';
+import { getSelectedLanguage } from '../../utils/languages-methods';
 // COMPONENTS
 import { ExitIcon } from '../../../assets/images/svg/ExitIcon';
 // DATA
-import { languages, type Language } from '../../../data/data-languages';
+import { flags,  type Flag } from '../../../data/data-languages';
 
 
 
@@ -19,11 +20,13 @@ export const LanguageModal = () => {
   const myLanguage    = useMenuStore((state) => state.menu.language);
   const setMyLanguage = useMenuStore((state) => state.setLanguage);
   
+  const flagsToRender = flags[myLanguage] ?? flags['es'];
+  const language = getSelectedLanguage(myLanguage);
+   
 
-
-  const handleSelectLanguage = (lang: Language) => {
-    setMyLanguage(lang.locale); // set language in localStore
-    toast.success(`Language changed to ${capitalizeFirstLetter(lang.name)}`);
+  const handleSelectLanguage = (flag: Flag) => {
+    setMyLanguage(flag.locale); // set language in localStore
+    toast.success(`Language changed to ${capitalizeFirstLetter(flag.name)}`);
     closeModal(); // close after selection
   };
 
@@ -46,21 +49,21 @@ export const LanguageModal = () => {
           <ExitIcon className='language-modal__exit-icon' />
         </button>
 
-        <h2 className='language-modal__title'>Select a language</h2>
+        <h2 className='language-modal__title'>{capitalizeFirstLetter(language.title1)}</h2>
 
         <ul className='language-modal__languages-list'>
-          {languages.map(language => (
-            <li key={language.id} className='language-modal__language-item'>           
+          {flagsToRender.map(flag => (
+            <li key={flag.id} className='language-modal__language-item'>           
               <button 
-                className={`language-modal__button ${language.locale === myLanguage ? 'language-modal__button--active' : ''}`}
-                onClick={() => handleSelectLanguage(language)}  
+                className={`language-modal__button ${flag.locale === myLanguage ? 'language-modal__button--active' : ''}`}
+                onClick={() => handleSelectLanguage(flag)}  
               >
                 <img 
                   className='language-modal__img' 
-                  src={language.image} 
-                  alt={`${language.name} flag`} 
+                  src={flag.image} 
+                  alt={`${flag.name} flag`} 
                 />
-                <span className='language-modal__text'>{language.name}</span>
+                <span className='language-modal__text'>{flag.name}</span>
               </button>
             </li>
           ))}

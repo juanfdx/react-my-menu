@@ -30,11 +30,13 @@ export function getJsonFromLocalStorage<T>(key: string, fallback: T): T {
 const MY_MENU_KEY = 'myMenu';
 const defaultMenu: MyMenu = {
   wishlist: [],
+  mostPopular: true,
   ratedProducts: {},
   allergens: [],
   maxPrice: 0,
   searchTerm: '',
-  language: 'en',
+  viewMode: 'grid',
+  language: 'es', 
 };
 
 export function updateMyMenu(updates: Partial<MyMenu>): MyMenu {

@@ -98,6 +98,7 @@
   font-weight: var(--font-weight-bold);
   color: var(--color-text-darkest);
 }
+
 /* Score buttons */
 .product-modal__score-buttons-wrapper {
   position: absolute;
@@ -108,34 +109,6 @@
   justify-content: center;
   align-items: center;
   gap: 14px;
-}
-
-.product-modal__score-button {
-  width: 32px;
-  height: 32px;
-  background: #fff;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, .1), 0 2px 4px -1px rgba(0, 0, 0, .1);
-  border-radius: 50px;
-  cursor: pointer;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.product-modal__score-star-icon {
-  width: 20px;
-  height: 20px;
-}
-
-.product-modal__heart-button {
-  width: 38px;
-  margin-top: 1px;
-  cursor: pointer;
-}
-
-.product-modal__score-heart-filled-icon {
-  animation: zoomOn .4s ease-in-out;
 }
 
 /* Product info */
@@ -177,19 +150,6 @@
   color: var(--color-text-darkest);
 }
 
-
-/* Animations */
-@keyframes zoomOn {
-  0% {
-    transform: scale(0);
-  }
-  50% {
-    transform: scale(1.5);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
 
 
 /* MEDIA QUERIES */

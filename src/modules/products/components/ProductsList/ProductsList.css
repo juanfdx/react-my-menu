@@ -3,7 +3,7 @@
   width: 100%;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  gap: 10px;
+  gap: 12px;
 }
 
 .products-list__item {
@@ -12,6 +12,13 @@
   border-radius: 8px;
   background-color: #f9fafb;
 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.products-list__item-wrapper {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -124,6 +131,7 @@
 @media (min-width: 970px) {
   .products-list {
     grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
   }
 
   .products-list__title {

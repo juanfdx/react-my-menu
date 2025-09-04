@@ -1,0 +1,28 @@
+
+.wishlist-button {
+  width: 38px;
+  min-width: 38px;
+  margin-top: 1px;
+  cursor: pointer;
+}
+
+.wishlist-button__heart-filled-icon {
+  animation: zoomOn .4s ease-in-out;
+}
+
+
+
+/* Animations */
+@keyframes zoomOn {
+  0% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1.5);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}

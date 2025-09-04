@@ -1,6 +1,7 @@
 import './Suggestions.css';
-import type { Product } from '../../modules/products/interfaces/product.interface';
 import { Link, useLoaderData } from 'react-router';
+// INTERFACES
+import type { Product } from '../../modules/products/interfaces/product.interface';
 // COMPONENTS
 import { ProductsView } from '../../modules/products/components/ProductsView/ProductsView';
 
@@ -19,7 +20,7 @@ export const Suggestions = () => {
         <div className='suggestions__container'>
           <h1 className='suggestions__title'>No suggested products found.</h1>
           <Link className='suggestions__link' to='/'>
-            Go back to menu
+            Return to menu
           </Link>
         </div>
       </div>

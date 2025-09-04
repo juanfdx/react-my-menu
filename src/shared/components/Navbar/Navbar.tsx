@@ -9,7 +9,7 @@ import { NavLinkButton } from '../NavLinkButton/NavLinkButton';
 import iconSettings from '../../../assets/images/svg/settings.svg';
 import logo from '../../../assets/images/logo/logo.png';
 // DATA
-import { languages } from '../../../data/data-languages';
+import { flags } from '../../../data/data-languages';
 import { navLinks } from '../../../data/data-links.ts';
 
 
@@ -20,6 +20,8 @@ export const Navbar = () => {
   const openModal = useModalStore((state) => state.openModal);
   const myLanguage = useMenuStore((state) => state.menu.language);
 
+  const flagsToRender = flags[myLanguage] ?? flags['es'];
+
   // Filter links: try current language, then fallback to 'en'
   const localizedLinks = navLinks.filter(
     (link) => link.locale === myLanguage
@@ -27,7 +29,7 @@ export const Navbar = () => {
 
   const linksToRender = localizedLinks.length > 0
     ? localizedLinks
-    : navLinks.filter((link) => link.locale === 'en');
+    : navLinks.filter((link) => link.locale === 'es');
 
 
   
@@ -58,13 +60,13 @@ export const Navbar = () => {
       <div className='navbar__actions'>
 
         {/* languages */}
-        {languages?.map((lang) =>        
+        {flagsToRender?.map((flag) =>        
           <button 
-            key={lang.id} 
-            className={`navbar__btn-flag ${lang.locale === myLanguage ? 'navbar__btn-flag--active' : ''}`} 
+            key={flag.id} 
+            className={`navbar__btn-flag ${flag.locale === myLanguage ? 'navbar__btn-flag--active' : ''}`} 
             onClick={() => openModal('language')}
           >
-            <img className='navbar__img-flag' src={lang.image} alt={`${lang.locale} flag`} />
+            <img className='navbar__img-flag' src={flag.image} alt={`${flag.locale} flag`} />
           </button>  
         )}
 

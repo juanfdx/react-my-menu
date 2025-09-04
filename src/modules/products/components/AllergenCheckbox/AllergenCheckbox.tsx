@@ -4,7 +4,7 @@ import { capitalizeFirstLetter } from '../../../../shared/utils/string-methods';
 
 
 type Props = {
-  img: string,
+  img: string
   allergen: string
   selectedAllergens: string[]
   handleInputChange: (text: string) => void

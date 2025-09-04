@@ -20,7 +20,7 @@ export const Footer = () => {
 
   const linksToRender = localizedLinks.length > 0
     ? localizedLinks
-    : navLinks.filter((link) => link.locale === 'en');
+    : navLinks.filter((link) => link.locale === 'es');
 
 
     

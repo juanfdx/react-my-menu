@@ -1,4 +1,5 @@
 import type { MyMenu } from '../modules/products/interfaces/myMenu.interface';
+import type { Product } from '../modules/products/interfaces/product.interface';
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
@@ -17,9 +18,9 @@ const defaultMenu: MyMenu = {
 
 interface MenuStore {
   menu: MyMenu;
-  addToWishlist: (productId: number) => void;
-  setMostPopular: (value: boolean) => void;
+  addToWishlist: (product: Product) => void;
   removeFromWishlist: (productId: number) => void;
+  setMostPopular: (value: boolean) => void;
   setRatedProducts: (productId: number, rating: number) => void;
   removeRatedProduct: (productId: number) => void;
   setMaxPrice: (price: number) => void;
@@ -35,11 +36,11 @@ export const useMenuStore = create<MenuStore>()(
   persist(
     (set) => ({
       menu: defaultMenu,
-      addToWishlist: (productId: number) => set((state) => ({ 
-        menu: { ...state.menu, wishlist: [...state.menu.wishlist, productId] } 
+      addToWishlist: (product: Product) => set((state) => ({ 
+        menu: { ...state.menu, wishlist: [...state.menu.wishlist, product] } 
       })),
       removeFromWishlist: (productId: number) => set((state) => ({ 
-        menu: { ...state.menu, wishlist: state.menu.wishlist.filter((id) => id !== productId) } 
+        menu: { ...state.menu, wishlist: state.menu.wishlist.filter((product) => product.id !== productId) } 
       })),
       setMostPopular: (value: boolean) => set((state) => ({ menu: { ...state.menu, mostPopular: value } })),
       setRatedProducts: (productId: number, rating: number) => set((state) => ({

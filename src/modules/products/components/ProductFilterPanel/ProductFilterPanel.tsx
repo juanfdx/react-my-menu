@@ -29,7 +29,7 @@ export const ProductFilterPanel = () => {
   const setMyViewMode   = useMenuStore((state) => state.setViewMode);
 
   const myLanguage     = useMenuStore((state) => state.menu.language);
-  const panel = filtersPanelByLocale[myLanguage];
+  const panel = filtersPanelByLocale[myLanguage] ?? filtersPanelByLocale['es'];
 
   const [accordion1, setAccordion1] = useState<boolean>(false);
   const [accordion2, setAccordion2] = useState<boolean>(false);  
