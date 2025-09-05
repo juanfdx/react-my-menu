@@ -2,13 +2,19 @@ import './ProductsGrid.css';
 import { Link, useLocation } from 'react-router';
 // INTERFACES
 import type { Product } from '../../interfaces/product.interface';
+// STORE
+import { useMenuStore } from '../../../../stores/useMenuStore';
 // UTILS
 import { capitalizeFirstLetter } from '../../../../shared/utils/string-methods';
+import { getSelectedLanguage } from '../../../../shared/utils/languages-methods';
 
 
 
 export const ProductsGrid = ({ products }: { products: Product[]}) => {
 
+  const myLanguage = useMenuStore((state) => state.menu.language);
+  const language = getSelectedLanguage(myLanguage);
+  
   const location = useLocation();
   // this used to add banner suggestions on product images L63
   const isSuggestions = location.pathname.startsWith('/suggestions');
@@ -34,7 +40,7 @@ export const ProductsGrid = ({ products }: { products: Product[]}) => {
           >
             <img className='products-grid__img' src={product.thumbnail} alt={product.name} />
             {(product.suggested && isSuggestions) &&
-              <div className='products-grid__suggestion-banner'>suggestion</div>
+              <div className='products-grid__suggestion-banner'>{capitalizeFirstLetter(language.suggestion)}</div>
             }
           </Link>
 

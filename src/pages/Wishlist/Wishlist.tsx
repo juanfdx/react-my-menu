@@ -1,9 +1,9 @@
 import './Wishlist.css';
-import { Link } from 'react-router';
 // STORE
 import { useMenuStore } from '../../stores/useMenuStore';
 // COMPONENTS
 import { ProductsView } from '../../modules/products/components/ProductsView/ProductsView';
+import { NoItemsMessage } from '../../shared/components/NoItemsMessage/NoItemsMessage';
 
 
 
@@ -14,17 +14,11 @@ export const Wishlist = () => {
 
   if (myWishlist.length === 0) {
     return (
-      <div className='suggestions'>
-        <div className='suggestions__container'>
-          <h1 className='suggestions__title'>Your wishlist is empty.</h1>
-          <Link className='suggestions__link' to='/'>
-            Return to menu
-          </Link>
-        </div>
-      </div>
+      <NoItemsMessage type='wishlist' showHomeButton />
     );
   };
   
+
   return (
     <ProductsView  products={myWishlist}/>
   )

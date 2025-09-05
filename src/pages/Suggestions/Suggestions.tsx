@@ -1,9 +1,10 @@
 import './Suggestions.css';
-import { Link, useLoaderData } from 'react-router';
+import { useLoaderData } from 'react-router';
 // INTERFACES
 import type { Product } from '../../modules/products/interfaces/product.interface';
 // COMPONENTS
 import { ProductsView } from '../../modules/products/components/ProductsView/ProductsView';
+import { NoItemsMessage } from '../../shared/components/NoItemsMessage/NoItemsMessage';
 
 
 
@@ -16,14 +17,7 @@ export const Suggestions = () => {
 
   if (suggestedProducts.length === 0) {
     return (
-      <div className='suggestions'>
-        <div className='suggestions__container'>
-          <h1 className='suggestions__title'>No suggested products found.</h1>
-          <Link className='suggestions__link' to='/'>
-            Return to menu
-          </Link>
-        </div>
-      </div>
+      <NoItemsMessage type='suggestions' showHomeButton />
     );
   };
 

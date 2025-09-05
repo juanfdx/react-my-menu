@@ -15,8 +15,8 @@ import { flags,  type Flag } from '../../../data/data-languages';
 
 export const LanguageModal = () => {
 
-  const isOpen = useModalStore((state) => state.isOpen('language'));
-  const closeModal = useModalStore((state) => state.closeModal);
+  const isOpen        = useModalStore((state) => state.isOpen('language'));
+  const closeModal    = useModalStore((state) => state.closeModal);
   const myLanguage    = useMenuStore((state) => state.menu.language);
   const setMyLanguage = useMenuStore((state) => state.setLanguage);
   
@@ -49,7 +49,7 @@ export const LanguageModal = () => {
           <ExitIcon className='language-modal__exit-icon' />
         </button>
 
-        <h2 className='language-modal__title'>{capitalizeFirstLetter(language.title1)}</h2>
+        <h2 className='language-modal__title'>{capitalizeFirstLetter(language.selectLang)}</h2>
 
         <ul className='language-modal__languages-list'>
           {flagsToRender.map(flag => (

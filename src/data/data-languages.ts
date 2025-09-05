@@ -8,9 +8,14 @@ export interface Flag {
 export interface Language {
   id: string;
   name: string;
-  title1: string;
+  selectLang: string;
   taxInfo: string;
   suggestion: string;
+  suggestionListEmpty: string;
+  wishlistEmpty: string;
+  defaultEmpty: string;
+  returnToMenu: string;
+  goBack: string;
   locale: string;
 }
 
@@ -193,45 +198,70 @@ export const languages: Record<string, Language> = {
     {
       id: '1',
       name: 'español',
-      title1: 'seleccione un idioma',
+      selectLang: 'seleccione un idioma',
       taxInfo: 'impuestos no incluidos',
       suggestion: 'sugerencia',
+      suggestionListEmpty: 'no se encontraron sugerencias',
+      wishlistEmpty: 'tu lista de deseos está vacía',
+      defaultEmpty: 'no se encontraron entradas',
+      returnToMenu: 'regresar al menú',
+      goBack: 'volver',
       locale: 'es',
     },
   en:
     {
       id: '2',
       name: 'english',
-      title1: 'select a language',
+      selectLang: 'select a language',
       taxInfo: 'taxes not included',
       suggestion: 'suggestion',
+      suggestionListEmpty: 'no suggestions found',
+      wishlistEmpty: 'your wishlist is empty',
+      defaultEmpty: 'no items found',
+      returnToMenu: 'return to menu',
+      goBack: 'go back',
       locale: 'en',
     },
   de:
     {
       id: '3',
       name: 'deutsch',
-      title1: 'wählen sie eine sprache',
+      selectLang: 'wählen sie eine sprache',
       taxInfo: 'steuern nicht enthalten',
       suggestion: 'vorschlag',
+      suggestionListEmpty: 'keine Vorschlag gefunden',
+      wishlistEmpty: 'ihre Wunschliste ist leer',
+      defaultEmpty: 'keine Einträge gefunden',
+      returnToMenu: 'zurück zum Menü',
+      goBack: 'geh zurück',
       locale: 'de',
     },
   fr:
     {
       id: '4',
       name: 'français',
-      title1: 'sélectionnez une langue',
+      selectLang: 'sélectionnez une langue',
       taxInfo: 'taxes non incluses',
       suggestion: 'suggestion',
+      suggestionListEmpty: 'aucune suggestion trouvée',
+      wishlistEmpty: 'votre liste de souhaits est vide',
+      defaultEmpty: 'aucune entrée trouvée',
+      returnToMenu: 'retour au menu',
+      goBack: 'retour',
       locale: 'fr',
     },
   it:
     {
       id: '5',
       name: 'italiano',
-      title1: 'seleziona una lingua',
+      selectLang: 'seleziona una lingua',
       taxInfo: 'tasse non incluse',
       suggestion: 'suggerimento',
+      suggestionListEmpty: 'nessuna suggerimento trovata',
+      wishlistEmpty: 'la tua lista dei desideri è vuota',
+      defaultEmpty: 'nessun elemento trovato',
+      returnToMenu: 'torna al menu',
+      goBack: 'torna indietro',
       locale: 'it',
     }
 };

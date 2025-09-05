@@ -1,0 +1,32 @@
+
+.no-items-message {
+  width: 100%;
+  margin-top: 50px;
+}
+
+.no-items-message__container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0px 15px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.no-items-message__title {
+  font-size: calc(1.3rem + .6vw);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.4;
+  color: var(--color-text-darkest);
+}
+
+.no-items-message__btn {
+  margin-top: 5px;
+  text-decoration: underline;
+  color: var(--color-underline-link);
+  cursor: pointer;
+}
+
