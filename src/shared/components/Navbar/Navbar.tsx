@@ -71,7 +71,10 @@ export const Navbar = () => {
         )}
 
         {/* settings */}
-        <button className='navbar__btn'>
+        <button 
+          className='navbar__btn' 
+          onClick={() => openModal('sidebar')}
+        >
           <img className='navbar__icon-settings' src={iconSettings} alt="settings icon" />
         </button>
       </div>

@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 
 
-type ModalType = 'language' | 'rating' | null;
+type ModalType = 'language' | 'rating' | 'sidebar' | null;
 
 interface ModalStore {
   activeModal: ModalType;

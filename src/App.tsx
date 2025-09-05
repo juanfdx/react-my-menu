@@ -7,6 +7,8 @@ import { SingleProduct } from './pages/SingleProduct/SingleProduct'
 import { Categories } from './pages/Categories/Categories'
 import { Suggestions } from './pages/Suggestions/Suggestions'
 import { Wishlist } from './pages/Wishlist/Wishlist'
+import { About } from './pages/About/About'
+import { Contact } from './pages/Contact/Contact'
 import { ErrorElement } from './shared/components/ErrorElement/ErrorElement'
 
 // LOADERS
@@ -51,6 +53,16 @@ const router = createBrowserRouter([
       {
         path: 'wishlist',
         element: <Wishlist />,
+        errorElement: <ErrorElement />
+      },
+      {
+        path: 'about',
+        element: <About />,
+        errorElement: <ErrorElement />
+      },
+      {
+        path: 'contact',
+        element: <Contact />,
         errorElement: <ErrorElement />
       }
     ]

@@ -9,11 +9,15 @@ export interface Language {
   id: string;
   name: string;
   selectLang: string;
+  langChangedTo: string;
   taxInfo: string;
   suggestion: string;
   suggestionListEmpty: string;
   wishlistEmpty: string;
   defaultEmpty: string;
+  home: string;
+  about: string;
+  contact: string;
   returnToMenu: string;
   goBack: string;
   locale: string;
@@ -199,11 +203,15 @@ export const languages: Record<string, Language> = {
       id: '1',
       name: 'español',
       selectLang: 'seleccione un idioma',
+      langChangedTo: 'idioma cambiado a',
       taxInfo: 'impuestos no incluidos',
       suggestion: 'sugerencia',
       suggestionListEmpty: 'no se encontraron sugerencias',
       wishlistEmpty: 'tu lista de deseos está vacía',
       defaultEmpty: 'no se encontraron entradas',
+      home: 'inicio',
+      about: 'quienes somos',
+      contact: 'contacto',
       returnToMenu: 'regresar al menú',
       goBack: 'volver',
       locale: 'es',
@@ -213,11 +221,15 @@ export const languages: Record<string, Language> = {
       id: '2',
       name: 'english',
       selectLang: 'select a language',
+      langChangedTo: 'language changed to',
       taxInfo: 'taxes not included',
       suggestion: 'suggestion',
       suggestionListEmpty: 'no suggestions found',
       wishlistEmpty: 'your wishlist is empty',
       defaultEmpty: 'no items found',
+      home: 'home',
+      about: 'about us',
+      contact: 'contact',
       returnToMenu: 'return to menu',
       goBack: 'go back',
       locale: 'en',
@@ -227,11 +239,15 @@ export const languages: Record<string, Language> = {
       id: '3',
       name: 'deutsch',
       selectLang: 'wählen sie eine sprache',
+      langChangedTo: 'sprache geændert zu',
       taxInfo: 'steuern nicht enthalten',
       suggestion: 'vorschlag',
       suggestionListEmpty: 'keine Vorschlag gefunden',
       wishlistEmpty: 'ihre Wunschliste ist leer',
       defaultEmpty: 'keine Einträge gefunden',
+      home: 'zuhause',
+      about: 'wer sind wir',
+      contact: 'kontakt',
       returnToMenu: 'zurück zum Menü',
       goBack: 'geh zurück',
       locale: 'de',
@@ -241,11 +257,15 @@ export const languages: Record<string, Language> = {
       id: '4',
       name: 'français',
       selectLang: 'sélectionnez une langue',
+      langChangedTo: 'langue changée en',
       taxInfo: 'taxes non incluses',
       suggestion: 'suggestion',
       suggestionListEmpty: 'aucune suggestion trouvée',
       wishlistEmpty: 'votre liste de souhaits est vide',
       defaultEmpty: 'aucune entrée trouvée',
+      home: 'maison',
+      about: 'qui sommes-nous',
+      contact: 'contact',
       returnToMenu: 'retour au menu',
       goBack: 'retour',
       locale: 'fr',
@@ -255,11 +275,15 @@ export const languages: Record<string, Language> = {
       id: '5',
       name: 'italiano',
       selectLang: 'seleziona una lingua',
+      langChangedTo: 'lingua cambiata in',
       taxInfo: 'tasse non incluse',
       suggestion: 'suggerimento',
       suggestionListEmpty: 'nessuna suggerimento trovata',
       wishlistEmpty: 'la tua lista dei desideri è vuota',
       defaultEmpty: 'nessun elemento trovato',
+      home: 'inizio',
+      about: 'chi siamo',
+      contact: 'contatto',
       returnToMenu: 'torna al menu',
       goBack: 'torna indietro',
       locale: 'it',
