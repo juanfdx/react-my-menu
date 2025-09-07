@@ -6,8 +6,11 @@ import { useMenuStore } from '../../../stores/useMenuStore';
 // UTILS
 import { getSelectedLanguage } from '../../utils/languages-methods';
 import { capitalizeFirstLetter } from '../../utils/string-methods';
+// COMPONENTS
+import { Icon } from '../Icon/Icon';
 // IMAGES
 import restaurantImg from '../../../assets/images/restaurant/pop-restaurant.webp'
+import logo from '../../../assets/images/logo/logo.png'
 
 
 
@@ -31,9 +34,22 @@ export const Sidebar = () => {
       >
 
         <div className='sidebar__header'>
-          <img src={restaurantImg} className="sidebar__img" alt="" />
+          <img src={restaurantImg} className="sidebar__img" alt="restaurant" />
           <div className='sidebar__header-overlay'></div>
 
+          <div className='sidebar__header-content'>
+            <img className="sidebar__header-logo" src={logo} alt="logo" />
+
+            <div className='sidebar__header-text'>
+              <h1 className='sidebar__header-title'>demo</h1>
+              <p className='sidebar__header-subtitle'>restaurant - madrid</p>
+            </div>
+          </div>
+
+          <div className='sidebar__header-phone'>
+            <Icon type='phone' className='sidebar__header-phone-icon' />
+            <span>918 25 33 54</span>
+          </div>
         </div>
   
         <ul className='sidebar__list'>

@@ -4,6 +4,10 @@ import './Contact.css';
 export const Contact = () => {
   
   return (
-    <div>Contact</div>
+    <section className='contact'>
+
+    contact
+
+    </section>
   )
 }

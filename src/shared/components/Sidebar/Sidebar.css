@@ -37,6 +37,7 @@
   transform: translateX(0);
 }
 
+/* sidebar header */
 .sidebar__header {
   position: relative;
 }
@@ -51,15 +52,73 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, .2);
+  background-color: rgba(0, 0, 0, .4);
 }
 
+.sidebar__header-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  padding: 15px;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+
+}
+
+.sidebar__header-logo {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background-color: #fff;
+  object-fit: contain;
+}
+
+.sidebar__header-title {
+  margin-bottom: 2px;
+  font-size: 12px;
+  font-weight: var(--font-weight-bold);
+  text-align: left;
+  color: #fff;
+  line-height: 1;
+}
+
+.sidebar__header-subtitle {
+  font-size: 10px;
+  text-align: left;
+  color: #fff;
+}
+
+.sidebar__header-phone {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 8px;
+  font-size: 11px;
+  color: #fff;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.sidebar__header-phone-icon {
+  width: 11px;
+  height: 11px;
+}
+
+/* sidebar list */
 .sidebar__list {
   padding: 25px;
 }
 
 .sidebar__li {
-  padding: 10px;
+  padding: 12px 10px;
 }
 
 .sidebar__link {

@@ -12,6 +12,7 @@ import { HeartFilledIcon } from '../../../assets/images/svg/HeartFilledIcon';
 import { HeartOutlineIcon } from '../../../assets/images/svg/HeartOutlineIcon';
 import { TfiLayoutListThumb } from "react-icons/tfi";
 import { TfiLayoutGrid2 } from "react-icons/tfi";
+import { FaPhone } from "react-icons/fa6";
 
 
 type IconProps = {
@@ -61,6 +62,9 @@ export const Icon = ({ type, className }: IconProps) => {
       )}
       {type === 'grid' && (
         <TfiLayoutGrid2 className={className} />
+      )}
+      {type === 'phone' && (
+        <FaPhone className={className} />
       )}
     </>
   )

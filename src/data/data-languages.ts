@@ -18,6 +18,9 @@ export interface Language {
   home: string;
   about: string;
   contact: string;
+  phone: string;
+  schedule: string;
+  socialMedia: string;
   returnToMenu: string;
   goBack: string;
   locale: string;
@@ -212,6 +215,9 @@ export const languages: Record<string, Language> = {
       home: 'inicio',
       about: 'quienes somos',
       contact: 'contacto',
+      phone: 'teléfono',
+      schedule: 'horarios',
+      socialMedia: 'redes sociales',
       returnToMenu: 'regresar al menú',
       goBack: 'volver',
       locale: 'es',
@@ -230,6 +236,9 @@ export const languages: Record<string, Language> = {
       home: 'home',
       about: 'about us',
       contact: 'contact',
+      phone: 'phone',
+      schedule: 'timetables',
+      socialMedia: 'social media',
       returnToMenu: 'return to menu',
       goBack: 'go back',
       locale: 'en',
@@ -248,6 +257,9 @@ export const languages: Record<string, Language> = {
       home: 'zuhause',
       about: 'wer sind wir',
       contact: 'kontakt',
+      phone: 'telefon',
+      schedule: 'fahrpläne',
+      socialMedia: 'soziale medien',
       returnToMenu: 'zurück zum Menü',
       goBack: 'geh zurück',
       locale: 'de',
@@ -266,6 +278,9 @@ export const languages: Record<string, Language> = {
       home: 'maison',
       about: 'qui sommes-nous',
       contact: 'contact',
+      phone: 'téléphone',
+      schedule: "horaires",
+      socialMedia: 'médias sociaux',
       returnToMenu: 'retour au menu',
       goBack: 'retour',
       locale: 'fr',
@@ -284,6 +299,9 @@ export const languages: Record<string, Language> = {
       home: 'inizio',
       about: 'chi siamo',
       contact: 'contatto',
+      phone: 'telefono',
+      schedule: 'orari',
+      socialMedia: 'media sociali',
       returnToMenu: 'torna al menu',
       goBack: 'torna indietro',
       locale: 'it',
