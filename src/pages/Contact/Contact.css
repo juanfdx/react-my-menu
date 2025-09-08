@@ -70,6 +70,10 @@
   border-radius: 4px;
 }
 
+.contact__input--error {
+  border-color: #dc3545;
+}
+
 .contact__textarea {
   padding: 6px 12px;
   font-size: 16px;
@@ -78,6 +82,10 @@
   background-color: #fff;
   border: 1px solid #ced4da;
   border-radius: 4px;
+}
+
+.contact__textarea--error {
+  border-color: #dc3545;
 }
 
 .contact__button {

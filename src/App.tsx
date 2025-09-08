@@ -18,6 +18,9 @@ import { categoriesLoader } from './modules/products/loaders/categoriesLoader'
 import { productsByCategoryLoader } from './modules/products/loaders/productsByCategoryLoader'
 import { productsLoader } from './modules/products/loaders/productsLoader'
 
+// ACTIONS
+import { contactAction } from './modules/contact/contactAction'
+
 
 
 const router = createBrowserRouter([
@@ -66,6 +69,7 @@ const router = createBrowserRouter([
       {
         path: 'contact',
         element: <Contact />,
+        action: contactAction,
         errorElement: <ErrorElement />
       }
     ]

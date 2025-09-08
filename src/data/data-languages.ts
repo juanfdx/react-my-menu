@@ -28,6 +28,7 @@ export interface Language {
   formEmail: string;
   formMessage: string;
   formSubmit: string;
+  formSuccess: string;
   returnToMenu: string;
   goBack: string;
   locale: string;
@@ -232,6 +233,7 @@ export const languages: Record<string, Language> = {
       formEmail: 'correo',
       formMessage: 'mensaje',
       formSubmit: 'enviar',
+      formSuccess: 'mensaje enviado',
       returnToMenu: 'regresar al menú',
       goBack: 'volver',
       locale: 'es',
@@ -260,6 +262,7 @@ export const languages: Record<string, Language> = {
       formEmail: 'email',
       formMessage: 'message',
       formSubmit: 'send',
+      formSuccess: 'message sent',
       returnToMenu: 'return to menu',
       goBack: 'go back',
       locale: 'en',
@@ -288,6 +291,7 @@ export const languages: Record<string, Language> = {
       formEmail: 'email',
       formMessage: 'nachricht',
       formSubmit: 'senden',
+      formSuccess: 'nachricht gesendet',
       returnToMenu: 'zurück zum Menü',
       goBack: 'geh zurück',
       locale: 'de',
@@ -316,6 +320,7 @@ export const languages: Record<string, Language> = {
       formEmail: 'email',
       formMessage: 'message',
       formSubmit: 'envoyer',
+      formSuccess: 'message envoyé',
       returnToMenu: 'retour au menu',
       goBack: 'retour',
       locale: 'fr',
@@ -344,6 +349,7 @@ export const languages: Record<string, Language> = {
       formEmail: 'email',
       formMessage: 'messaggio',
       formSubmit: 'invia',
+      formSuccess: 'messaggio inviato',
       returnToMenu: 'torna al menu',
       goBack: 'torna indietro',
       locale: 'it',

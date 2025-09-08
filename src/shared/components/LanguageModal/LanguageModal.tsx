@@ -25,7 +25,10 @@ export const LanguageModal = () => {
   
   const handleSelectLanguage = (flag: Flag) => {
     setMyLanguage(flag.locale); // set language in localStore
-    toast.success(`${capitalizeFirstLetter(language.langChangedTo)} ${capitalizeFirstLetter(flag.name)}`);
+    //the myLanguage value won't reflect the new language until the next render cycle, so...
+    const newLanguage = getSelectedLanguage(flag.locale);
+    
+    toast.success(`${capitalizeFirstLetter(newLanguage.langChangedTo)} ${capitalizeFirstLetter(newLanguage.name)}`);
     closeModal(); // close after selection
   };
 

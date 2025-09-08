@@ -1,19 +1,57 @@
 import './Contact.css';
-import { Form } from 'react-router';
+import { useEffect, useRef } from 'react';
+import { Form, useActionData } from 'react-router';
 // STORE
 import { useMenuStore } from '../../stores/useMenuStore';
 // UTILS
 import { getSelectedLanguage } from '../../shared/utils/languages-methods';
 import { capitalizeFirstLetter } from '../../shared/utils/string-methods';
+import { focusOnInvalidInput } from '../../shared/utils/form-methods';
+import { toast } from 'react-toastify';
 
-
+type ActionResponse = {
+  success?: boolean;
+  errors?: Record<string, string>;
+};
 
 export const Contact = () => {
+
+  const { errors, success } = useActionData() as ActionResponse || {};
 
   const myLanguage = useMenuStore((state) => state.menu.language);
   const language = getSelectedLanguage(myLanguage);
   
+  const nameRef  = useRef<HTMLInputElement>(null);
+  const phoneRef = useRef<HTMLInputElement>(null);
+  const emailRef = useRef<HTMLInputElement>(null);
+  const messageRef = useRef<HTMLTextAreaElement>(null);
+  const formRef = useRef<HTMLFormElement>(null);
+
+  const refs = {
+    name: nameRef,
+    phone: phoneRef,
+    email: emailRef,
+    message: messageRef
+  }
   
+  // Focus on first invalid input (after form submission)
+  focusOnInvalidInput(errors, refs);
+
+  // Focus name field on first render
+  useEffect(() => {
+    nameRef.current?.focus();
+  }, []);
+
+  
+  useEffect(() => {
+    if (success) {
+      toast.success(capitalizeFirstLetter(language.formSuccess));
+      formRef.current?.reset();
+    }
+  }, [success, language.formSuccess]);
+
+
+
   return (
     <section className='contact'>
       <div className='contact__container'>
@@ -24,7 +62,7 @@ export const Contact = () => {
         </div>
 
         <div className='contact__col'>
-          <Form method='POST' className='contact__form' >
+          <Form ref={formRef} method='POST' className='contact__form' >
             {/* Name */}
             <div className='contact__form-group'>
               <label 
@@ -34,8 +72,9 @@ export const Contact = () => {
                 {capitalizeFirstLetter(language.formName)}
               </label>
               <input
+                 ref={nameRef}
                  id="name" 
-                 className='contact__input' 
+                 className={`contact__input ${errors?.name && 'contact__input--error'}`} 
                  type="text" 
                  name="name" 
                  autoComplete='off'
@@ -50,8 +89,9 @@ export const Contact = () => {
                 {capitalizeFirstLetter(language.formPhone)}
               </label>
               <input 
+                ref={phoneRef}
                 id="phone" 
-                className='contact__input' 
+                className={`contact__input ${errors?.phone && 'contact__input--error'}`} 
                 type="text" 
                 name="phone"
                 autoComplete='off'
@@ -66,8 +106,9 @@ export const Contact = () => {
                 {capitalizeFirstLetter(language.formEmail)}
               </label>
               <input 
+                ref={emailRef}
                 id="email" 
-                className='contact__input' 
+                className={`contact__input ${errors?.email && 'contact__input--error'}`} 
                 type="email" 
                 name="email"
                 autoComplete='off' 
@@ -82,7 +123,8 @@ export const Contact = () => {
                 {capitalizeFirstLetter(language.formMessage)}
               </label>
               <textarea 
-                className='contact__textarea' 
+                ref={messageRef}
+                className={`contact__textarea ${errors?.message && 'contact__textarea--error'}`} 
                 name="message" 
                 id="message" 
                 cols={30} 
