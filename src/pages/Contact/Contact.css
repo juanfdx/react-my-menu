@@ -13,7 +13,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 18px;
+  gap: 30px;
 }
 
 .contact__col {
@@ -51,7 +51,7 @@
 }
 
 .contact__form-group:nth-child(4) {
-  /* margin-top: 25px; */
+  margin-top: 25px;
   margin-bottom: 40px;
 }
 
@@ -112,6 +112,7 @@
     
     flex-direction: row;
     align-items: flex-start;
+    gap: 15px;
   }
 
   .contact__title {
@@ -130,6 +131,7 @@
 
   .contact__container {
     max-width: 960px;
+    gap: 20px;
   }
 }
 

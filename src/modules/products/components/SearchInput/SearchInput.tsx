@@ -12,7 +12,6 @@ export const SearchInput = ({ searchTerm, setSearchTerm, placeholder }: SearchIn
 
   const [inputValue, setInputValue] = useState(searchTerm); // internal state
 
-
   useEffect(() => {
     const delay = setTimeout(() => {
       setSearchTerm(inputValue);

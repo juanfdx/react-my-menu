@@ -21,6 +21,13 @@ export interface Language {
   phone: string;
   schedule: string;
   socialMedia: string;
+  contactTitle: string;
+  contactText: string;
+  formName: string;
+  formPhone: string;
+  formEmail: string;
+  formMessage: string;
+  formSubmit: string;
   returnToMenu: string;
   goBack: string;
   locale: string;
@@ -218,6 +225,13 @@ export const languages: Record<string, Language> = {
       phone: 'teléfono',
       schedule: 'horarios',
       socialMedia: 'redes sociales',
+      contactTitle: 'contacto',
+      contactText: 'aquí puedes enviarnos un mensaje o sugerencia. Nos encantaría conocer cualquier cosa que nos ayude a mejorar.',
+      formName: 'nombre',
+      formPhone: 'telefono',
+      formEmail: 'correo',
+      formMessage: 'mensaje',
+      formSubmit: 'enviar',
       returnToMenu: 'regresar al menú',
       goBack: 'volver',
       locale: 'es',
@@ -239,6 +253,13 @@ export const languages: Record<string, Language> = {
       phone: 'phone',
       schedule: 'timetables',
       socialMedia: 'social media',
+      contactTitle: 'contact',
+      contactText: 'here you can send us a message or suggestion. We would love to know anything that helps us improve.',
+      formName: 'name',
+      formPhone: 'phone',
+      formEmail: 'email',
+      formMessage: 'message',
+      formSubmit: 'send',
       returnToMenu: 'return to menu',
       goBack: 'go back',
       locale: 'en',
@@ -260,6 +281,13 @@ export const languages: Record<string, Language> = {
       phone: 'telefon',
       schedule: 'fahrpläne',
       socialMedia: 'soziale medien',
+      contactTitle: 'kontakt',
+      contactText: 'hier kannst du uns eine Nachricht oder eine Vorschlag senden. Wir wünschen uns alles, was uns hilft, zu verbessern.',
+      formName: 'name',
+      formPhone: 'telefon',
+      formEmail: 'email',
+      formMessage: 'nachricht',
+      formSubmit: 'senden',
       returnToMenu: 'zurück zum Menü',
       goBack: 'geh zurück',
       locale: 'de',
@@ -281,6 +309,13 @@ export const languages: Record<string, Language> = {
       phone: 'téléphone',
       schedule: "horaires",
       socialMedia: 'médias sociaux',
+      contactTitle: 'contact',
+      contactText: 'vous pouvez nous envoyer un message ou une suggestion. Nous aimons savoir tout ce qui nous aide à nous améliorer.',
+      formName: 'nom',
+      formPhone: 'téléphone',
+      formEmail: 'email',
+      formMessage: 'message',
+      formSubmit: 'envoyer',
       returnToMenu: 'retour au menu',
       goBack: 'retour',
       locale: 'fr',
@@ -302,6 +337,13 @@ export const languages: Record<string, Language> = {
       phone: 'telefono',
       schedule: 'orari',
       socialMedia: 'media sociali',
+      contactTitle: 'contatto',
+      contactText: 'qui puoi inviare a noi un messaggio o una suggerimento. Ci piacerebbe sapere qualunque cosa ci aiuta a migliorare.',
+      formName: 'nome',
+      formPhone: 'telefono',
+      formEmail: 'email',
+      formMessage: 'messaggio',
+      formSubmit: 'invia',
       returnToMenu: 'torna al menu',
       goBack: 'torna indietro',
       locale: 'it',

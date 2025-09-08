@@ -24,12 +24,7 @@ export const HomePage = () => {
       <CategoryFilter />
       
       <div className='home-page__main'>
-        {isNavigating ? (
-          <Loader />
-
-        ) : (
-          <Outlet /> 
-        )}
+        {isNavigating ? <Loader /> : <Outlet />}
       </div>
   
       <Footer />

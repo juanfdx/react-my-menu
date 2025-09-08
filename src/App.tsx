@@ -10,6 +10,8 @@ import { Wishlist } from './pages/Wishlist/Wishlist'
 import { About } from './pages/About/About'
 import { Contact } from './pages/Contact/Contact'
 import { ErrorElement } from './shared/components/ErrorElement/ErrorElement'
+// COMPONENTS
+import { Loader } from './shared/components/Loader/Loader'
 
 // LOADERS
 import { categoriesLoader } from './modules/products/loaders/categoriesLoader'
@@ -22,6 +24,7 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <HomePage />,
+    hydrateFallbackElement: <Loader />,// show loader when first render of my app
     errorElement: <Error />,
     children: [
       {
