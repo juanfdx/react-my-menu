@@ -1,4 +1,9 @@
-import type { Allergen } from '../../../data/data-allergens';
+export interface ProductAllergens {
+  id: number;
+  name: string;
+  image: string;
+  locale: string;
+}
 
 
 export interface Product {
@@ -10,7 +15,7 @@ export interface Product {
   thumbnail: string;
   image: string;
   rating: number;
-  allergens: Allergen[];
+  allergens: ProductAllergens[];
   locale: string;
   active: boolean;
   suggested: boolean

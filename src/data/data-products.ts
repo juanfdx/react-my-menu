@@ -28,6 +28,15 @@ import thumbCarbonara from '../assets/images/products/pasta/thumbnails/thumb-car
 import carbonara from '../assets/images/products/pasta/carbonara.jpg'
 import thumbPesto from '../assets/images/products/pasta/thumbnails/thumb-pesto.jpg'
 import pesto from '../assets/images/products/pasta/pesto.jpg'
+import thumbCheesecake from '../assets/images/products/desserts/thumbnails/thumb-cheesecake.jpg'
+import cheesecake from '../assets/images/products/desserts/cheesecake.jpg'
+import thumbChocolateCake from '../assets/images/products/desserts/thumbnails/thumb-chocolate-cake.jpg'
+import chocolateCake from '../assets/images/products/desserts/chocolate-cake.jpg'
+import thumbCaramelCake from '../assets/images/products/desserts/thumbnails/thumb-caramel-cake.jpg'
+import caramelCake from '../assets/images/products/desserts/caramel-cake.jpg'
+import thumbIceCream from '../assets/images/products/desserts/thumbnails/thumb-ice-cream.jpg'
+import iceCream from '../assets/images/products/desserts/ice-cream.jpg'
+
 
 // ALLERGENS
 // import apio from '../assets/images/allergens/apio.png'
@@ -36,13 +45,10 @@ import eggs from '../assets/images/allergens/eggs.png'
 import milk from '../assets/images/allergens/milk.png'
 import fish from '../assets/images/allergens/fish.png'
 import soy from '../assets/images/allergens/soy.png'
-// import sesame from '../assets/images/allergens/sesame.png'
+import sesame from '../assets/images/allergens/sesame.png'
 import nuts from '../assets/images/allergens/nuts.png'
 import crustaceans from '../assets/images/allergens/crustaceans.png'
 import molluscs from '../assets/images/allergens/molluscs.png'
-
-
-
 
 
 
@@ -546,6 +552,156 @@ export const products: Product[] = [
         locale: 'en',
       },
 
+    ],
+    locale: 'en',
+    active: true,
+    suggested: false
+  },
+  {
+    id: 15,
+    name: 'cheesecake',
+    description: 'with berry syrup',
+    category: 'desserts',
+    price: 5.5,
+    thumbnail: thumbCheesecake,
+    image: cheesecake,
+    rating: 5,
+    allergens: [
+      {
+        id: 1,
+        name: 'gluten',
+        image: gluten,
+        locale: 'en',
+      },
+      {
+        id: 2,
+        name: 'eggs',
+        image: eggs,
+        locale: 'en',
+      },
+      {
+        id: 3,
+        name: 'milk',
+        image: milk,
+        locale: 'en',
+      }
+    ],
+    locale: 'en',
+    active: true,
+    suggested: false
+  },
+  {
+    id: 16,
+    name: 'chocolate cake',
+    description: "chocolate cake, chocolate cream, chocolate shavings and chocolate syrup... The only thing that isn't chocolate is the plate",
+    category: 'desserts',
+    price: 5.5,
+    thumbnail: thumbChocolateCake,
+    image: chocolateCake,
+    rating: 4,
+    allergens: [
+      {
+        id: 1,
+        name: 'gluten',
+        image: gluten,
+        locale: 'en',
+      },
+      {
+        id: 2,
+        name: 'eggs',
+        image: eggs,
+        locale: 'en',
+      },
+      {
+        id: 3,
+        name: 'milk',
+        image: milk,
+        locale: 'en',
+      },
+      {
+        id: 6,
+        name: 'soy',
+        image: soy,
+        locale: 'en',
+      },
+      {
+      id: 7,
+      name: 'sesame',
+      image: sesame,
+      locale: 'en',
+    },
+    ],
+    locale: 'en',
+    active: true,
+    suggested: true
+  },
+  {
+    id: 17,
+    name: 'caramel cake',
+    description: 'With caramel syrup',
+    category: 'desserts',
+    price: 5.5,
+    thumbnail: thumbCaramelCake,
+    image: caramelCake,
+    rating: 0,
+    allergens: [
+      {
+        id: 1,
+        name: 'gluten',
+        image: gluten,
+        locale: 'en',
+      },
+      {
+        id: 2,
+        name: 'eggs',
+        image: eggs,
+        locale: 'en',
+      },
+      {
+      id: 7,
+      name: 'sesame',
+      image: sesame,
+      locale: 'en',
+    },
+    ],
+    locale: 'en',
+    active: false,
+    suggested: false
+  },
+  {
+    id: 18,
+    name: 'ice creams',
+    description: "Combine two scoops and syrup as desired. Ice creams: chocolate, strawberry, vanilla, and tiramisu Syrups: caramel, chocolate, and berries",
+    category: 'desserts',
+    price: 4.5,
+    thumbnail: thumbIceCream,
+    image: iceCream,
+    rating: 0,
+    allergens: [
+      {
+        id: 1,
+        name: 'gluten',
+        image: gluten,
+        locale: 'en',
+      },
+      {
+        id: 2,
+        name: 'eggs',
+        image: eggs,
+        locale: 'en',
+      },
+      {
+        id: 3,
+        name: 'milk',
+        image: milk,
+        locale: 'en',
+      },
+      {
+        id: 6,
+        name: 'soy',
+        image: soy,
+        locale: 'en',
+      },
     ],
     locale: 'en',
     active: true,

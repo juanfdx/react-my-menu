@@ -6,6 +6,7 @@ import type { Product } from '../../interfaces/product.interface';
 import { useMenuStore } from '../../../../stores/useMenuStore';
 // UTILS
 import { capitalizeFirstLetter } from '../../../../shared/utils/string-methods';
+import { formatPrice } from '../../../../shared/utils/currencyUtils';
 // COMPONENTS
 import { ExitIcon } from '../../../../assets/images/svg/ExitIcon';
 import { useNavigate } from 'react-router';
@@ -127,7 +128,7 @@ export const ProductModal = ({ product }: ProductModalProps) => {
             <h1 className='product-modal__title'>{capitalizeFirstLetter(product.name)}</h1>
             <p className='product-modal__description'>{capitalizeFirstLetter(product.description)}</p>
           </div>
-            <p className='product-modal__price'>{product.price}€</p>
+            <p className='product-modal__price'>{formatPrice(product.price)}</p>
         </div>
 
         {product?.allergens?.length > 0 &&

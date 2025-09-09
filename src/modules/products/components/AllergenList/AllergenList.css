@@ -5,14 +5,14 @@
 }
 
 .allergen-list__title {
-  font-size: var(--font-size-lg);
+  font-size: calc(1.275rem + .3vw);
   font-weight: var(--font-weight-medium);
   color: var(--color-text-darkest);
   line-height: 1.4;
 }
 
 .allergen-list__list {
-  margin-top: 10px;
+  margin-top: 12px;
 
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -30,10 +30,20 @@
 }
 
 .allergen-list__img {
-  width: 23px;
-  height: 23px;
+  width: 24px;
+  height: 24px;
 }
 
 .allergen-list__text {
-  font-size: var(--font-size-xs);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+
+
+/* MEDIA QUERIES */
+@media (min-width: 1200px) {
+  .allergen-list__title {
+    font-size: 24px;
+  }
 }

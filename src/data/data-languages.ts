@@ -31,6 +31,7 @@ export interface Language {
   formSuccess: string;
   clear: string;
   all: string;
+  allergens: string;
   returnToMenu: string;
   goBack: string;
   locale: string;
@@ -238,6 +239,7 @@ export const languages: Record<string, Language> = {
       formSuccess: 'mensaje enviado',
       clear: 'borrar',
       all: 'todos',
+      allergens: 'alérgenos',
       returnToMenu: 'regresar al menú',
       goBack: 'volver',
       locale: 'es',
@@ -269,6 +271,7 @@ export const languages: Record<string, Language> = {
       formSuccess: 'message sent',
       clear: 'clear',
       all: 'all',
+      allergens: 'allergens',
       returnToMenu: 'return to menu',
       goBack: 'go back',
       locale: 'en',
@@ -300,6 +303,7 @@ export const languages: Record<string, Language> = {
       formSuccess: 'nachricht gesendet',
       clear: 'Löschen',
       all: 'alle',
+      allergens: 'allergene',
       returnToMenu: 'zurück zum Menü',
       goBack: 'geh zurück',
       locale: 'de',
@@ -331,6 +335,7 @@ export const languages: Record<string, Language> = {
       formSuccess: 'message envoyé',
       clear: 'effacer',
       all: 'tout',
+      allergens: 'allergènes',
       returnToMenu: 'retour au menu',
       goBack: 'retour',
       locale: 'fr',
@@ -360,9 +365,10 @@ export const languages: Record<string, Language> = {
       formMessage: 'messaggio',
       formSubmit: 'invia',
       formSuccess: 'messaggio inviato',
-      returnToMenu: 'torna al menu',
       clear: 'cancella',
       all: 'tutto',
+      allergens: 'allergeni',
+      returnToMenu: 'torna al menu',
       goBack: 'torna indietro',
       locale: 'it',
     }

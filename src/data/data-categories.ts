@@ -5,6 +5,7 @@ import beef from '../assets/images/products/beef/thumbnails/thumb-veal-in-sauce.
 import seafood from '../assets/images/products/seafood/thumbnails/thumb-battered-squid .jpg'
 import pasta from '../assets/images/products/pasta/thumbnails/thumb-bolognese.jpg'
 import poultry from '../assets/images/products/poultry/thumbnails/thumb-chicken-strips.jpg'
+import desserts from '../assets/images/products/desserts/thumbnails/thumb-cheesecake.jpg'
 
 
 
@@ -234,5 +235,49 @@ export const categories: Category[] = [
     locale: 'it',
     active: true
   },
-
+  {
+    id: '26',
+    name: 'postres',
+    description: 'postres',
+    image: desserts,
+    link: 'desserts',
+    locale: 'es',
+    active: true
+  },
+  {
+    id: '27',
+    name: 'desserts',
+    description: 'desserts',
+    image: desserts,
+    link: 'desserts',
+    locale: 'en',
+    active: true
+  },
+  {
+    id: '28',
+    name: 'desserts',
+    description: 'desserts',
+    image: desserts,
+    link: 'desserts',
+    locale: 'de',
+    active: true
+  },
+  {
+    id: '29',
+    name: 'desserts',
+    description: 'desserts',
+    image: desserts,
+    link: 'desserts',
+    locale: 'fr',
+    active: true
+  },
+  {
+    id: '30',
+    name: 'dolci',
+    description: 'dolci',
+    image: desserts,
+    link: 'desserts',
+    locale: 'it',
+    active: true
+  }
 ]

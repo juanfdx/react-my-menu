@@ -1,18 +1,27 @@
 import './AllergenList.css';
 // INTERFACES
-import type { Allergen } from '../../../../data/data-allergens';
+import type { ProductAllergens } from '../../interfaces/product.interface';
+// STORE
+import { useMenuStore } from '../../../../stores/useMenuStore';
+// UTILS
+import { capitalizeFirstLetter } from '../../../../shared/utils/string-methods';
+import { getSelectedLanguage } from '../../../../shared/utils/languages-methods';
 
 
 type AllergenListProps = {
-  allergens: Allergen[]
+  allergens: ProductAllergens[]
 }
+
 
 export const AllergenList = ({ allergens }: AllergenListProps) => {
   
-  
+  const myLanguage = useMenuStore((state) => state.menu.language);
+  const language = getSelectedLanguage(myLanguage);
+
+
   return (
     <div className='allergen-list'>
-      <h5 className='allergen-list__title'>Allergens</h5>
+      <h5 className='allergen-list__title'>{capitalizeFirstLetter(language.allergens)}</h5>
 
       <ul className='allergen-list__list'>
         {allergens.map(allergen => (
@@ -25,7 +34,7 @@ export const AllergenList = ({ allergens }: AllergenListProps) => {
               src={allergen.image} 
               alt={allergen.name} 
             />
-            <span className='allergen-list__text'>{allergen.name}</span>
+            <span className='allergen-list__text'>{capitalizeFirstLetter(allergen.name)}</span>
           </li>
         ))}
       </ul>
