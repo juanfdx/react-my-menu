@@ -5,9 +5,13 @@ type Props = {
   price: number
   selectedPrice: number
   handlePriceChange: (price: number) => void
+  all?: string
 }
 
-export const PriceRadio = ({ price, selectedPrice, handlePriceChange }: Props) => {
+export const PriceRadio = ({ price, selectedPrice, handlePriceChange, all }: Props) => {
+  
+  const allText = all ? all : 'Todos';
+
   
   return (
     <div className='price-radio'>
@@ -27,7 +31,7 @@ export const PriceRadio = ({ price, selectedPrice, handlePriceChange }: Props) =
         <span 
           className={`price-radio__text ${selectedPrice === price ? 'price-radio__text--active' : ''}`}
         >
-          {price === 0 ? 'All' : `${price}€`}
+          {price === 0 ? allText : `${price}€`}
         </span>
       </label>
     </div>

@@ -1,5 +1,6 @@
 import './AllergenList.css';
-import type { Allergen } from '../../interfaces/product.interface';
+// INTERFACES
+import type { Allergen } from '../../../../data/data-allergens';
 
 
 type AllergenListProps = {

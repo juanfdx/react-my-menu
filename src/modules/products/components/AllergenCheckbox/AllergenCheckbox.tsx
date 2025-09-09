@@ -8,7 +8,6 @@ type Props = {
   allergen: string
   selectedAllergens: string[]
   handleInputChange: (text: string) => void
-
 }
 
 export const AllergenCheckbox = ({ img, allergen, selectedAllergens, handleInputChange }: Props) => {

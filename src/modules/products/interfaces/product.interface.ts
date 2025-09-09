@@ -1,10 +1,5 @@
+import type { Allergen } from '../../../data/data-allergens';
 
-export interface Allergen {
-  id: number;
-  name: string;
-  image: string;
-  locale: string;
-}
 
 export interface Product {
   id: number;

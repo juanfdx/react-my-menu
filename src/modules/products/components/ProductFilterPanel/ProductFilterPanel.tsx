@@ -2,6 +2,8 @@ import './ProductFilterPanel.css';
 import { useRef, useState } from 'react';
 // STORE
 import { useMenuStore } from '../../../../stores/useMenuStore';
+// UTILS
+import { getSelectedLanguage } from '../../../../shared/utils/languages-methods';
 // COMPONENTS
 import { Icon } from '../../../../shared/components/Icon/Icon';
 import { SearchInput } from '../SearchInput/SearchInput';
@@ -12,7 +14,7 @@ import { ToggleButton } from '../../../../shared/components/ToggleButton/ToggleB
 import { allergens } from '../../../../data/data-allergens';
 import { priceRange } from '../../../../data/data-price-range';
 import { filtersPanelByLocale } from '../../../../data/data-filters-lang';
-
+import { capitalizeFirstLetter } from '../../../../shared/utils/string-methods';
 
 
 export const ProductFilterPanel = () => {
@@ -27,9 +29,12 @@ export const ProductFilterPanel = () => {
   const setMyAllergens  = useMenuStore((state) => state.setAllergens);
   const myViewMode      = useMenuStore((state) => state.menu.viewMode);
   const setMyViewMode   = useMenuStore((state) => state.setViewMode);
+  const myLanguage      = useMenuStore((state) => state.menu.language);
 
-  const myLanguage     = useMenuStore((state) => state.menu.language);
   const panel = filtersPanelByLocale[myLanguage] ?? filtersPanelByLocale['es'];
+  const allergensList = allergens[myLanguage] ?? allergens['es'];
+  const language = getSelectedLanguage(myLanguage);
+  
 
   const [accordion1, setAccordion1] = useState<boolean>(false);
   const [accordion2, setAccordion2] = useState<boolean>(false);  
@@ -88,7 +93,7 @@ export const ProductFilterPanel = () => {
             <h5 className='product-filter-panel__allergens-title'>{panel.allergens}</h5>
             
             <ul className='product-filter-panel__allergens-list'>
-              {allergens?.map((allergen) => (
+              {allergensList?.map((allergen) => (
                 <li key={allergen.id} className='product-filter-panel__allergens-item'>
                   <AllergenCheckbox 
                     img={allergen.image} 
@@ -104,7 +109,7 @@ export const ProductFilterPanel = () => {
                   className='product-filter-panel__reset-btn'
                   onClick={() => setMyAllergens([])}
                 >
-                  Clear
+                  {capitalizeFirstLetter(language.clear)}
                 </button>
               </li>
             </ul>
@@ -169,6 +174,7 @@ export const ProductFilterPanel = () => {
                   price={0} 
                   selectedPrice={myMaxPrice} 
                   handlePriceChange={setMyMaxPrice} 
+                  all={capitalizeFirstLetter(language.all)}
                 />
               </li>
             </ul>
