@@ -4,6 +4,7 @@ import { useRef, useState } from 'react';
 import { useMenuStore } from '../../../../stores/useMenuStore';
 // UTILS
 import { getSelectedLanguage } from '../../../../shared/utils/languages-methods';
+import { capitalizeFirstLetter } from '../../../../shared/utils/string-methods';
 // COMPONENTS
 import { Icon } from '../../../../shared/components/Icon/Icon';
 import { SearchInput } from '../SearchInput/SearchInput';
@@ -14,7 +15,7 @@ import { ToggleButton } from '../../../../shared/components/ToggleButton/ToggleB
 import { allergens } from '../../../../data/data-allergens';
 import { priceRange } from '../../../../data/data-price-range';
 import { filtersPanelByLocale } from '../../../../data/data-filters-lang';
-import { capitalizeFirstLetter } from '../../../../shared/utils/string-methods';
+
 
 
 export const ProductFilterPanel = () => {
@@ -98,6 +99,7 @@ export const ProductFilterPanel = () => {
                   <AllergenCheckbox 
                     img={allergen.image} 
                     allergen={allergen.name}
+                    value={allergen.value}
                     selectedAllergens={myAllergens}
                     handleInputChange={handleToggleAllergen} 
                   />

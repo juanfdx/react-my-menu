@@ -3,26 +3,27 @@ import './AllergenCheckbox.css';
 import { capitalizeFirstLetter } from '../../../../shared/utils/string-methods';
 
 
-type Props = {
+type AllergenCheckboxProps = {
   img: string
   allergen: string
+  value: string
   selectedAllergens: string[]
   handleInputChange: (text: string) => void
 }
 
-export const AllergenCheckbox = ({ img, allergen, selectedAllergens, handleInputChange }: Props) => {
+export const AllergenCheckbox = ({ img, allergen, value, selectedAllergens, handleInputChange }: AllergenCheckboxProps) => {
 
   const isChecked = selectedAllergens?.includes(allergen);
 
   
   return (
-    <label className='allergen-checkbox' htmlFor={`allergen-${allergen}`}>
+    <label className='allergen-checkbox' htmlFor={allergen}>
       <input 
         className='allergen-checkbox__input'
-        id={`allergen-${allergen}`} 
+        id={allergen} 
         type="checkbox"
         name="allergen"
-        value={allergen}
+        value={value}
         checked={isChecked}
         onChange={() =>handleInputChange(allergen)}
       />
