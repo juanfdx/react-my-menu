@@ -65,8 +65,8 @@ export const validateForm = (formData: FormData): ValidateFormResult => {
     if (!formData.name) {
       errors.name = 'Please enter your name.';
 
-    } else if (formData.name.length < 3 || formData.name.length > 20) {
-      errors.name = 'Name must be between 3 and 20 characters';
+    } else if (formData.name.length > 20) {
+      errors.name = 'Name must be less than 20 characters';
     }
   } 
 
@@ -91,8 +91,8 @@ export const validateForm = (formData: FormData): ValidateFormResult => {
   if (keyExists(formData, 'message')) {
     if (!formData.message) {
       errors.message = 'Please enter your message.';
-    } else if (formData.message.length < 10) {
-      errors.message = 'Message must be at least 10 characters';
+    } else if (formData.message.length > 300) {
+      errors.message = 'Message must be less than 300 characters';
     }
   }
 

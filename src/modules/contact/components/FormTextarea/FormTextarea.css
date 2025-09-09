@@ -1,0 +1,24 @@
+
+.form-textarea {
+  margin-top: 25px;
+  margin-bottom: 50px;
+}
+
+.form-textarea__label {
+  margin-bottom: 8px;
+  color: #212529;
+}
+
+.form-textarea__textarea {
+  padding: 6px 12px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #212529;
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+
+.form-textarea__textarea--error {
+  border-color: #dc3545;
+}

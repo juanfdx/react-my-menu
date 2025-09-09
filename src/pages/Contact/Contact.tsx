@@ -1,6 +1,6 @@
 import './Contact.css';
 import { useEffect, useRef } from 'react';
-import { Form, useActionData } from 'react-router';
+import { Form, useActionData, useNavigation } from 'react-router';
 // STORE
 import { useMenuStore } from '../../stores/useMenuStore';
 // UTILS
@@ -8,17 +8,26 @@ import { getSelectedLanguage } from '../../shared/utils/languages-methods';
 import { capitalizeFirstLetter } from '../../shared/utils/string-methods';
 import { focusOnInvalidInput } from '../../shared/utils/form-methods';
 import { toast } from 'react-toastify';
+// COMPONENTS
+import { FormInput } from '../../modules/contact/components/FormInput/FormInput';
+import { FormTextarea } from '../../modules/contact/components/FormTextarea/FormTextarea';
+
 
 type ActionResponse = {
   success?: boolean;
   errors?: Record<string, string>;
 };
 
+
+
 export const Contact = () => {
 
   const { errors, success } = useActionData() as ActionResponse || {};
-
+  const navigation = useNavigation();
   const myLanguage = useMenuStore((state) => state.menu.language);
+
+  const isSubmitting = navigation.state === "submitting";
+  
   const language = getSelectedLanguage(myLanguage);
   
   const nameRef  = useRef<HTMLInputElement>(null);
@@ -63,76 +72,52 @@ export const Contact = () => {
 
         <div className='contact__col'>
           <Form ref={formRef} method='POST' className='contact__form' >
-            {/* Name */}
-            <div className='contact__form-group'>
-              <label 
-                className='contact__label' 
-                htmlFor="name"
-              >
-                {capitalizeFirstLetter(language.formName)}
-              </label>
-              <input
-                 ref={nameRef}
-                 id="name" 
-                 className={`contact__input ${errors?.name && 'contact__input--error'}`} 
-                 type="text" 
-                 name="name" 
-                 autoComplete='off'
-                />
-            </div>
-            {/* Phone */}
-            <div className='contact__form-group'>
-              <label 
-                className='contact__label' 
-                htmlFor="phone"
-              >
-                {capitalizeFirstLetter(language.formPhone)}
-              </label>
-              <input 
-                ref={phoneRef}
-                id="phone" 
-                className={`contact__input ${errors?.phone && 'contact__input--error'}`} 
-                type="text" 
-                name="phone"
-                autoComplete='off'
-              />
-            </div>
-            {/* Email */}
-            <div className='contact__form-group'>
-              <label 
-                className='contact__label' 
-                htmlFor="email"
-              >
-                {capitalizeFirstLetter(language.formEmail)}
-              </label>
-              <input 
-                ref={emailRef}
-                id="email" 
-                className={`contact__input ${errors?.email && 'contact__input--error'}`} 
-                type="email" 
-                name="email"
-                autoComplete='off' 
-              />
-            </div>
-            {/* Textarea */}
-            <div className='contact__form-group'>
-              <label 
-                className='contact__label' 
-                htmlFor="message"
-              >
-                {capitalizeFirstLetter(language.formMessage)}
-              </label>
-              <textarea 
-                ref={messageRef}
-                className={`contact__textarea ${errors?.message && 'contact__textarea--error'}`} 
-                name="message" 
-                id="message" 
-                cols={30} 
-                rows={4}
-              ></textarea>
-            </div>
 
-            <button className='contact__button' type="submit">
+            {/* Name */}
+            <FormInput 
+              label={language.formName} 
+              inputRef={nameRef} 
+              id='name'
+              type='text' 
+              name='name' 
+              error={errors?.name} 
+            />
+
+            {/* Phone */}
+            <FormInput 
+              label={language.formPhone} 
+              inputRef={phoneRef} 
+              id='phone'
+              type='text' 
+              name='phone' 
+              error={errors?.phone} 
+            />
+
+            {/* Email */}
+            <FormInput 
+              label={language.formEmail} 
+              inputRef={emailRef} 
+              id='email'
+              type='email' 
+              name='email' 
+              error={errors?.email} 
+            />
+   
+            {/* Textarea */}
+            <FormTextarea 
+              label={language.formMessage} 
+              textareaRef={messageRef} 
+              id='message'
+              name='message' 
+              rows={4}
+              error={errors?.message} 
+            />
+
+            <button 
+              className={`contact__button ${isSubmitting && 'contact__button--submitting'}`} 
+              type="submit" 
+              disabled={isSubmitting}
+            >
               {capitalizeFirstLetter(language.formSubmit)}
             </button>
           </Form>

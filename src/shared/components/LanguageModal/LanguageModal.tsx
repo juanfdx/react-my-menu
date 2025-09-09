@@ -23,6 +23,7 @@ export const LanguageModal = () => {
   const flagsToRender = flags[myLanguage] ?? flags['es'];
   const language = getSelectedLanguage(myLanguage);
   
+  
   const handleSelectLanguage = (flag: Flag) => {
     setMyLanguage(flag.locale); // set language in localStore
     //the myLanguage value won't reflect the new language until the next render cycle, so...

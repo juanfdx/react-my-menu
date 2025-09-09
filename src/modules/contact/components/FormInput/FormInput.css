@@ -1,0 +1,23 @@
+
+.form-input {
+  margin-bottom: 16px;
+}
+
+.form-input__label {
+  margin-bottom: 8px;
+  color: #212529;
+}
+
+.form-input__input {
+  padding: 6px 12px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #212529;
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+
+.form-input__input--error {
+  border-color: #dc3545;
+}
