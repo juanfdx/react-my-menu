@@ -26,6 +26,6 @@ My web site:&nbsp; [www.juanfdx.com](https://www.juanfdx.com)
 
 ## ☎ Contact me
 
-[juanfdx@ideastradeweb.com](https://www.juanfdx.com/contact)
+Email:&nbsp; [juanfdx@ideastradeweb.com](https://www.juanfdx.com/contact)
 &nbsp;<br />
 &nbsp;<br />
