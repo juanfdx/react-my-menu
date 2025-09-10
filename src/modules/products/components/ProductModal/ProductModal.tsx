@@ -1,5 +1,6 @@
 import './ProductModal.css';
 import { useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router';
 // INTERFACES
 import type { Product } from '../../interfaces/product.interface';
 // STORE
@@ -9,7 +10,6 @@ import { capitalizeFirstLetter } from '../../../../shared/utils/string-methods';
 import { formatPrice } from '../../../../shared/utils/currencyUtils';
 // COMPONENTS
 import { ExitIcon } from '../../../../assets/images/svg/ExitIcon';
-import { useNavigate } from 'react-router';
 import { AllergenList } from '../AllergenList/AllergenList';
 import { StarRating } from '../../../../shared/components/StarRating/StarRating';
 import { WishlistButton } from '../../../../shared/components/WishlistButton/WishlistButton';

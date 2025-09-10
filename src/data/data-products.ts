@@ -36,6 +36,14 @@ import thumbCaramelCake from '../assets/images/products/desserts/thumbnails/thum
 import caramelCake from '../assets/images/products/desserts/caramel-cake.jpg'
 import thumbIceCream from '../assets/images/products/desserts/thumbnails/thumb-ice-cream.jpg'
 import iceCream from '../assets/images/products/desserts/ice-cream.jpg'
+import thumbWatercressSalad from '../assets/images/products/salads/thumbnails/thumb-watercress-salad.jpg'
+import watercressSalad from '../assets/images/products/salads/watercress-salad.jpg'
+import thumbTomatoSalad from '../assets/images/products/salads/thumbnails/thumb-tomato-salad.jpg'
+import tomatoSalad from '../assets/images/products/salads/tomato-salad.jpg'
+import thumbTunaSalad from '../assets/images/products/salads/thumbnails/thumb-tuna-salad.jpg'
+import tunaSalad from '../assets/images/products/salads/tuna-salad.jpg'
+
+
 
 
 // ALLERGENS
@@ -671,7 +679,7 @@ export const products: Product[] = [
   {
     id: 18,
     name: 'ice creams',
-    description: "Combine two scoops and syrup as desired. Ice creams: chocolate, strawberry, vanilla, and tiramisu Syrups: caramel, chocolate, and berries",
+    description: 'Combine two scoops and syrup as desired.\n Ice creams: chocolate, strawberry, vanilla, and tiramisu\n Syrups: caramel, chocolate, and berries',
     category: 'desserts',
     price: 4.5,
     thumbnail: thumbIceCream,
@@ -703,6 +711,55 @@ export const products: Product[] = [
         locale: 'en',
       },
     ],
+    locale: 'en',
+    active: true,
+    suggested: false
+  },
+  {
+    id: 19,
+    name: 'house watercress salad',
+    description: 'watercress and goat cheese salad',
+    category: 'salads',
+    price: 12,
+    thumbnail: thumbWatercressSalad,
+    image: watercressSalad,
+    rating: 0,
+    allergens: [
+      {
+        id: 3,
+        name: 'milk',
+        image: milk,
+        locale: 'en',
+      },
+    ],
+    locale: 'en',
+    active: true,
+    suggested: false
+  },
+  {
+    id: 20,
+    name: 'tomato salad',
+    description: 'warm tomato salad with olive oil',
+    category: 'salads',
+    price: 9,
+    thumbnail: thumbTomatoSalad,
+    image: tomatoSalad,
+    rating: 0,
+    allergens: [],
+    locale: 'en',
+    active: true,
+    suggested: false
+  },
+  {
+    id: 21,
+    name: 'tuna salad',
+    description: 'tuna salad',
+    category: 'salads',
+    price: 20,
+    thumbnail: thumbTunaSalad,
+    image: tunaSalad,
+    rating: 0,
+    allergens: [],
     locale: 'en',
     active: true,
     suggested: false

@@ -1,6 +1,7 @@
 import './CategoriesList.css';
-import type { Category } from '../../interfaces/category.interface';
 import { Link } from 'react-router';
+// INTERFACES
+import type { Category } from '../../interfaces/category.interface';
 // STORE
 import { useMenuStore } from '../../../../stores/useMenuStore';
 

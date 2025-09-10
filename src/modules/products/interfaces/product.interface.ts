@@ -1,4 +1,4 @@
-export interface ProductAllergens {
+export interface ProductAllergen {
   id: number;
   name: string;
   image: string;
@@ -15,7 +15,7 @@ export interface Product {
   thumbnail: string;
   image: string;
   rating: number;
-  allergens: ProductAllergens[];
+  allergens: ProductAllergen[];
   locale: string;
   active: boolean;
   suggested: boolean

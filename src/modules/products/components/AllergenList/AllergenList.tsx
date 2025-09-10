@@ -1,6 +1,6 @@
 import './AllergenList.css';
 // INTERFACES
-import type { ProductAllergens } from '../../interfaces/product.interface';
+import type { ProductAllergen } from '../../interfaces/product.interface';
 // STORE
 import { useMenuStore } from '../../../../stores/useMenuStore';
 // UTILS
@@ -9,7 +9,7 @@ import { getSelectedLanguage } from '../../../../shared/utils/languages-methods'
 
 
 type AllergenListProps = {
-  allergens: ProductAllergens[]
+  allergens: ProductAllergen[]
 }
 
 

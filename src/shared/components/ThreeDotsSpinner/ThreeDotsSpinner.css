@@ -4,12 +4,12 @@
   justify-content: center;
   align-items: center;
   gap: 8px;
-  height: 50px;
+  height: 30px;
 }
 
 .dots-spinner div {
-  width: 12px;
-  height: 12px;
+  width: 8px;
+  height: 8px;
   background-color: var(--color-interactive);
   border-radius: 50%;
   animation: dots-bounce 1s infinite ease-in-out;
@@ -25,7 +25,6 @@
 
 
 @keyframes dots-bounce {
-
   0%,
   80%,
   100% {
@@ -36,5 +35,29 @@
   40% {
     transform: scale(1);
     opacity: 1;
+  }
+}
+
+
+/* MEDIA QUERIES */
+@media (min-width: 380px) {
+  .dots-spinner {
+    height: 40px;
+  }
+
+  .dots-spinner div {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+@media (min-width: 576px) {
+  .dots-spinner {
+    height: 50px;
+  }
+
+  .dots-spinner div {
+    width: 12px;
+    height: 12px;
   }
 }

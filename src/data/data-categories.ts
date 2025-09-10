@@ -6,10 +6,57 @@ import seafood from '../assets/images/products/seafood/thumbnails/thumb-battered
 import pasta from '../assets/images/products/pasta/thumbnails/thumb-bolognese.jpg'
 import poultry from '../assets/images/products/poultry/thumbnails/thumb-chicken-strips.jpg'
 import desserts from '../assets/images/products/desserts/thumbnails/thumb-cheesecake.jpg'
+import salads from '../assets/images/products/salads/thumbnails/thumb-watercress-salad.jpg'
+
 
 
 
 export const categories: Category[] = [
+  {
+    id: '31',
+    name: 'ensaladas',
+    description: 'ensaladas',
+    image: salads,
+    link: 'salads',
+    locale: 'es',
+    active: true
+  },
+  {
+    id: '32',
+    name: 'salads',
+    description: 'salads',
+    image: salads,
+    link: 'salads',
+    locale: 'en',
+    active: true
+  },
+  {
+    id: '33',
+    name: 'salate',
+    description: 'salate',
+    image: salads,
+    link: 'salads',
+    locale: 'de',
+    active: true
+  },
+    {
+    id: '34',
+    name: 'salades',
+    description: 'salades',
+    image: salads,
+    link: 'salads',
+    locale: 'fr',
+    active: true
+  },
+  {
+    id: '35',
+    name: 'insalate',
+    description: 'insalate',
+    image: salads,
+    link: 'salads',
+    locale: 'it',
+    active: true
+  },
   {
     id: '1',
     name: 'pork',

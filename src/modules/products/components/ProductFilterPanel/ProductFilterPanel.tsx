@@ -45,8 +45,6 @@ export const ProductFilterPanel = () => {
   const contentRef4 = useRef<HTMLDivElement>(null);
 
 
-
-
   const handleToggleAllergen = (allergen: string) => {
     if (myAllergens.includes(allergen)) {
       setMyAllergens(myAllergens.filter(a => a !== allergen));
