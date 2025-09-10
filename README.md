@@ -1,6 +1,6 @@
 ## 🧾 Description
 
-Small project for my portfolio web site. I have made an imitation of the [app.cartamovil.com/demo/1](https://app.cartamovil.com/demo/1) website using frontend technologies. The idea is that the created web site is as similar as possible to the original.
+Small project for my portfolio website. I have made an imitation of the [app.cartamovil.com/demo/1](https://app.cartamovil.com/demo/1) web application from the [cartamovil.es](https://www.cartamovil.es) website using frontend technologies. The idea is that the created website is as similar as possible to the original.
 
 ## 🧐 Author 
 
