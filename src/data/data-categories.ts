@@ -1,12 +1,12 @@
 import type { Category } from '../modules/products/interfaces/category.interface'
 // IMAGES
-import pork from '../assets/images/products/pork/thumbnails/thumb-taquitos-pork.jpg'
-import beef from '../assets/images/products/beef/thumbnails/thumb-veal-in-sauce.jpg'
-import seafood from '../assets/images/products/seafood/thumbnails/thumb-battered-squid .jpg'
-import pasta from '../assets/images/products/pasta/thumbnails/thumb-bolognese.jpg'
-import poultry from '../assets/images/products/poultry/thumbnails/thumb-chicken-strips.jpg'
-import desserts from '../assets/images/products/desserts/thumbnails/thumb-cheesecake.jpg'
-import salads from '../assets/images/products/salads/thumbnails/thumb-watercress-salad.jpg'
+import pork from '../assets/images/products/pork/thumbnails/thumb-taquitos-pork.webp'
+import beef from '../assets/images/products/beef/thumbnails/thumb-veal-in-sauce.webp'
+import seafood from '../assets/images/products/seafood/thumbnails/thumb-battered-squid.webp'
+import pasta from '../assets/images/products/pasta/thumbnails/thumb-bolognese.webp'
+import poultry from '../assets/images/products/poultry/thumbnails/thumb-chicken-strips.webp'
+import desserts from '../assets/images/products/desserts/thumbnails/thumb-cheesecake.webp'
+import salads from '../assets/images/products/salads/thumbnails/thumb-watercress-salad.webp'
 
 
 

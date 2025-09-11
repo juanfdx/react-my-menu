@@ -35,7 +35,7 @@ export const getProducts = (): Promise<ResponseProducts> => {
 
     setTimeout(() => {
       resolve({ status: 200, data: { products } })
-    }, 500);
+    }, 400);
   });
 }
 
@@ -58,7 +58,7 @@ export const getProductById = (productId: number): Promise<ResponseProduct> => {
       else {
         resolve({ status: 200, data: { product } });
       }
-    }, 500);
+    }, 400);
   })
 } 
 
@@ -88,7 +88,7 @@ export const getCategories = (): Promise<ResponseCategories> => {
       } else {
         resolve({ status: 200, data: { categories } });
       }
-    }, 500);
+    }, 400);
 
     // setTimeout(() => {
     //   reject({ status: 500, message: "Database connection failed" }); // ✅ proper error
@@ -117,7 +117,7 @@ export const getProductsByCategory = (categoryName: string): Promise<ResponsePro
       else {
         resolve({ status: 200, data: { products: productsByCategory } });
       }
-    }, 500);
+    }, 400);
   })
 }
 
@@ -131,7 +131,7 @@ export const getProductsByMaxPrice = (maxPrice: number): Promise<ResponseProduct
     setTimeout(() => {
       const productsByMaxPrice = products?.filter((product) => product.price <= maxPrice);
       resolve({ status: 200, data: { products: productsByMaxPrice } });
-    }, 500);
+    }, 0);
   })
 }
 
@@ -145,7 +145,7 @@ export const getProductsByRating = (rating: number): Promise<ResponseProducts> =
     setTimeout(() => {
       const productsByRating = products?.filter((product) => product.rating >= rating);
       resolve({ status: 200, data: { products: productsByRating } });
-    }, 500);
+    }, 0);
   })
 }
 
@@ -159,6 +159,6 @@ export const getProductsBySearch = (searchQuery: string): Promise<ResponseProduc
     setTimeout(() => {
       const productsBySearch = products?.filter((product) => product.name.toLowerCase().includes(searchQuery.toLowerCase()));
       resolve({ status: 200, data: { products: productsBySearch } });
-    }, 500);
+    }, 0);
   })
 }
