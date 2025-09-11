@@ -14,7 +14,8 @@ Juan Fernandez Diaz
 
 ## 🚀 Live Demo 
 
-**Website:** [www.juanfdx.com](https://www.juanfdx.com)
+Check out the live version of this project:
+🔗 [www.juanfdx.com](https://www.juanfdx.com)
 
 ## 💻 Built with
 
