@@ -1,6 +1,8 @@
 ## 🧾 Description
 
-Small project for my portfolio website. I have made an imitation of the [app.cartamovil.com/demo/1](https://app.cartamovil.com/demo/1) web application from the [cartamovil.es](https://www.cartamovil.es) website using frontend technologies. The idea is that the created website is as similar as possible to the original.
+CartaMovil Web App Clone:
+
+Recreated a functional clone of the [cartaMovil demo web app](https://app.cartamovil.com/demo/1) using modern frontend technologies, with a strong focus on replicating the UI/UX of the original application from [cartamovil.es](https://www.cartamovil.es). The goal of this project was to demonstrate my ability to reverse-engineer and build responsive, interactive web interfaces by closely mimicking the design, layout, and user interactions of a production-level application.
 
 ## 🧐 Author 
 
