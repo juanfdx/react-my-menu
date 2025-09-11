@@ -1,6 +1,6 @@
 // UTILS
-import { validateForm } from '../../shared/utils/form-methods';
-import { trimValues } from '../../shared/utils/object-methods';
+import { validateForm } from '../../../shared/utils/form-methods';
+import { trimValues } from '../../../shared/utils/object-methods';
 
 
 

@@ -19,7 +19,7 @@ import { productsByCategoryLoader } from './modules/products/loaders/productsByC
 import { productsLoader } from './modules/products/loaders/productsLoader'
 
 // ACTIONS
-import { contactAction } from './modules/contact/contactAction'
+import { contactAction } from './modules/contact/actions/contactAction'
 
 
 
