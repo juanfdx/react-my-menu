@@ -12,9 +12,9 @@ Juan Fernandez Diaz
 - [LinkedIn](https://www.linkedin.com/in/juanfdx-com/)
 - [Portfolio](https://www.juanfdx.com/portfolio)
 
-## 🚀 Demo 
+## 🚀 Live Demo 
 
-My web site:&nbsp; [www.juanfdx.com](https://www.juanfdx.com)
+**Website:** [www.juanfdx.com](https://www.juanfdx.com)
 
 ## 💻 Built with
 
