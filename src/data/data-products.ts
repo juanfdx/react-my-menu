@@ -673,7 +673,7 @@ export const products: Product[] = [
     },
     ],
     locale: 'en',
-    active: false,
+    active: true,
     suggested: false
   },
   {

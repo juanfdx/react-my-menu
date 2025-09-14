@@ -11,7 +11,14 @@ type SearchInputProps = {
 export const SearchInput = ({ searchTerm, setSearchTerm, placeholder }: SearchInputProps) => {
 
   const [inputValue, setInputValue] = useState(searchTerm); // internal state
+  
 
+  // ✅ Sync local inputValue with external store value
+  useEffect(() => {
+    setInputValue(searchTerm);
+  }, [searchTerm]);
+
+  // ✅ Debounced update to store
   useEffect(() => {
     const delay = setTimeout(() => {
       setSearchTerm(inputValue);

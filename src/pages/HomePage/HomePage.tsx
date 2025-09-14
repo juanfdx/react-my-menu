@@ -1,6 +1,7 @@
 import './HomePage.css';
 import { Outlet, useNavigation } from 'react-router';
 // COMPONENTS
+import { FilterResetHandler } from '../../shared/components/FilterResetHandler/FilterResetHandler';
 import { Header } from '../../shared/components/Header/Header';
 import { Footer } from '../../shared/components/Footer/Footer';
 import { ProductFilterPanel } from '../../modules/products/components/ProductFilterPanel/ProductFilterPanel';
@@ -19,6 +20,7 @@ export const HomePage = () => {
 
   return (
     <div className='home-page'>
+      <FilterResetHandler />
       <Header />
       <ProductFilterPanel />
       <CategoryFilter />
