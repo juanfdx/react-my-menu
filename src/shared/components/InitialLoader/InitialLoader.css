@@ -1,17 +1,17 @@
 
-.loader {
+.initial-loader {
   width: 100%;
-  height: calc(100vh - 400px);
-  
+  height: 100vh;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.loader__img {
+.initial-loader__img {
   width: 100px;
-
+  
   animation: pulse-scale 4s infinite ease-in-out;
   display: inline-block;
   transition: transform 0.3s;
@@ -29,10 +29,9 @@
 }
 
 
-
 /* MEDIA QUERIES */
 @media (min-width: 576px) {
-  .loader__img {
+  .initial-loader__img {
     width: 170px;
   }
 }
