@@ -70,7 +70,7 @@ export const products: Product[] = [
     price: 13.5,
     thumbnail: thumbGrilledPork,
     image: grilledPork,
-    rating: 0,
+    rating: 4,
     allergens: [
       {
         id: 1,
@@ -208,7 +208,7 @@ export const products: Product[] = [
     price: 10.5,
     thumbnail: thumbChickenWings,
     image: chickenWings,
-    rating: 0,
+    rating: 3,
     allergens: [],
     locale: 'en',
     active: true,
@@ -414,7 +414,7 @@ export const products: Product[] = [
     price: 13.5,
     thumbnail: thumbVealInSauce,
     image: vealInSauce,
-    rating: 0,
+    rating: 4,
     allergens: [
       {
         id: 1,
@@ -573,7 +573,7 @@ export const products: Product[] = [
     price: 5.5,
     thumbnail: thumbCheesecake,
     image: cheesecake,
-    rating: 5,
+    rating: 3,
     allergens: [
       {
         id: 1,
@@ -684,7 +684,7 @@ export const products: Product[] = [
     price: 4.5,
     thumbnail: thumbIceCream,
     image: iceCream,
-    rating: 0,
+    rating: 5,
     allergens: [
       {
         id: 1,
@@ -758,7 +758,7 @@ export const products: Product[] = [
     price: 20,
     thumbnail: thumbTunaSalad,
     image: tunaSalad,
-    rating: 0,
+    rating: 4,
     allergens: [],
     locale: 'en',
     active: true,
