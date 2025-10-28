@@ -1,8 +1,8 @@
 ## 🧾 Description
 
-CartaMovil Web App Clone:
+CartaMovil Web App Demo:
 
-Recreated a functional clone of the [CartaMovil demo web app](https://app.cartamovil.com/demo/1) using modern frontend technologies, with a strong focus on replicating the UI/UX of the original application from [cartamovil.es](https://www.cartamovil.es). The goal of this project was to demonstrate my ability to reverse-engineer and build responsive, interactive web interfaces by closely mimicking the design, layout, and user interactions of a production-level application.
+Recreated a functional clone of the [CartaMovil web app](https://app.cartamovil.com/demo/1) using modern frontend technologies, with a strong focus on replicating the UI/UX of the original application from [cartamovil.es](https://www.cartamovil.es). The goal of this project was to demonstrate my ability to reverse-engineer and build responsive, interactive web interfaces by closely mimicking the design, layout, and user interactions of a production-level application.
 
 ## 🧐 Author 
 

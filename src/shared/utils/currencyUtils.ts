@@ -1,6 +1,6 @@
 
 /*========================================================
-  FORMAT PRICE
+  FORMAT PRICE - USA 'en-US' USD | UE 'es-ES' EUR 
 ========================================================*/
 export const formatPrice = (amount: number, locale = 'es-ES', currency = 'EUR'): string => {
   return new Intl.NumberFormat(locale, {
